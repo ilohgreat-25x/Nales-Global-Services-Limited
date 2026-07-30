@@ -1,0 +1,4058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nales Global Services Limited — Premium Construction, Electrical & Engineering Solutions in Ibadan, Nigeria. Building Excellence. Delivering Quality. On Time.">
+<meta name="keywords" content="construction company Nigeria, electrical installation Ibadan, engineering consultancy, petroleum services, residential construction, commercial building">
+<meta name="author" content="Nales Global Services Limited">
+<meta property="og:title" content="Nales Global Services Limited | Building Excellence">
+<meta property="og:description" content="Construction, Electrical & Engineering Solutions Built to Last. Serving Ibadan, Oyo State, Nigeria.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B1F33">
+<title>Nales Global Services Limited | Building Excellence. Delivering Quality.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CSS CUSTOM PROPERTIES — DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Brand Colors */
+  --navy:        #0B1F33;
+  --navy-light:  #112841;
+  --navy-mid:    #1a3a5c;
+  --steel:       #4A5568;
+  --steel-light: #718096;
+  --orange:      #F97316;
+  --orange-dark: #EA6C0A;
+  --orange-glow: rgba(249,115,22,0.18);
+  --orange-dim:  rgba(249,115,22,0.08);
+  --emerald:     #10B981;
+  --emerald-dim: rgba(16,185,129,0.12);
+
+  /* Backgrounds */
+  --bg-white:    #FFFFFF;
+  --bg-soft:     #F8FAFC;
+  --bg-gray:     #F1F5F9;
+  --bg-dark:     #0B1F33;
+  --bg-card:     #FFFFFF;
+
+  /* Text */
+  --text-dark:   #0B1F33;
+  --text-body:   #334155;
+  --text-muted:  #64748B;
+  --text-light:  #94A3B8;
+  --text-white:  #FFFFFF;
+
+  /* Borders */
+  --border:      rgba(15,31,51,0.08);
+  --border-dark: rgba(255,255,255,0.1);
+  --border-orange: rgba(249,115,22,0.3);
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px rgba(11,31,51,0.06), 0 1px 2px rgba(11,31,51,0.04);
+  --shadow-md:   0 4px 16px rgba(11,31,51,0.08), 0 2px 8px rgba(11,31,51,0.06);
+  --shadow-lg:   0 16px 48px rgba(11,31,51,0.12), 0 8px 24px rgba(11,31,51,0.08);
+  --shadow-xl:   0 32px 80px rgba(11,31,51,0.16);
+  --shadow-orange: 0 8px 32px rgba(249,115,22,0.25);
+
+  /* Typography */
+  --font-sans:   'Space Grotesk', 'Inter', sans-serif;
+  --font-body:   'Inter', sans-serif;
+  --font-serif:  'Playfair Display', serif;
+  --font-mono:   'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --section-py:  100px;
+  --container:   1280px;
+
+  /* Transitions */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --transition:  0.35s var(--ease-out);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-white);
+  color: var(--text-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body.nav-open { overflow: hidden; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-gray); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+
+::selection { background: var(--orange); color: white; }
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; transition: color var(--transition); }
+button { font-family: inherit; border: none; background: none; cursor: pointer; }
+ul { list-style: none; }
+input, textarea, select { font-family: inherit; }
+
+/* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--orange), #FBBF24);
+  z-index: 99999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px var(--orange);
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+.section-label::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: var(--orange);
+  display: block;
+  flex-shrink: 0;
+}
+
+.section-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--text-dark);
+}
+
+.section-heading .accent { color: var(--orange); }
+
+.section-subheading {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.75;
+  margin-top: 16px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover::before { opacity: 0.08; }
+
+.btn-primary {
+  background: var(--orange);
+  color: white;
+  box-shadow: 0 4px 20px rgba(249,115,22,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+
+.btn-secondary:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: var(--navy);
+  color: white;
+}
+
+.btn-dark:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Scroll reveal */
+.sr {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.sr-left { opacity: 0; transform: translateX(-28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr-right { opacity: 0; transform: translateX(28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr.visible, .sr-left.visible, .sr-right.visible { opacity: 1; transform: none; }
+.sr.d1 { transition-delay: 0.1s; }
+.sr.d2 { transition-delay: 0.2s; }
+.sr.d3 { transition-delay: 0.3s; }
+.sr.d4 { transition-delay: 0.4s; }
+.sr.d5 { transition-delay: 0.5s; }
+.sr.d6 { transition-delay: 0.6s; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9000;
+  padding: 20px 0;
+  transition: all 0.4s var(--ease-out);
+}
+
+#navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(11,31,51,0.97);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  width: 44px; height: 44px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+  flex-shrink: 0;
+}
+
+.logo-mark:hover {
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: var(--shadow-orange);
+}
+
+.logo-mark-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.logo-bar {
+  width: 20px; height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+.logo-bar.short { width: 12px; align-self: flex-start; }
+
+.logo-text { flex: 1; }
+
+.logo-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.logo-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  border-radius: 6px;
+  transition: all 0.25s;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255,255,255,0.07);
+}
+
+.nav-link.active { color: var(--orange); }
+
+/* Nav actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  transition: color 0.3s;
+}
+
+.nav-phone:hover { color: var(--orange); }
+
+.nav-phone-icon {
+  width: 28px; height: 28px;
+  background: var(--orange-dim);
+  border: 1px solid var(--border-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 9001;
+}
+
+.hamburger span {
+  width: 24px; height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s var(--ease-out);
+  display: block;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,31,51,0.99);
+  backdrop-filter: blur(24px);
+  z-index: 8999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+
+.mobile-nav.open { opacity: 1; visibility: visible; }
+
+.mobile-nav .nav-link {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding: 12px 24px;
+  color: rgba(255,255,255,0.8);
+}
+
+.mobile-nav .nav-link:hover { color: var(--orange); }
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center 30%;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-out forwards;
+}
+
+@keyframes heroZoom {
+  to { transform: scale(1); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(11,31,51,0.92) 40%, rgba(11,31,51,0.5) 100%),
+    linear-gradient(to bottom, rgba(11,31,51,0.3) 0%, transparent 40%, rgba(11,31,51,0.8) 100%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* Animated construction lines */
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(249,115,22,0.3), transparent);
+  height: 1px;
+  animation: scanLine 8s ease-in-out infinite;
+}
+
+.hero-line:nth-child(1) { top: 25%; width: 100%; animation-delay: 0s; }
+.hero-line:nth-child(2) { top: 55%; width: 80%; left: 10%; animation-delay: 3s; }
+.hero-line:nth-child(3) { top: 75%; width: 60%; left: 20%; animation-delay: 6s; }
+
+@keyframes scanLine {
+  0%, 100% { opacity: 0; transform: scaleX(0); }
+  25%, 75% { opacity: 1; transform: scaleX(1); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 140px 0 100px;
+  width: 100%;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 8px;
+  background: rgba(249,115,22,0.12);
+  border: 1px solid rgba(249,115,22,0.3);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #FBB880;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s var(--ease-out) 0.3s both;
+}
+
+.hero-tag-dot {
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: blink 2s ease infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero-title {
+  font-family: var(--font-sans);
+  font-size: clamp(52px, 8vw, 108px);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  color: white;
+  margin-bottom: 28px;
+  animation: fadeUp 0.9s var(--ease-out) 0.5s both;
+}
+
+.hero-title .line { display: block; }
+.hero-title .orange { color: var(--orange); }
+
+.hero-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(255,255,255,0.68);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 44px;
+  animation: fadeUp 0.8s var(--ease-out) 0.7s both;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s var(--ease-out) 0.85s both;
+}
+
+.hero-btn-call {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.hero-btn-call:hover {
+  background: rgba(255,255,255,0.14);
+  border-color: white;
+}
+
+/* Hero stats bar */
+.hero-stats {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(11,31,51,0.85);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  z-index: 2;
+  animation: fadeUp 0.8s var(--ease-out) 1.1s both;
+}
+
+.hero-stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.hero-stat {
+  padding: 24px 32px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+
+.hero-stat:last-child { border-right: none; }
+
+.hero-stat-num {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  display: block;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 100px; right: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+  animation: fadeUp 0.8s var(--ease-out) 1.3s both;
+}
+
+.scroll-indicator-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+}
+
+.scroll-indicator-line {
+  width: 1px; height: 56px;
+  background: linear-gradient(to bottom, rgba(249,115,22,0.8), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.6; }
+  50% { transform: scaleY(0.7); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+#about {
+  padding: var(--section-py) 0;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* About visual side */
+.about-visual {
+  position: relative;
+}
+
+.about-img-stack {
+  position: relative;
+}
+
+.about-img-main {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-img-main img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.about-img-main:hover img { transform: scale(1.04); }
+
+.about-img-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(11,31,51,0.6) 100%);
+  z-index: 1;
+}
+
+.about-img-accent {
+  position: absolute;
+  bottom: -24px; right: -24px;
+  width: 60%; aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: var(--shadow-xl);
+}
+
+.about-img-accent img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.about-experience-badge {
+  position: absolute;
+  top: 24px; left: -24px;
+  background: var(--orange);
+  color: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow-orange);
+  text-align: center;
+  min-width: 110px;
+}
+
+.about-exp-num {
+  font-family: var(--font-sans);
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  display: block;
+}
+
+.about-exp-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+/* About content */
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-intro {
+  font-size: 17px;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.about-intro strong { color: var(--text-dark); font-weight: 600; }
+
+/* Feature cards */
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all var(--transition);
+}
+
+.about-feature:hover {
+  border-color: var(--border-orange);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.about-feature-icon {
+  width: 40px; height: 40px;
+  background: var(--orange-dim);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  border: 1px solid rgba(249,115,22,0.15);
+}
+
+.about-feature-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.about-feature-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
+#services {
+  padding: var(--section-py) 0;
+  background: var(--bg-white);
+}
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
+  gap: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
+  cursor: default;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), #FBBF24);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(249,115,22,0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.service-card:hover {
+  background: white;
+  border-color: rgba(249,115,22,0.2);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover::after { opacity: 1; }
+
+.service-card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.12em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-icon {
+  width: 56px; height: 56px;
+  background: var(--navy);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover .service-icon {
+  background: var(--orange);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-orange);
+}
+
+.service-title {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-body);
+}
+
+.service-item::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange);
+  transition: gap 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover .service-cta { gap: 10px; }
+
+/* ============================================================
+   WHY CHOOSE US
+   ============================================================ */
+#why {
+  padding: var(--section-py) 0;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.why-bg-gradient {
+  position: absolute;
+  bottom: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.why-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+.why-header .section-label { justify-content: center; color: var(--orange); }
+.why-header .section-label::before { background: var(--orange); }
+.why-header .section-heading { color: white; }
+.why-header .section-subheading { margin: 16px auto 0; color: rgba(255,255,255,0.55); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.why-card {
+  padding: 36px 28px;
+  background: rgba(255,255,255,0.02);
+  text-align: center;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--orange);
+  transition: all 0.4s var(--ease-out);
+}
+
+.why-card:hover { background: rgba(255,255,255,0.04); }
+.why-card:hover::before { left: 0; right: 0; }
+
+.why-icon {
+  width: 56px; height: 56px;
+  background: rgba(249,115,22,0.1);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 20px;
+  transition: all 0.3s;
+}
+
+.why-card:hover .why-icon {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.why-title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.why-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   STATISTICS
+   ============================================================ */
+#stats {
+  padding: 80px 0;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  background: var(--border);
+}
+
+.stat-card {
+  padding: 40px 28px;
+  background: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 3px;
+  background: var(--orange);
+  transition: all 0.4s var(--ease-out);
+}
+
+.stat-card:hover { background: var(--bg-soft); }
+.stat-card:hover::before { left: 0; right: 0; }
+
+.stat-num {
+  font-family: var(--font-sans);
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.stat-num .stat-accent { color: var(--orange); }
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+#projects {
+  padding: var(--section-py) 0;
+  background: var(--bg-white);
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 32px;
+}
+
+.projects-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  box-shadow: 0 4px 16px rgba(249,115,22,0.25);
+}
+
+/* Projects masonry */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 260px;
+  gap: 16px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.project-card:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+.project-card:nth-child(2) { grid-column: span 5; grid-row: span 1; }
+.project-card:nth-child(3) { grid-column: span 5; grid-row: span 1; }
+.project-card:nth-child(4) { grid-column: span 4; grid-row: span 1; }
+.project-card:nth-child(5) { grid-column: span 4; grid-row: span 1; }
+.project-card:nth-child(6) { grid-column: span 4; grid-row: span 1; }
+
+.project-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.project-card:hover .project-img { transform: scale(1.06); }
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11,31,51,0.9) 0%, transparent 60%);
+  transition: background 0.4s;
+}
+
+.project-card:hover .project-overlay {
+  background: linear-gradient(to top, rgba(11,31,51,0.95) 0%, rgba(11,31,51,0.3) 100%);
+}
+
+.project-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 24px;
+  z-index: 1;
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.project-title {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 4px 10px;
+  background: rgba(16,185,129,0.15);
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 100px;
+  font-size: 11px;
+  color: #6EE7B7;
+  font-family: var(--font-mono);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s;
+}
+
+.project-card:hover .project-status { opacity: 1; transform: translateY(0); }
+
+.project-status::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--emerald);
+  border-radius: 50%;
+}
+
+.project-view {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 40px; height: 40px;
+  background: rgba(249,115,22,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s var(--ease-out);
+}
+
+.project-card:hover .project-view { opacity: 1; transform: scale(1); }
+
+/* ============================================================
+   PROCESS SECTION
+   ============================================================ */
+#process {
+  padding: var(--section-py) 0;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.process-header { max-width: 600px; margin-bottom: 80px; }
+
+.process-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 40px; left: calc(100% / 12);
+  right: calc(100% / 12);
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--orange) 0px, var(--orange) 8px,
+    transparent 8px, transparent 20px
+  );
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+}
+
+.process-step-num {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s var(--ease-out);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+}
+
+.process-step.active .process-step-num,
+.process-step:hover .process-step-num {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  box-shadow: var(--shadow-orange);
+  transform: scale(1.1);
+}
+
+.process-step-icon {
+  font-size: 28px;
+}
+
+.process-step-title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.process-step-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+#testimonials {
+  padding: var(--section-py) 0;
+  background: var(--bg-white);
+  overflow: hidden;
+}
+
+.testimonials-header { max-width: 560px; margin-bottom: 64px; }
+
+.testimonials-track-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.testimonial-card {
+  flex-shrink: 0;
+  width: calc(33.333% - 16px);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  transition: all 0.4s var(--ease-out);
+}
+
+.testimonial-card:hover {
+  border-color: rgba(249,115,22,0.2);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  background: white;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.star {
+  width: 16px; height: 16px;
+  color: #FBBF24;
+  font-size: 16px;
+}
+
+.testimonial-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+}
+
+.author-role {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.slider-btn {
+  width: 44px; height: 44px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 16px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.slider-btn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  box-shadow: var(--shadow-orange);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.slider-dot {
+  width: 6px; height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-dot.active {
+  width: 24px;
+  background: var(--orange);
+}
+
+/* ============================================================
+   GALLERY SECTION
+   ============================================================ */
+#gallery {
+  padding: var(--section-py) 0;
+  background: var(--bg-soft);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 12px;
+  margin-top: 56px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(6) { grid-column: span 2; grid-row: span 2; }
+
+.gallery-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.gallery-item:hover .gallery-img { transform: scale(1.06); }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11,31,51,0.6);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-zoom {
+  width: 52px; height: 52px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transform: scale(0.7);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.gallery-item:hover .gallery-zoom { transform: scale(1); }
+
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
+#faq {
+  padding: var(--section-py) 0;
+  background: var(--bg-white);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.faq-content .section-subheading { margin-bottom: 40px; }
+
+.faq-contact-card {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-contact-card::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(249,115,22,0.15), transparent 70%);
+}
+
+.faq-contact-title {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.faq-contact-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.faq-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.faq-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+
+.faq-contact-icon {
+  width: 36px; height: 36px;
+  background: rgba(249,115,22,0.1);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Accordion */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-item {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.accordion-item.open {
+  border-color: rgba(249,115,22,0.25);
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.accordion-btn:hover { background: rgba(249,115,22,0.03); }
+
+.accordion-question {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+}
+
+.accordion-icon {
+  width: 28px; height: 28px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.accordion-item.open .accordion-icon {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out);
+}
+
+.accordion-item.open .accordion-body { max-height: 200px; }
+
+.accordion-answer {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+#contact {
+  padding: var(--section-py) 0;
+  background: var(--bg-soft);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-title {
+  font-family: var(--font-sans);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.contact-info-title span { color: var(--orange); }
+
+.contact-info-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all var(--transition);
+}
+
+.contact-item:hover {
+  border-color: var(--border-orange);
+  box-shadow: var(--shadow-md);
+  transform: translateX(6px);
+}
+
+.contact-item-icon {
+  width: 44px; height: 44px;
+  background: var(--orange-dim);
+  border: 1px solid rgba(249,115,22,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.contact-item-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-item-value {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.contact-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  width: 44px; height: 44px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-orange);
+}
+
+/* Contact Form */
+.contact-form-wrap {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 44px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.contact-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 40px; right: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), #FBBF24);
+  border-radius: 0 0 4px 4px;
+}
+
+.form-title {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg-soft);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.3s;
+  appearance: none;
+}
+
+.form-control:focus {
+  border-color: var(--orange);
+  background: white;
+  box-shadow: 0 0 0 4px var(--orange-dim);
+}
+
+.form-control::placeholder { color: var(--text-light); }
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--orange);
+  color: white;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-submit:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange);
+}
+
+.form-note {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-top-bar {
+  background: var(--orange);
+  padding: 16px 0;
+}
+
+.footer-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-top-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.footer-top-cta {
+  padding: 10px 24px;
+  background: white;
+  color: var(--orange);
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.footer-top-cta:hover { background: var(--navy); color: white; }
+
+.footer-main { padding: 72px 0 48px; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-name {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.footer-brand-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-brand-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.3s;
+}
+
+.footer-social:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-col-title {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 24px; height: 2px;
+  background: var(--orange);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-link:hover { color: var(--orange); }
+.footer-link::before { content: '→'; font-size: 11px; opacity: 0; transition: opacity 0.3s; }
+.footer-link:hover::before { opacity: 1; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 24px 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+  font-family: var(--font-mono);
+}
+
+.footer-copy span { color: var(--orange); }
+
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-bottom-link {
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+  transition: color 0.3s;
+  font-family: var(--font-mono);
+}
+
+.footer-bottom-link:hover { color: var(--orange); }
+
+/* ============================================================
+   FLOATING ELEMENTS
+   ============================================================ */
+/* WhatsApp FAB */
+#whatsapp-fab {
+  position: fixed;
+  bottom: 88px; right: 24px;
+  width: 56px; height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  z-index: 9000;
+  transition: all 0.3s var(--ease-out);
+  cursor: pointer;
+}
+
+#whatsapp-fab:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(37,211,102,0.5);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  background: rgba(11,31,51,0.95);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all 0.3s;
+  font-family: var(--font-sans);
+}
+
+#whatsapp-fab:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Back to top */
+#back-to-top {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  width: 44px; height: 44px;
+  background: var(--navy);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all 0.4s var(--ease-out);
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-orange);
+}
+
+/* Mobile sticky call */
+#mobile-call {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 8998;
+  display: none;
+  background: var(--orange);
+  padding: 14px 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  box-shadow: 0 -4px 20px rgba(249,115,22,0.3);
+}
+
+/* ============================================================
+   404 PAGE
+   ============================================================ */
+#page-404 {
+  display: none;
+  min-height: 100vh;
+  background: var(--navy);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px;
+  flex-direction: column;
+}
+
+.error-code {
+  font-family: var(--font-sans);
+  font-size: clamp(100px, 20vw, 200px);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(249,115,22,0.3);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-shadow: 0 0 80px rgba(249,115,22,0.1);
+}
+
+.error-title {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.error-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  max-width: 440px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   SECTION DIVIDERS
+   ============================================================ */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1100px) {
+  :root { --container: 100%; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .hamburger { display: flex; }
+  .nav-cta { display: none; }
+
+  #hero { min-height: 100svh; }
+  .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .scroll-indicator { display: none; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-accent { display: none; }
+  .about-experience-badge { left: 12px; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .services-header { flex-direction: column; align-items: flex-start; }
+
+  .process-timeline { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .process-timeline::before { display: none; }
+
+  .projects-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+  .project-card:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+  .project-card:nth-child(1) { grid-column: span 2; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 2; grid-row: span 1; }
+  .testimonial-card { width: calc(100% - 0px); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .projects-header { flex-direction: column; align-items: flex-start; }
+
+  #mobile-call { display: flex; }
+  body { padding-bottom: 56px; }
+}
+
+@media (max-width: 640px) {
+  :root { --section-py: 72px; }
+  #nav { padding: 16px 0; }
+  #nav.scrolled { padding: 12px 0; }
+  .container { padding: 0 20px; }
+
+  .hero-title { font-size: 52px; letter-spacing: -0.04em; }
+  .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat { padding: 16px; }
+  .hero-stat-num { font-size: 24px; }
+  .hero-actions { gap: 10px; }
+
+  .about-features { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card:nth-child(n) { grid-column: span 1; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 1; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom-inner { flex-direction: column; text-align: center; }
+  .footer-top-inner { flex-direction: column; text-align: center; }
+  .contact-form-wrap { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a href="#hero" class="nav-logo">
+        <div class="logo-mark">
+          <div class="logo-mark-inner">
+            <div class="logo-bar"></div>
+            <div class="logo-bar"></div>
+            <div class="logo-bar short"></div>
+          </div>
+        </div>
+        <div class="logo-text">
+          <div class="logo-name">NALES GLOBAL</div>
+          <div class="logo-sub">SERVICES LIMITED</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:08033954614" class="nav-phone">
+          <span class="nav-phone-icon">📞</span>
+          08033954614
+        </a>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">
+          Request Quote
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+  <a href="#about" class="nav-link" onclick="closeMobileNav()">About</a>
+  <a href="#services" class="nav-link" onclick="closeMobileNav()">Services</a>
+  <a href="#projects" class="nav-link" onclick="closeMobileNav()">Projects</a>
+  <a href="#gallery" class="nav-link" onclick="closeMobileNav()">Gallery</a>
+  <a href="#faq" class="nav-link" onclick="closeMobileNav()">FAQ</a>
+  <a href="#contact" class="nav-link" onclick="closeMobileNav()">Contact</a>
+  <div style="display:flex;gap:16px;margin-top:24px;">
+    <a href="tel:08033954614" class="btn btn-primary" onclick="closeMobileNav()">📞 Call Now</a>
+    <a href="#contact" class="btn btn-secondary" onclick="closeMobileNav()">Get Quote</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section id="hero" role="banner">
+  <div class="hero-bg">
+    <div class="hero-bg-img" role="img" aria-label="Construction workers on an active building site in Nigeria"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-lines">
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        Ibadan, Oyo State — Est. Nigeria
+      </div>
+      <h1 class="hero-title">
+        <span class="line">Building</span>
+        <span class="line orange">Excellence.</span>
+        <span class="line">Delivering</span>
+        <span class="line">Quality.</span>
+        <span class="line" style="font-size:0.6em;color:rgba(255,255,255,0.7);font-weight:700;letter-spacing:-0.02em;">On Time.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Construction, Electrical &amp; Engineering Solutions Built to Last.
+        Trusted by clients across Ibadan and beyond for precision,
+        integrity, and exceptional results.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" style="font-size:15px;padding:16px 32px;">
+          Request a Quote ↗
+        </a>
+        <a href="#services" class="btn btn-secondary" style="font-size:15px;padding:16px 32px;">
+          Explore Services
+        </a>
+        <a href="tel:08033954614" class="hero-btn-call">
+          📞 08033954614
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="hero-stats">
+    <div class="container">
+      <div class="hero-stats-inner">
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-target="150" data-suffix="+">0</span>
+          <span class="hero-stat-label">Projects Completed</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-target="12" data-suffix="+">0</span>
+          <span class="hero-stat-label">Years Experience</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-target="98" data-suffix="%">0</span>
+          <span class="hero-stat-label">On-Time Delivery</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-target="24" data-suffix="/7">0</span>
+          <span class="hero-stat-label">Support Available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-indicator-text">Scroll</div>
+    <div class="scroll-indicator-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT SECTION
+     ============================================================ -->
+<section id="about" aria-label="About Nales Global Services Limited">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Visual -->
+      <div class="about-visual sr-left">
+        <div class="about-img-stack">
+          <div class="about-img-main">
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=85&auto=format&fit=crop"
+              alt="Nales Global Services Limited engineers reviewing blueprints on-site"
+              loading="lazy"
+            >
+          </div>
+          <div class="about-img-accent">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop"
+              alt="Construction workers in safety gear at an active construction site"
+              loading="lazy"
+            >
+          </div>
+          <div class="about-experience-badge">
+            <span class="about-exp-num">12+</span>
+            <div class="about-exp-text">Years of<br>Excellence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-content sr-right">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-heading">
+          Precision Engineering.<br>
+          <span class="accent">Uncompromising</span> Quality.
+        </h2>
+        <p class="section-subheading">
+          Based in Ibadan, Oyo State, we deliver construction, electrical,
+          and engineering solutions that stand the test of time.
+        </p>
+
+        <p class="about-intro" style="margin-top:28px;">
+          <strong>Nales Global Services Limited</strong> is a premier Nigerian engineering company
+          built on a foundation of integrity, craftsmanship, and accountability.
+          Under the leadership of <strong>Joshua Olawuyi</strong>, we have delivered over
+          150 projects across residential, commercial, electrical, and industrial sectors —
+          <strong>never cutting corners, always exceeding expectations.</strong>
+        </p>
+
+        <p class="about-intro">
+          We bring together skilled professionals, modern equipment, and proven methodologies
+          to transform your vision into a durable, high-quality reality — delivered
+          <span style="color:var(--orange);font-weight:600;">on schedule and within budget.</span>
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature sr d1">
+            <div class="about-feature-icon">🏆</div>
+            <div>
+              <div class="about-feature-title">Certified Excellence</div>
+              <div class="about-feature-desc">Industry-standard practices with rigorous quality control at every stage.</div>
+            </div>
+          </div>
+          <div class="about-feature sr d2">
+            <div class="about-feature-icon">⚡</div>
+            <div>
+              <div class="about-feature-title">On-Time Delivery</div>
+              <div class="about-feature-desc">98% project completion rate within the agreed timeline.</div>
+            </div>
+          </div>
+          <div class="about-feature sr d3">
+            <div class="about-feature-icon">🛡️</div>
+            <div>
+              <div class="about-feature-title">Safety First</div>
+              <div class="about-feature-desc">Comprehensive safety protocols protecting workers and clients alike.</div>
+            </div>
+          </div>
+          <div class="about-feature sr d4">
+            <div class="about-feature-icon">🤝</div>
+            <div>
+              <div class="about-feature-title">Client Integrity</div>
+              <div class="about-feature-desc">Transparent communication and honest pricing throughout every project.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote →</a>
+          <a href="#services" class="btn btn-outline">View Services</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     SERVICES SECTION
+     ============================================================ -->
+<section id="services" aria-label="Our Engineering Services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <div class="section-label sr">What We Build</div>
+        <h2 class="section-heading sr delay-1">
+          Engineering Solutions<br>
+          <span class="accent">You Can Trust</span>
+        </h2>
+      </div>
+      <p class="section-subheading sr" style="margin-top:0;">
+        From residential foundations to petroleum industry support —
+        we deliver comprehensive engineering solutions with precision and care.
+        Partnered with renowned names such as Awe  Ayodele Michael, Awe Oluwaseyi Stella, 
+        Awe Adeyinka Murphy & Ayeyemi Israel Ayobami.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Service 1 -->
+      <div class="service-card sr d1">
+        <span class="service-card-num">01 — Construction</span>
+        <div class="service-icon">🏗️</div>
+        <h3 class="service-title">Residential Construction</h3>
+        <p class="service-desc">Dream homes built to the highest standards. We handle foundation to finishing with exceptional craftsmanship.</p>
+        <div class="service-items">
+          <div class="service-item">New Home Construction</div>
+          <div class="service-item">Renovation & Extensions</div>
+          <div class="service-item">Structural Engineering</div>
+          <div class="service-item">Interior & Finishing</div>
+        </div>
+        <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card sr d2">
+        <span class="service-card-num">02 — Commercial</span>
+        <div class="service-icon">🏢</div>
+        <h3 class="service-title">Commercial Buildings</h3>
+        <p class="service-desc">Office complexes, retail spaces, and commercial properties built for durability, function, and professional appeal.</p>
+        <div class="service-items">
+          <div class="service-item">Office Buildings</div>
+          <div class="service-item">Retail & Shopping Complexes</div>
+          <div class="service-item">Warehouse Construction</div>
+          <div class="service-item">Project Management</div>
+        </div>
+        <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card sr d3">
+        <span class="service-card-num">03 — Electrical</span>
+        <div class="service-icon">⚡</div>
+        <h3 class="service-title">Electrical Installations</h3>
+        <p class="service-desc">Certified electrical engineering from wiring and distribution boards to industrial power systems — safe, compliant, and reliable.</p>
+        <div class="service-items">
+          <div class="service-item">Power Distribution</div>
+          <div class="service-item">Wiring & Cabling</div>
+          <div class="service-item">Switchgear Installation</div>
+          <div class="service-item">Emergency Systems</div>
+        </div>
+        <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card sr d1">
+        <span class="service-card-num">04 — Electronics</span>
+        <div class="service-icon">🔌</div>
+        <h3 class="service-title">Electronics Installation</h3>
+        <p class="service-desc">Advanced electronics integration including CCTV, security systems, networking, and smart building technology.</p>
+        <div class="service-items">
+          <div class="service-item">CCTV & Security Systems</div>
+          <div class="service-item">Network Infrastructure</div>
+          <div class="service-item">Smart Home Systems</div>
+          <div class="service-item">AV & Communication</div>
+        </div>
+        <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card sr d2">
+        <span class="service-card-num">05 — Petroleum</span>
+        <div class="service-icon">🛢️</div>
+        <h3 class="service-title">Petroleum Industry Support</h3>
+        <p class="service-desc">Specialist engineering and construction support services for the Nigerian petroleum sector — precise, certified, and safe.</p>
+        <div class="service-items">
+          <div class="service-item">Pipeline Infrastructure</div>
+          <div class="service-item">Facility Construction</div>
+          <div class="service-item">Equipment Installation</div>
+          <div class="service-item">Safety Compliance</div>
+        </div>
+        <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card sr d3">
+        <span class="service-card-num">06 — Consultancy</span>
+        <div class="service-icon">📐</div>
+        <h3 class="service-title">Engineering Consultancy</h3>
+        <p class="service-desc">Expert engineering consultation, project planning, maintenance programs, and technical advisory services.</p>
+        <div class="service-items">
+          <div class="service-item">Structural Assessments</div>
+          <div class="service-item">Project Planning</div>
+          <div class="service-item">Preventive Maintenance</div>
+          <div class="service-item">Technical Advisory</div>
+        </div>
+        <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE US
+     ============================================================ -->
+<section id="why" aria-label="Why Choose Nales Global Services Limited?">
+  <div class="why-bg-pattern"></div>
+  <div class="why-bg-gradient"></div>
+  <div class="container" style="position:relative;">
+    <div class="why-header">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-heading">
+        Our Promise to<br>
+        <span style="color:var(--orange)">Every Client</span>
+      </h2>
+      <p class="section-subheading">
+        We don't just build structures — we build lasting trust through
+        consistent quality, integrity, and results that speak for themselves.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card sr d1">
+        <div class="why-icon">🏆</div>
+        <div class="why-title">Quality Workmanship</div>
+        <div class="why-desc">Every project delivered to the highest standard of craftsmanship. No shortcuts, no compromises.</div>
+      </div>
+      <div class="why-card sr d2">
+        <div class="why-icon">📅</div>
+        <div class="why-title">On-Time Delivery</div>
+        <div class="why-desc">98% on-time completion rate. We respect your timeline as much as we respect your project.</div>
+      </div>
+      <div class="why-card sr d3">
+        <div class="why-icon">👷</div>
+        <div class="why-title">Experienced Team</div>
+        <div class="why-desc">Certified engineers and seasoned professionals with over a decade of field expertise.</div>
+      </div>
+      <div class="why-card sr d4">
+        <div class="why-icon">🚜</div>
+        <div class="why-title">Modern Equipment</div>
+        <div class="why-desc">State-of-the-art machinery and tools for precision, efficiency, and safety.</div>
+      </div>
+      <div class="why-card sr d1">
+        <div class="why-icon">🛡️</div>
+        <div class="why-title">Safety Standards</div>
+        <div class="why-desc">Comprehensive safety protocols across every site, every day. Zero compromise on worker and client safety.</div>
+      </div>
+      <div class="why-card sr d2">
+        <div class="why-icon">💬</div>
+        <div class="why-title">Clear Communication</div>
+        <div class="why-desc">Regular updates, honest reporting, and open dialogue throughout the entire project lifecycle.</div>
+      </div>
+      <div class="why-card sr d3">
+        <div class="why-icon">🔧</div>
+        <div class="why-title">Reliable Support</div>
+        <div class="why-desc">Post-delivery maintenance and support available 24/7 for all our clients.</div>
+      </div>
+      <div class="why-card sr d4">
+        <div class="why-icon">✅</div>
+        <div class="why-title">No Shortcuts</div>
+        <div class="why-desc">We build for the long term. Our reputation depends on the durability of every structure we create.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATISTICS
+     ============================================================ -->
+<section id="stats" aria-label="Company Statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card sr d1">
+        <span class="stat-num" data-target="150" data-suffix="+">0<span class="stat-accent">+</span></span>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card sr d2">
+        <span class="stat-num" data-target="120" data-suffix="+">0<span class="stat-accent">+</span></span>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-card sr d3">
+        <span class="stat-num" data-target="12" data-suffix="+">0<span class="stat-accent">+</span></span>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card sr d4">
+        <span class="stat-num" data-target="98" data-suffix="%">0<span class="stat-accent">%</span></span>
+        <div class="stat-label">On-Time Delivery</div>
+      </div>
+      <div class="stat-card sr d5">
+        <span class="stat-num" data-target="24" data-suffix="/7">0<span class="stat-accent">/7</span></span>
+        <div class="stat-label">Support Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     PROJECTS SECTION
+     ============================================================ -->
+<section id="projects" aria-label="Featured Construction Projects">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <div class="section-label sr">Our Portfolio</div>
+        <h2 class="section-heading sr delay-1">
+          Projects That<br>
+          <span class="accent">Define Us</span>
+        </h2>
+      </div>
+      <div class="projects-filter sr" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="construction">Construction</button>
+        <button class="filter-btn" data-filter="electrical">Electrical</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+      </div>
+    </div>
+
+    <!-- 
+      BACKEND INTEGRATION POINT:
+      Replace the static project cards below with dynamic data fetched from your API.
+      Expected endpoint: GET /api/projects
+      Expected response: Array of project objects with { id, title, category, image, status, location }
+    -->
+    <div class="projects-grid">
+
+      <div class="project-card" data-category="commercial">
+        <img class="project-img"
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop"
+          alt="Modern commercial building construction in Ibadan, Nigeria"
+          loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-view">↗</div>
+        <div class="project-info">
+          <div class="project-category">Commercial Construction</div>
+          <div class="project-title">Ikeja Commercial Complex</div>
+          <div class="project-status">Completed 2023</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="electrical">
+        <img class="project-img"
+          src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=700&q=80&auto=format&fit=crop"
+          alt="Industrial electrical installation and power distribution panel"
+          loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-view">↗</div>
+        <div class="project-info">
+          <div class="project-category">Electrical Installation</div>
+          <div class="project-title">Industrial Power Distribution</div>
+          <div class="project-status">Completed 2023</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="residential">
+        <img class="project-img"
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80&auto=format&fit=crop"
+          alt="Luxury residential home construction completed by Nales Global Services Limited"
+          loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-view">↗</div>
+        <div class="project-info">
+          <div class="project-category">Residential Construction</div>
+          <div class="project-title">Premium Estate Development</div>
+          <div class="project-status">Completed 2022</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="construction">
+        <img class="project-img"
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80&auto=format&fit=crop"
+          alt="Heavy construction equipment at an active building site"
+          loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-view">↗</div>
+        <div class="project-info">
+          <div class="project-category">Industrial Construction</div>
+          <div class="project-title">Warehouse & Storage Facility</div>
+          <div class="project-status">Completed 2023</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="electrical">
+        <img class="project-img"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&auto=format&fit=crop"
+          alt="Solar and electrical system installation for commercial property"
+          loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-view">↗</div>
+        <div class="project-info">
+          <div class="project-category">Electrical Systems</div>
+          <div class="project-title">Solar Hybrid Installation</div>
+          <div class="project-status">Completed 2024</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="commercial">
+        <img class="project-img"
+          src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=700&q=80&auto=format&fit=crop"
+          alt="Corporate office building construction in Ibadan"
+          loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-view">↗</div>
+        <div class="project-info">
+          <div class="project-category">Commercial Construction</div>
+          <div class="project-title">Corporate Headquarters Build</div>
+          <div class="project-status">In Progress 2024</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS SECTION
+     ============================================================ -->
+<section id="process" aria-label="Our Engineering Process">
+  <div class="container">
+    <div class="process-header">
+      <div class="section-label sr">How We Work</div>
+      <h2 class="section-heading sr delay-1">
+        Our Engineering<br>
+        <span class="accent">Process</span>
+      </h2>
+      <p class="section-subheading sr delay-2">
+        A structured, transparent approach that ensures every project is
+        delivered with precision, on time, and to the highest standard.
+      </p>
+    </div>
+
+    <div class="process-timeline">
+      <div class="process-step sr d1">
+        <div class="process-step-num">
+          <span class="process-step-icon">💬</span>
+        </div>
+        <div class="process-step-title">Consultation</div>
+        <div class="process-step-desc">Understanding your vision, goals, and project requirements in detail.</div>
+      </div>
+      <div class="process-step sr d2">
+        <div class="process-step-num">
+          <span class="process-step-icon">📋</span>
+        </div>
+        <div class="process-step-title">Planning</div>
+        <div class="process-step-desc">Detailed project plan, timeline, and cost estimation prepared and reviewed.</div>
+      </div>
+      <div class="process-step sr d3">
+        <div class="process-step-num">
+          <span class="process-step-icon">⚙️</span>
+        </div>
+        <div class="process-step-title">Engineering</div>
+        <div class="process-step-desc">Technical design, structural analysis, and engineering drawings finalised.</div>
+      </div>
+      <div class="process-step sr d4">
+        <div class="process-step-num">
+          <span class="process-step-icon">🏗️</span>
+        </div>
+        <div class="process-step-title">Construction</div>
+        <div class="process-step-desc">Skilled teams execute with precision, regular reporting keeps you informed.</div>
+      </div>
+      <div class="process-step sr d5">
+        <div class="process-step-num">
+          <span class="process-step-icon">🔍</span>
+        </div>
+        <div class="process-step-title">Inspection</div>
+        <div class="process-step-desc">Rigorous quality control and safety checks at every completion milestone.</div>
+      </div>
+      <div class="process-step sr d6">
+        <div class="process-step-num">
+          <span class="process-step-icon">🎯</span>
+        </div>
+        <div class="process-step-title">Delivery</div>
+        <div class="process-step-desc">Handover with full documentation, walkthrough, and ongoing support.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section id="testimonials" aria-label="Client Testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <div class="section-label sr">Client Voices</div>
+      <h2 class="section-heading sr delay-1">
+        What Our Clients<br>
+        <span class="accent">Say</span>
+      </h2>
+    </div>
+
+    <!-- 
+      BACKEND INTEGRATION POINT:
+      Fetch testimonials from: GET /api/testimonials
+      Expected: Array of { name, role, company, rating, text, avatar_initial }
+    -->
+    <div class="testimonials-track-wrap sr delay-2">
+      <div class="testimonials-track" id="testimonials-track">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Nales Global Services Limited transformed our vision into a magnificent reality.
+            The quality of their workmanship and their commitment to delivering on time
+            is truly exceptional. I cannot recommend them highly enough."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AO</div>
+            <div>
+              <div class="author-name">Adeola Okonkwo</div>
+              <div class="author-role">Property Developer, Lagos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Their electrical installation work on our factory complex was flawless.
+            Professional team, modern approach, and they completed the project
+            two weeks ahead of schedule. Outstanding service."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EM</div>
+            <div>
+              <div class="author-name">Emeka Nwachukwu</div>
+              <div class="author-role">Factory Owner, Ibadan</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "From the first consultation to final handover, Nales Global Services Limited
+            were professional, transparent, and delivered exactly what they promised.
+            Our residential project exceeded our every expectation."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">FB</div>
+            <div>
+              <div class="author-name">Fatimah Bello</div>
+              <div class="author-role">Homeowner, Oyo State</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "We contracted them for a major commercial building project.
+            Their engineering expertise, safety standards, and project management
+            capability are world-class. A company that truly values quality above all."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TK</div>
+            <div>
+              <div class="author-name">Tunde Kolade</div>
+              <div class="author-role">CEO, KoladeCorp Nigeria</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Their maintenance team resolved our industrial electrical fault within hours.
+            The 24/7 support promise is real. Dependable, skilled, and genuinely
+            committed to client success. Our go-to engineering partner."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SA</div>
+            <div>
+              <div class="author-name">Sola Adeyemi</div>
+              <div class="author-role">Plant Manager, Ibadan</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="testimonials-controls">
+      <button class="slider-btn" id="t-prev" aria-label="Previous testimonial">←</button>
+      <div class="slider-dots" id="t-dots"></div>
+      <button class="slider-btn" id="t-next" aria-label="Next testimonial">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section id="gallery" aria-label="Project Gallery">
+  <div class="container">
+    <div class="section-label sr">Gallery</div>
+    <h2 class="section-heading sr delay-1">
+      Our Work<br>
+      <span class="accent">In Pictures</span>
+    </h2>
+    <p class="section-subheading sr delay-2">
+      A visual showcase of completed projects, skilled craftsmanship,
+      and engineering excellence across Ibadan and Nigeria.
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item sr d1">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop"
+          alt="Heavy construction equipment at an active building site"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item sr d2">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop"
+          alt="Engineer reviewing construction blueprints on site"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item sr d3">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop"
+          alt="Electrical installation and wiring system"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item sr d4">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80&auto=format&fit=crop"
+          alt="Commercial building exterior at dusk"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item sr d2">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80&auto=format&fit=crop"
+          alt="Modern commercial high-rise under construction"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item sr d3">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=800&q=80&auto=format&fit=crop"
+          alt="Industrial engineering and power systems"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item sr d4">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&auto=format&fit=crop"
+          alt="Completed residential property with modern architecture"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item sr d5">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80&auto=format&fit=crop"
+          alt="Construction team meeting and project planning session"
+          loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     FAQ SECTION
+     ============================================================ -->
+<section id="faq" aria-label="Frequently Asked Questions">
+  <div class="container">
+    <div class="faq-grid">
+
+      <div class="faq-content">
+        <div class="section-label sr">Common Questions</div>
+        <h2 class="section-heading sr delay-1">
+          Frequently<br>
+          <span class="accent">Asked</span>
+        </h2>
+        <p class="section-subheading sr delay-2">
+          Everything you need to know before starting your project with us.
+        </p>
+
+        <div class="accordion sr delay-2" id="accordion">
+
+          <div class="accordion-item open">
+            <button class="accordion-btn" aria-expanded="true">
+              <span class="accordion-question">How do I get a project quote?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <p class="accordion-answer">
+                Contact us via the form on our website, WhatsApp, or phone. We'll arrange a free
+                site visit and consultation, then provide a detailed written quote within 48–72 hours.
+                No obligation whatsoever.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span class="accordion-question">What areas do you serve?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <p class="accordion-answer">
+                We are headquartered in Ibadan, Oyo State, and operate across Nigeria.
+                Our teams are deployed across Ibadan, Lagos, Abuja, and surrounding states.
+                Contact us to discuss your specific project location.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span class="accordion-question">How long does a residential project take?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <p class="accordion-answer">
+                Project duration depends on scope and complexity. A standard 3-bedroom residential
+                build typically takes 6–12 months. We provide a detailed project timeline during
+                the planning phase and commit to delivering within agreed timescales.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span class="accordion-question">Are your electricians certified?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <p class="accordion-answer">
+                Yes. All our electrical engineers and technicians are fully certified and
+                comply with Nigerian Electricity Regulatory Commission (NERC) standards and
+                international best practices. Safety and compliance are non-negotiable.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span class="accordion-question">Do you offer post-project maintenance?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <p class="accordion-answer">
+                Absolutely. We offer comprehensive maintenance contracts and 24/7 emergency
+                support for all clients. We believe our relationship with clients doesn't
+                end at project handover — it's just the beginning.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              <span class="accordion-question">Can I see completed projects before deciding?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <p class="accordion-answer">
+                Yes. We encourage potential clients to review our portfolio and, where appropriate,
+                arrange site visits to completed projects with client permission. We're proud of
+                every project we deliver and happy to showcase our work.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contact Card in FAQ -->
+      <div class="sr-right">
+        <div class="faq-contact-card">
+          <div class="faq-contact-title">
+            Still Have Questions?
+          </div>
+          <p class="faq-contact-desc">
+            Our team is ready to answer any question and guide you through
+            your project from day one. Reach out directly — we respond fast.
+          </p>
+          <div class="faq-contact-info">
+            <div class="faq-contact-item">
+              <div class="faq-contact-icon">📞</div>
+              <span>08033954614</span>
+            </div>
+            <div class="faq-contact-item">
+              <div class="faq-contact-icon">📍</div>
+              <span>Ibadan, Oyo State, Nigeria</span>
+            </div>
+            <div class="faq-contact-item">
+              <div class="faq-contact-icon">👤</div>
+              <span>Contact: Joshua Olawuyi</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="tel:08033954614" class="btn btn-primary" style="width:100%;justify-content:center;">
+              📞 Call Now
+            </a>
+            <a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
+               class="btn" style="width:100%;justify-content:center;background:#25D366;color:white;">
+              💬 WhatsApp Us
+            </a>
+            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener"
+               class="btn" style="width:100%;justify-content:center;background:#1877F2;color:white;">
+              Facebook Page →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section id="contact" aria-label="Contact Us">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 64px;">
+      <div class="section-label sr" style="justify-content:center;">Start Your Project</div>
+      <h2 class="section-heading sr delay-1">
+        Ready to Build<br>
+        <span class="accent">Something Great?</span>
+      </h2>
+      <p class="section-subheading sr delay-2" style="max-width:100%;">
+        Get in touch today for a free consultation and project quote.
+        Our team responds within 24 hours.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info sr-left" style="display:flex;flex-direction:column;gap:16px;">
+        <div id="realtime-panel" style="border:1px solid rgba(249,115,22,0.24);background:linear-gradient(135deg, rgba(249,115,22,0.1), rgba(16,185,129,0.08));padding:16px;border-radius:12px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--orange);font-family:var(--font-mono);">Realtime status</div>
+          <div id="realtime-status" style="font-size:16px;font-weight:600;color:var(--text-dark);margin-top:8px;">Connecting…</div>
+          <div id="realtime-message" style="font-size:13px;color:var(--text-muted);margin-top:6px;">Using Node.js + WebSocket with a Rust-ready message contract.</div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info sr-left">
+        <h3 class="contact-info-title">
+          Get In<br>
+          <span>Touch</span>
+        </h3>
+        <p class="contact-info-desc">
+          Whether you have a new project in mind, need expert advice,
+          or require emergency maintenance — we're here and ready.
+        </p>
+
+        <div class="contact-items">
+          <a href="tel:08033954614" class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Phone / WhatsApp</div>
+              <div class="contact-item-value">08033954614</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value">Ibadan, Oyo State, Nigeria</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">👤</div>
+            <div>
+              <div class="contact-item-label">Contact Person</div>
+              <div class="contact-item-value">Joshua Olawuyi</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div>
+              <div class="contact-item-label">Availability</div>
+              <div class="contact-item-value">24/7 — Always Ready</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener"
+             class="social-link" aria-label="Facebook">𝓕</a>
+          <a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
+             class="social-link" aria-label="WhatsApp">💬</a>
+          <a href="tel:08033954614" class="social-link" aria-label="Call us">📞</a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <!--
+        BACKEND INTEGRATION POINT:
+        Connect this form to your backend API endpoint.
+        Recommended endpoint: POST /api/contact
+        Expected payload: { name, phone, email, service, message }
+        On success: Show success message and clear form.
+        On error: Display appropriate error message.
+        Consider: EmailJS, Nodemailer, or a serverless function (Netlify/Vercel Functions).
+      -->
+      <div class="contact-form-wrap sr-right">
+        <h3 class="form-title">Request a Free Quote</h3>
+        <form id="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name *</label>
+              <input class="form-control" type="text" id="name" name="name"
+                placeholder="Your full name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number *</label>
+              <input class="form-control" type="tel" id="phone" name="phone"
+                placeholder="08012345678" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-control" type="email" id="email" name="email"
+              placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="service">Service Required *</label>
+            <select class="form-control form-select" id="service" name="service" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option value="residential">Residential Construction</option>
+              <option value="commercial">Commercial Construction</option>
+              <option value="electrical">Electrical Installation</option>
+              <option value="electronics">Electronics Installation</option>
+              <option value="petroleum">Petroleum Industry Support</option>
+              <option value="consultancy">Engineering Consultancy</option>
+              <option value="maintenance">Maintenance Services</option>
+              <option value="other">Other / Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Project Details *</label>
+            <textarea class="form-control form-textarea" id="message" name="message"
+              placeholder="Describe your project, location, timeline, and any specific requirements..."
+              required rows="4"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="form-submit-btn">
+            <span id="submit-text">Send Request →</span>
+          </button>
+          <p class="form-note">
+            * We respond within 24 hours. Your information is confidential.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer role="contentinfo">
+  <!-- Top CTA Bar -->
+  <div class="footer-top-bar">
+    <div class="container">
+      <div class="footer-top-inner">
+        <div class="footer-top-text">
+          Ready to start your project? Contact us today for a free consultation.
+        </div>
+        <a href="tel:08033954614" class="footer-top-cta">📞 Call: 08033954614</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-brand-name">Nales Global Services Limited</div>
+          <div class="footer-brand-sub">Engineering Excellence Since Day One</div>
+          <p class="footer-brand-desc">
+            A premier Nigerian engineering and construction company delivering
+            quality-first solutions across construction, electrical, petroleum,
+            and engineering consultancy sectors. Based in Ibadan, Oyo State.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener"
+               class="footer-social" aria-label="Facebook">𝓕</a>
+            <a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
+               class="footer-social" aria-label="WhatsApp">💬</a>
+            <a href="tel:08033954614" class="footer-social" aria-label="Phone">📞</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
+            <li><a href="#gallery" class="footer-link">Gallery</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services" class="footer-link">Residential Construction</a></li>
+            <li><a href="#services" class="footer-link">Commercial Buildings</a></li>
+            <li><a href="#services" class="footer-link">Electrical Installation</a></li>
+            <li><a href="#services" class="footer-link">Electronics Systems</a></li>
+            <li><a href="#services" class="footer-link">Petroleum Services</a></li>
+            <li><a href="#services" class="footer-link">Engineering Consultancy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <ul class="footer-links">
+            <li class="footer-link" style="cursor:default;color:rgba(255,255,255,0.45)">📍 Ibadan, Oyo State</li>
+            <li><a href="tel:08033954614" class="footer-link">📞 08033954614</a></li>
+            <li><a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener" class="footer-link">Facebook Page</a></li>
+            <li class="footer-link" style="cursor:default;color:rgba(255,255,255,0.45)">👤 Joshua Olawuyi</li>
+            <li class="footer-link" style="cursor:default;color:rgba(255,255,255,0.45)">🕐 24/7 Support</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <div class="footer-copy">
+          © <span id="footer-year">2024</span> <span>Nales Global Services Limited</span>. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#hero" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#hero" class="footer-bottom-link">Terms</a>
+          <a href="#contact" class="footer-bottom-link">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING ELEMENTS
+     ============================================================ -->
+<a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
+   id="whatsapp-fab" aria-label="Contact us on WhatsApp">
+  💬
+  <div class="whatsapp-tooltip">Chat on WhatsApp</div>
+</a>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  ↑
+</button>
+
+<a href="tel:08033954614" id="mobile-call" aria-label="Call Nales Global Services Limited.">
+  📞 Call Now — 08033954614
+</a>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* ============================================================
+   SCROLL PROGRESS
+   ============================================================ */
+const scrollBar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  scrollBar.style.width = (scrollTop / docH * 100) + '%';
+});
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  navbar.classList.toggle('scrolled', y > 80);
+  backToTop.classList.toggle('show', y > 400);
+  updateActiveNav();
+});
+
+function updateActiveNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const scrollY = window.scrollY + 120;
+  sections.forEach(s => {
+    const top = s.offsetTop;
+    const bottom = top + s.offsetHeight;
+    const link = document.querySelector(`.nav-link[href="#${s.id}"]`);
+    if (link) link.classList.toggle('active', scrollY >= top && scrollY < bottom);
+  });
+}
+
+/* ============================================================
+   MOBILE NAV
+   ============================================================ */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+  document.body.classList.toggle('nav-open');
+});
+
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  mobileNav.classList.remove('open');
+  document.body.classList.remove('nav-open');
+}
+
+/* ============================================================
+   SCROLL REVEAL — IntersectionObserver
+   ============================================================ */
+const srObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      srObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+
+document.querySelectorAll('.sr, .sr-left, .sr-right').forEach(el => srObserver.observe(el));
+
+/* ============================================================
+   COUNTER ANIMATION
+   ============================================================ */
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target'));
+  const suffix = el.getAttribute('data-suffix') || '';
+  const duration = 2000;
+  const step = target / (duration / 16);
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    // Preserve inner HTML structure for stat-accent spans
+    const numStr = Math.round(current).toLocaleString();
+    if (el.querySelector('.stat-accent')) {
+      const accentEl = el.querySelector('.stat-accent');
+      el.childNodes[0].textContent = numStr;
+    } else {
+      el.textContent = numStr + suffix;
+    }
+    if (current >= target) {
+      clearInterval(timer);
+      if (el.querySelector && el.querySelector('.stat-accent')) {
+        el.childNodes[0].textContent = target.toLocaleString();
+      } else {
+        el.textContent = target.toLocaleString() + suffix;
+      }
+    }
+  }, 16);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+      entry.target.classList.add('counted');
+      animateCounter(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+/* ============================================================
+   TESTIMONIALS SLIDER
+   ============================================================ */
+const track = document.getElementById('testimonials-track');
+const dotsContainer = document.getElementById('t-dots');
+const cards = document.querySelectorAll('.testimonial-card');
+let currentSlide = 0;
+let cardWidth = 0;
+
+function getCardWidth() {
+  return cards[0] ? cards[0].offsetWidth + 24 : 400;
+}
+
+function createDots() {
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+}
+
+function goToSlide(idx) {
+  currentSlide = Math.max(0, Math.min(idx, cards.length - 1));
+  cardWidth = getCardWidth();
+  track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+  document.querySelectorAll('.slider-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentSlide);
+  });
+}
+
+document.getElementById('t-prev')?.addEventListener('click', () => goToSlide(currentSlide - 1));
+document.getElementById('t-next')?.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+createDots();
+window.addEventListener('resize', () => goToSlide(currentSlide));
+
+// Auto-advance
+setInterval(() => goToSlide((currentSlide + 1) % cards.length), 6000);
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+document.querySelectorAll('.accordion-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.accordion-item');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.accordion-item').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.accordion-btn').setAttribute('aria-expanded', 'false');
+    });
+
+    // Open clicked (if was closed)
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ============================================================
+   PROJECT FILTER
+   ============================================================ */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+
+    projectCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const show = filter === 'all' || category === filter;
+      card.style.opacity = show ? '1' : '0.25';
+      card.style.transform = show ? '' : 'scale(0.97)';
+      card.style.pointerEvents = show ? '' : 'none';
+      card.style.transition = 'opacity 0.4s, transform 0.4s';
+    });
+  });
+});
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+function handleFormSubmit(e) {
+  e.preventDefault();
+
+  const btn = document.getElementById('form-submit-btn');
+  const text = document.getElementById('submit-text');
+  const form = document.getElementById('contact-form');
+
+  // Validation
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !phone || !service || !message) {
+    showFormError('Please fill in all required fields.');
+    return;
+  }
+
+  text.textContent = 'Sending...';
+  btn.style.opacity = '0.7';
+  btn.disabled = true;
+
+  fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, phone, email, service, message })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.ok) {
+      showFormSuccess(form, btn, text);
+      if (window.socket && window.socket.readyState === 1) {
+        window.socket.send(JSON.stringify({ type: 'presence' }));
+      }
+    } else {
+      showFormError(data.message || 'Your request was blocked by the security layer.');
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      text.textContent = 'Send Request →';
+    }
+  })
+  .catch(() => {
+    showFormError('Something went wrong. Please try again.');
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    text.textContent = 'Send Request →';
+  });
+}
+
+function showFormSuccess(form, btn, text) {
+  text.textContent = '✓ Message Sent!';
+  btn.style.opacity = '1';
+  btn.style.background = 'var(--emerald)';
+  btn.disabled = false;
+  form.reset();
+
+  setTimeout(() => {
+    text.textContent = 'Send Request →';
+    btn.style.background = '';
+  }, 4000);
+}
+
+function showFormError(msg) {
+  const existing = document.querySelector('.form-error-msg');
+  if (existing) existing.remove();
+
+  const errEl = document.createElement('p');
+  errEl.className = 'form-error-msg';
+  errEl.style.cssText = 'color:#EF4444;font-size:13px;margin-top:8px;font-family:var(--font-mono);';
+  errEl.textContent = msg;
+  document.getElementById('form-submit-btn').parentNode.insertBefore(errEl, document.getElementById('form-submit-btn'));
+  setTimeout(() => errEl.remove(), 5000);
+}
+
+/* ============================================================
+   REALTIME CHANNEL
+   ============================================================ */
+function connectRealtime() {
+  const statusEl = document.getElementById('realtime-status');
+  const messageEl = document.getElementById('realtime-message');
+
+  if (!('WebSocket' in window)) {
+    statusEl.textContent = 'WebSocket unavailable';
+    messageEl.textContent = 'The browser does not support realtime updates.';
+    return;
+  }
+
+  const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+  const host = window.location.hostname;
+  const port = window.location.port ? `:${window.location.port}` : '';
+  const socket = new WebSocket(`${protocol}://${host}${port}/ws`);
+  window.socket = socket;
+
+  socket.addEventListener('open', () => {
+    statusEl.textContent = 'Live connection ready';
+    messageEl.textContent = 'Realtime updates are active for this page.';
+    socket.send(JSON.stringify({ type: 'presence' }));
+  });
+
+  socket.addEventListener('message', (event) => {
+    try {
+      const data = JSON.parse(event.data);
+      if (data.type === 'system') {
+        messageEl.textContent = data.message;
+      } else if (data.type === 'contact') {
+        messageEl.textContent = data.message;
+      }
+    } catch (error) {
+      messageEl.textContent = 'Live update received.';
+    }
+  });
+
+  socket.addEventListener('close', () => {
+    statusEl.textContent = 'Reconnecting…';
+    messageEl.textContent = 'The websocket stream was interrupted.';
+    setTimeout(connectRealtime, 3000);
+  });
+}
+
+connectRealtime();
+
+/* ============================================================
+   FOOTER YEAR
+   ============================================================ */
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+/* ============================================================
+   SMOOTH ANCHOR SCROLLING
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  });
+});
+
+/* ============================================================
+   PROCESS STEP ANIMATION
+   ============================================================ */
+const processObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('active');
+      }, i * 200);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.process-step').forEach(step => processObserver.observe(step));
+
+/* ============================================================
+   HERO STATS COUNTER ON LOAD
+   ============================================================ */
+setTimeout(() => {
+  document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => {
+    const target = parseInt(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    let current = 0;
+    const duration = 2500;
+    const step = target / (duration / 16);
+
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.round(current) + suffix;
+      if (current >= target) {
+        clearInterval(timer);
+        el.textContent = target + suffix;
+      }
+    }, 16);
+  });
+}, 1500);
+
+/* ============================================================
+   CONSOLE LOG — Backend Dev Info
+   ============================================================ */
+console.log(`
+%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  NALES GLOBAL SERVICES LIMITED
+  Frontend — Production Build
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+%cBackend Integration Points:
+%c  1. Contact Form → POST /api/contact
+     Payload: { name, phone, email, service, message }
+
+  2. Projects → GET /api/projects
+     Response: [{ id, title, category, image, status, location }]
+
+  3. Testimonials → GET /api/testimonials
+     Response: [{ name, role, text, rating, avatar_initial }]
+
+  4. Gallery → GET /api/gallery
+     Response: [{ id, image_url, alt_text, category }]
+
+%cContact: 08033954614 | Nales Global Services Limited
+Location: Ibadan, Oyo State, Nigeria
+`,
+'color:#F97316;font-weight:bold;font-family:monospace;',
+'color:#60A5FA;font-weight:bold;font-family:monospace;',
+'color:#94A3B8;font-family:monospace;',
+'color:#10B981;font-family:monospace;'
+);
+</script>
+</body>
+</html>
