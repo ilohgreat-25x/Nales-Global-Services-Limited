@@ -3411,10 +3411,18 @@ footer {
     <div class="contact-grid">
 
       <div class="contact-info sr-left" style="display:flex;flex-direction:column;gap:16px;">
-        <div id="realtime-panel" style="border:1px solid rgba(249,115,22,0.24);background:linear-gradient(135deg, rgba(249,115,22,0.1), rgba(16,185,129,0.08));padding:16px;border-radius:12px;">
-          <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--orange);font-family:var(--font-mono);">Realtime status</div>
-          <div id="realtime-status" style="font-size:16px;font-weight:600;color:var(--text-dark);margin-top:8px;">Connecting…</div>
-          <div id="realtime-message" style="font-size:13px;color:var(--text-muted);margin-top:6px;">Using Node.js + WebSocket with a Rust-ready message contract.</div>
+        <div id="instant-contact-panel" style="border:1px solid rgba(249,115,22,0.24);background:linear-gradient(135deg, rgba(249,115,22,0.1), rgba(16,185,129,0.08));padding:16px;border-radius:12px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--orange);font-family:var(--font-mono);">Reach us right now</div>
+          <div style="font-size:16px;font-weight:600;color:var(--text-dark);margin-top:8px;">Talk to a real person, instantly</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:6px;margin-bottom:14px;">No forms, no waiting. Call or message us directly.</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="tel:08033954614" class="btn" style="flex:1;min-width:140px;justify-content:center;background:var(--text-dark);color:white;">
+              📞 Call Now
+            </a>
+            <a href="https://wa.me/2348033954614" target="_blank" rel="noopener" class="btn" style="flex:1;min-width:140px;justify-content:center;background:#25D366;color:white;">
+              💬 WhatsApp
+            </a>
+          </div>
         </div>
       </div>
 
@@ -3471,13 +3479,10 @@ footer {
 
       <!-- Contact Form -->
       <!--
-        BACKEND INTEGRATION POINT:
-        Connect this form to your backend API endpoint.
-        Recommended endpoint: POST /api/contact
-        Expected payload: { name, phone, email, service, message }
-        On success: Show success message and clear form.
-        On error: Display appropriate error message.
-        Consider: EmailJS, Nodemailer, or a serverless function (Netlify/Vercel Functions).
+        BACKEND: Formspree (https://formspree.io)
+        Replace FORMSPREE_ENDPOINT in the <script> below with your
+        own form endpoint from your Formspree dashboard, e.g.
+        https://formspree.io/f/xxxxxxxx
       -->
       <div class="contact-form-wrap sr-right">
         <h3 class="form-title">Request a Free Quote</h3>
@@ -3647,6 +3652,13 @@ footer {
      JAVASCRIPT
      ============================================================ -->
 <script>
+/* ============================================================
+   CONFIG
+   Replace with your own endpoint from https://formspree.io
+   (Dashboard → your form → "Integration" tab)
+   ============================================================ */
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
 /* ============================================================
    SCROLL PROGRESS
    ============================================================ */
@@ -3868,20 +3880,20 @@ function handleFormSubmit(e) {
   btn.style.opacity = '0.7';
   btn.disabled = true;
 
-  fetch('/api/contact', {
+  fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
     body: JSON.stringify({ name, phone, email, service, message })
   })
   .then(res => res.json())
   .then(data => {
-    if (data.ok) {
+    if (!data.errors) {
       showFormSuccess(form, btn, text);
-      if (window.socket && window.socket.readyState === 1) {
-        window.socket.send(JSON.stringify({ type: 'presence' }));
-      }
     } else {
-      showFormError(data.message || 'Your request was blocked by the security layer.');
+      showFormError('Your request could not be sent. Please try again or contact us directly.');
       btn.style.opacity = '1';
       btn.disabled = false;
       text.textContent = 'Send Request →';
@@ -3922,50 +3934,11 @@ function showFormError(msg) {
 
 /* ============================================================
    REALTIME CHANNEL
+   Removed: this is a static deployment with no Node/WebSocket
+   server behind it, so a live socket connection can never
+   succeed here. The "Realtime status" widget was replaced with
+   direct call/WhatsApp CTAs in the HTML above instead.
    ============================================================ */
-function connectRealtime() {
-  const statusEl = document.getElementById('realtime-status');
-  const messageEl = document.getElementById('realtime-message');
-
-  if (!('WebSocket' in window)) {
-    statusEl.textContent = 'WebSocket unavailable';
-    messageEl.textContent = 'The browser does not support realtime updates.';
-    return;
-  }
-
-  const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-  const host = window.location.hostname;
-  const port = window.location.port ? `:${window.location.port}` : '';
-  const socket = new WebSocket(`${protocol}://${host}${port}/ws`);
-  window.socket = socket;
-
-  socket.addEventListener('open', () => {
-    statusEl.textContent = 'Live connection ready';
-    messageEl.textContent = 'Realtime updates are active for this page.';
-    socket.send(JSON.stringify({ type: 'presence' }));
-  });
-
-  socket.addEventListener('message', (event) => {
-    try {
-      const data = JSON.parse(event.data);
-      if (data.type === 'system') {
-        messageEl.textContent = data.message;
-      } else if (data.type === 'contact') {
-        messageEl.textContent = data.message;
-      }
-    } catch (error) {
-      messageEl.textContent = 'Live update received.';
-    }
-  });
-
-  socket.addEventListener('close', () => {
-    statusEl.textContent = 'Reconnecting…';
-    messageEl.textContent = 'The websocket stream was interrupted.';
-    setTimeout(connectRealtime, 3000);
-  });
-}
-
-connectRealtime();
 
 /* ============================================================
    FOOTER YEAR
@@ -4054,5 +4027,25 @@ Location: Ibadan, Oyo State, Nigeria
 'color:#10B981;font-family:monospace;'
 );
 </script>
+<!-- ============================================================
+     LIVE CHAT WIDGET (Tawk.to)
+     Replace YOUR_PROPERTY_ID/YOUR_WIDGET_ID below with the values
+     from your Tawk.to dashboard: Administration > Channels > Chat Widget
+     Sign up free at https://www.tawk.to
+     Visitors chat with you directly on the page; you get notified
+     instantly by email, browser push, or the Tawk.to mobile app.
+     ============================================================ -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function(){
+  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/YOUR_PROPERTY_ID/YOUR_WIDGET_ID';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+
 </body>
 </html>
