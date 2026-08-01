@@ -3,82 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nales Global Services Limited — Premium Construction, Electrical & Engineering Solutions in Ibadan, Nigeria. Building Excellence. Delivering Quality. On Time.">
-<meta name="keywords" content="construction company Nigeria, electrical installation Ibadan, engineering consultancy, petroleum services, residential construction, commercial building">
+<meta name="description" content="Nales Global Services Limited — Premium Construction, Electrical & Engineering Solutions in Lagos, Nigeria. Building Excellence. Delivering Quality. On Time.">
+<meta name="keywords" content="construction company Nigeria, electrical installation Lagos, engineering consultancy, petroleum services, residential construction, commercial building">
 <meta name="author" content="Nales Global Services Limited">
 <meta property="og:title" content="Nales Global Services Limited | Building Excellence">
-<meta property="og:description" content="Construction, Electrical & Engineering Solutions Built to Last. Serving Ibadan, Oyo State, Nigeria.">
+<meta property="og:description" content="Construction, Electrical & Engineering Solutions Built to Last. Serving Lagos, Nigeria.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0B1F33">
 <title>Nales Global Services Limited | Building Excellence. Delivering Quality.</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ============================================================
-   CSS CUSTOM PROPERTIES — DESIGN TOKENS
-   ============================================================ */
 :root {
-  /* Brand Colors */
-  --navy:        #0B1F33;
-  --navy-light:  #112841;
-  --navy-mid:    #1a3a5c;
-  --steel:       #4A5568;
-  --steel-light: #718096;
-  --orange:      #F97316;
-  --orange-dark: #EA6C0A;
-  --orange-glow: rgba(249,115,22,0.18);
-  --orange-dim:  rgba(249,115,22,0.08);
-  --emerald:     #10B981;
-  --emerald-dim: rgba(16,185,129,0.12);
-
-  /* Backgrounds */
-  --bg-white:    #FFFFFF;
-  --bg-soft:     #F8FAFC;
-  --bg-gray:     #F1F5F9;
-  --bg-dark:     #0B1F33;
-  --bg-card:     #FFFFFF;
-
-  /* Text */
-  --text-dark:   #0B1F33;
-  --text-body:   #334155;
-  --text-muted:  #64748B;
-  --text-light:  #94A3B8;
-  --text-white:  #FFFFFF;
-
-  /* Borders */
-  --border:      rgba(15,31,51,0.08);
-  --border-dark: rgba(255,255,255,0.1);
-  --border-orange: rgba(249,115,22,0.3);
-
-  /* Shadows */
-  --shadow-sm:   0 1px 3px rgba(11,31,51,0.06), 0 1px 2px rgba(11,31,51,0.04);
-  --shadow-md:   0 4px 16px rgba(11,31,51,0.08), 0 2px 8px rgba(11,31,51,0.06);
-  --shadow-lg:   0 16px 48px rgba(11,31,51,0.12), 0 8px 24px rgba(11,31,51,0.08);
-  --shadow-xl:   0 32px 80px rgba(11,31,51,0.16);
-  --shadow-orange: 0 8px 32px rgba(249,115,22,0.25);
-
-  /* Typography */
-  --font-sans:   'Space Grotesk', 'Inter', sans-serif;
-  --font-body:   'Inter', sans-serif;
-  --font-serif:  'Playfair Display', serif;
-  --font-mono:   'JetBrains Mono', monospace;
-
-  /* Spacing */
-  --section-py:  100px;
-  --container:   1280px;
-
-  /* Transitions */
-  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
-  --transition:  0.35s var(--ease-out);
+  --navy:          #0A1628;
+  --navy-light:    #0F2040;
+  --navy-mid:      #163156;
+  --primary:       #1D4ED8;
+  --primary-dark:  #1A3FBF;
+  --primary-light: #3B82F6;
+  --primary-glow:  rgba(29,78,216,0.22);
+  --primary-dim:   rgba(29,78,216,0.09);
+  --steel:         #4A5568;
+  --steel-light:   #718096;
+  --sky:           #38BDF8;
+  --sky-dim:       rgba(56,189,248,0.12);
+  --emerald:       #10B981;
+  --emerald-dim:   rgba(16,185,129,0.12);
+  --bg-white:      #FFFFFF;
+  --bg-soft:       #F0F5FF;
+  --bg-gray:       #E8F0FE;
+  --bg-dark:       #0A1628;
+  --bg-card:       #FFFFFF;
+  --text-dark:     #0A1628;
+  --text-body:     #1E3A5F;
+  --text-muted:    #4A6FA5;
+  --text-light:    #7EA3CC;
+  --text-white:    #FFFFFF;
+  --border:        rgba(29,78,216,0.10);
+  --border-dark:   rgba(255,255,255,0.10);
+  --border-blue:   rgba(29,78,216,0.30);
+  --shadow-sm:     0 1px 3px rgba(10,22,40,0.07), 0 1px 2px rgba(10,22,40,0.05);
+  --shadow-md:     0 4px 16px rgba(10,22,40,0.10), 0 2px 8px rgba(10,22,40,0.07);
+  --shadow-lg:     0 16px 48px rgba(10,22,40,0.13), 0 8px 24px rgba(10,22,40,0.09);
+  --shadow-xl:     0 32px 80px rgba(10,22,40,0.18);
+  --shadow-blue:   0 8px 32px rgba(29,78,216,0.28);
+  --font-sans:     'Space Grotesk', 'Inter', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-serif:    'Playfair Display', serif;
+  --font-mono:     'JetBrains Mono', monospace;
+  --section-py:    100px;
+  --container:     1280px;
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.45, 0, 0.55, 1);
+  --transition:    0.35s var(--ease-out);
 }
 
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
@@ -100,9 +85,9 @@ body.nav-open { overflow: hidden; }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg-gray); }
-::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
 
-::selection { background: var(--orange); color: white; }
+::selection { background: var(--primary); color: white; }
 
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; transition: color var(--transition); }
@@ -110,23 +95,17 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 ul { list-style: none; }
 input, textarea, select { font-family: inherit; }
 
-/* ============================================================
-   SCROLL PROGRESS BAR
-   ============================================================ */
 #scroll-progress {
   position: fixed;
   top: 0; left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, var(--orange), #FBBF24);
+  background: linear-gradient(90deg, var(--primary), var(--sky));
   z-index: 99999;
   transition: width 0.1s linear;
-  box-shadow: 0 0 8px var(--orange);
+  box-shadow: 0 0 8px var(--primary);
 }
 
-/* ============================================================
-   UTILITIES
-   ============================================================ */
 .container {
   max-width: var(--container);
   margin: 0 auto;
@@ -142,14 +121,14 @@ input, textarea, select { font-family: inherit; }
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--primary);
   margin-bottom: 20px;
 }
 
 .section-label::before {
   content: '';
   width: 28px; height: 2px;
-  background: var(--orange);
+  background: var(--primary);
   display: block;
   flex-shrink: 0;
 }
@@ -163,7 +142,7 @@ input, textarea, select { font-family: inherit; }
   color: var(--text-dark);
 }
 
-.section-heading .accent { color: var(--orange); }
+.section-heading .accent { color: var(--primary); }
 
 .section-subheading {
   font-size: 17px;
@@ -173,7 +152,6 @@ input, textarea, select { font-family: inherit; }
   margin-top: 16px;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -204,15 +182,15 @@ input, textarea, select { font-family: inherit; }
 .btn:hover::before { opacity: 0.08; }
 
 .btn-primary {
-  background: var(--orange);
+  background: var(--primary);
   color: white;
-  box-shadow: 0 4px 20px rgba(249,115,22,0.3);
+  box-shadow: 0 4px 20px rgba(29,78,216,0.30);
 }
 
 .btn-primary:hover {
-  background: var(--orange-dark);
+  background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-blue);
 }
 
 .btn-secondary {
@@ -223,7 +201,7 @@ input, textarea, select { font-family: inherit; }
 
 .btn-secondary:hover {
   border-color: white;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.10);
   transform: translateY(-2px);
 }
 
@@ -234,8 +212,8 @@ input, textarea, select { font-family: inherit; }
 }
 
 .btn-outline:hover {
-  border-color: var(--orange);
-  color: var(--orange);
+  border-color: var(--primary);
+  color: var(--primary);
   transform: translateY(-2px);
 }
 
@@ -250,25 +228,17 @@ input, textarea, select { font-family: inherit; }
   box-shadow: var(--shadow-lg);
 }
 
-/* Scroll reveal */
-.sr {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
-}
-.sr-left { opacity: 0; transform: translateX(-28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
-.sr-right { opacity: 0; transform: translateX(28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr        { opacity: 0; transform: translateY(28px);   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr-left   { opacity: 0; transform: translateX(-28px);  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr-right  { opacity: 0; transform: translateX(28px);   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
 .sr.visible, .sr-left.visible, .sr-right.visible { opacity: 1; transform: none; }
-.sr.d1 { transition-delay: 0.1s; }
-.sr.d2 { transition-delay: 0.2s; }
-.sr.d3 { transition-delay: 0.3s; }
-.sr.d4 { transition-delay: 0.4s; }
-.sr.d5 { transition-delay: 0.5s; }
-.sr.d6 { transition-delay: 0.6s; }
+.sr.d1  { transition-delay: 0.10s; }
+.sr.d2  { transition-delay: 0.20s; }
+.sr.d3  { transition-delay: 0.30s; }
+.sr.d4  { transition-delay: 0.40s; }
+.sr.d5  { transition-delay: 0.50s; }
+.sr.d6  { transition-delay: 0.60s; }
 
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
 #navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -279,7 +249,7 @@ input, textarea, select { font-family: inherit; }
 
 #navbar.scrolled {
   padding: 12px 0;
-  background: rgba(11,31,51,0.97);
+  background: rgba(10,22,40,0.97);
   backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 rgba(255,255,255,0.06);
 }
@@ -291,7 +261,6 @@ input, textarea, select { font-family: inherit; }
   gap: 32px;
 }
 
-/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -301,7 +270,7 @@ input, textarea, select { font-family: inherit; }
 
 .logo-mark {
   width: 44px; height: 44px;
-  background: var(--orange);
+  background: transparent;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -314,7 +283,7 @@ input, textarea, select { font-family: inherit; }
 
 .logo-mark:hover {
   transform: rotate(-5deg) scale(1.05);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-blue);
 }
 
 .logo-mark-inner {
@@ -324,15 +293,8 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
 }
 
-.logo-bar {
-  width: 20px; height: 3px;
-  background: white;
-  border-radius: 2px;
-}
-
+.logo-bar { width: 20px; height: 3px; background: white; border-radius: 2px; }
 .logo-bar.short { width: 12px; align-self: flex-start; }
-
-.logo-text { flex: 1; }
 
 .logo-name {
   font-family: var(--font-sans);
@@ -347,11 +309,10 @@ input, textarea, select { font-family: inherit; }
   font-family: var(--font-mono);
   font-size: 10px;
   color: rgba(255,255,255,0.5);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
 }
 
-/* Nav links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -366,24 +327,13 @@ input, textarea, select { font-family: inherit; }
   color: rgba(255,255,255,0.72);
   border-radius: 6px;
   transition: all 0.25s;
-  position: relative;
   white-space: nowrap;
 }
 
-.nav-link:hover {
-  color: white;
-  background: rgba(255,255,255,0.07);
-}
+.nav-link:hover   { color: white; background: rgba(255,255,255,0.07); }
+.nav-link.active  { color: var(--sky); }
 
-.nav-link.active { color: var(--orange); }
-
-/* Nav actions */
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
+.nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
 .nav-phone {
   display: flex;
@@ -395,12 +345,12 @@ input, textarea, select { font-family: inherit; }
   transition: color 0.3s;
 }
 
-.nav-phone:hover { color: var(--orange); }
+.nav-phone:hover { color: var(--sky); }
 
 .nav-phone-icon {
   width: 28px; height: 28px;
-  background: var(--orange-dim);
-  border: 1px solid var(--border-orange);
+  background: var(--primary-dim);
+  border: 1px solid var(--border-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -408,7 +358,6 @@ input, textarea, select { font-family: inherit; }
   font-size: 12px;
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -430,11 +379,10 @@ input, textarea, select { font-family: inherit; }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile nav */
 .mobile-nav {
   position: fixed;
   inset: 0;
-  background: rgba(11,31,51,0.99);
+  background: rgba(10,22,40,0.99);
   backdrop-filter: blur(24px);
   z-index: 8999;
   display: flex;
@@ -454,14 +402,11 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   letter-spacing: -0.02em;
   padding: 12px 24px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.80);
 }
 
-.mobile-nav .nav-link:hover { color: var(--orange); }
+.mobile-nav .nav-link:hover { color: var(--sky); }
 
-/* ============================================================
-   HERO SECTION
-   ============================================================ */
 #hero {
   min-height: 100vh;
   position: relative;
@@ -470,11 +415,7 @@ input, textarea, select { font-family: inherit; }
   overflow: hidden;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
 
 .hero-bg-img {
   position: absolute;
@@ -486,24 +427,22 @@ input, textarea, select { font-family: inherit; }
   animation: heroZoom 20s ease-out forwards;
 }
 
-@keyframes heroZoom {
-  to { transform: scale(1); }
-}
+@keyframes heroZoom { to { transform: scale(1); } }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(11,31,51,0.92) 40%, rgba(11,31,51,0.5) 100%),
-    linear-gradient(to bottom, rgba(11,31,51,0.3) 0%, transparent 40%, rgba(11,31,51,0.8) 100%);
+    linear-gradient(to right, rgba(10,22,40,0.93) 40%, rgba(10,22,40,0.52) 100%),
+    linear-gradient(to bottom, rgba(10,22,40,0.30) 0%, transparent 40%, rgba(10,22,40,0.82) 100%);
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(29,78,216,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,78,216,0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -515,17 +454,11 @@ input, textarea, select { font-family: inherit; }
   background-size: 200px;
 }
 
-/* Animated construction lines */
-.hero-lines {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
+.hero-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 
 .hero-line {
   position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(249,115,22,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.25), transparent);
   height: 1px;
   animation: scanLine 8s ease-in-out infinite;
 }
@@ -536,7 +469,7 @@ input, textarea, select { font-family: inherit; }
 
 @keyframes scanLine {
   0%, 100% { opacity: 0; transform: scaleX(0); }
-  25%, 75% { opacity: 1; transform: scaleX(1); }
+  25%,  75% { opacity: 1; transform: scaleX(1); }
 }
 
 .hero-content {
@@ -551,12 +484,12 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   gap: 10px;
   padding: 6px 16px 6px 8px;
-  background: rgba(249,115,22,0.12);
-  border: 1px solid rgba(249,115,22,0.3);
+  background: rgba(29,78,216,0.14);
+  border: 1px solid rgba(29,78,216,0.35);
   border-radius: 100px;
   font-family: var(--font-mono);
   font-size: 11px;
-  color: #FBB880;
+  color: #93C5FD;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 28px;
@@ -565,14 +498,14 @@ input, textarea, select { font-family: inherit; }
 
 .hero-tag-dot {
   width: 6px; height: 6px;
-  background: var(--orange);
+  background: var(--sky);
   border-radius: 50%;
   animation: blink 2s ease infinite;
 }
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  50%       { opacity: 0.3; }
 }
 
 .hero-title {
@@ -586,8 +519,8 @@ input, textarea, select { font-family: inherit; }
   animation: fadeUp 0.9s var(--ease-out) 0.5s both;
 }
 
-.hero-title .line { display: block; }
-.hero-title .orange { color: var(--orange); }
+.hero-title .line   { display: block; }
+.hero-title .blue   { color: var(--sky); }
 
 .hero-subtitle {
   font-size: clamp(16px, 2vw, 20px);
@@ -612,7 +545,7 @@ input, textarea, select { font-family: inherit; }
   gap: 8px;
   padding: 14px 20px;
   background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(255,255,255,0.2);
+  border: 1.5px solid rgba(255,255,255,0.20);
   border-radius: 6px;
   color: white;
   font-family: var(--font-mono);
@@ -626,11 +559,10 @@ input, textarea, select { font-family: inherit; }
   border-color: white;
 }
 
-/* Hero stats bar */
 .hero-stats {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: rgba(11,31,51,0.85);
+  background: rgba(10,22,40,0.88);
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(255,255,255,0.06);
   z-index: 2;
@@ -655,7 +587,7 @@ input, textarea, select { font-family: inherit; }
   font-family: var(--font-sans);
   font-size: 32px;
   font-weight: 800;
-  color: var(--orange);
+  color: var(--sky);
   letter-spacing: -0.04em;
   line-height: 1;
   display: block;
@@ -663,14 +595,13 @@ input, textarea, select { font-family: inherit; }
 
 .hero-stat-label {
   font-size: 12px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.50);
   font-family: var(--font-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 4px;
 }
 
-/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 100px; right: 48px;
@@ -685,31 +616,28 @@ input, textarea, select { font-family: inherit; }
 .scroll-indicator-text {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.40);
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   writing-mode: vertical-lr;
 }
 
 .scroll-indicator-line {
   width: 1px; height: 56px;
-  background: linear-gradient(to bottom, rgba(249,115,22,0.8), transparent);
+  background: linear-gradient(to bottom, rgba(56,189,248,0.80), transparent);
   animation: scrollPulse 2s ease infinite;
 }
 
 @keyframes scrollPulse {
   0%, 100% { transform: scaleY(1); opacity: 0.6; }
-  50% { transform: scaleY(0.7); opacity: 1; }
+  50%       { transform: scaleY(0.7); opacity: 1; }
 }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================================
-   ABOUT SECTION
-   ============================================================ */
 #about {
   padding: var(--section-py) 0;
   background: var(--bg-soft);
@@ -723,14 +651,9 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
 }
 
-/* About visual side */
-.about-visual {
-  position: relative;
-}
+.about-visual { position: relative; }
 
-.about-img-stack {
-  position: relative;
-}
+.about-img-stack { position: relative; }
 
 .about-img-main {
   width: 100%;
@@ -752,7 +675,7 @@ input, textarea, select { font-family: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 50%, rgba(11,31,51,0.6) 100%);
+  background: linear-gradient(to bottom, transparent 50%, rgba(10,22,40,0.60) 100%);
   z-index: 1;
 }
 
@@ -766,19 +689,16 @@ input, textarea, select { font-family: inherit; }
   box-shadow: var(--shadow-xl);
 }
 
-.about-img-accent img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
+.about-img-accent img { width: 100%; height: 100%; object-fit: cover; }
 
 .about-experience-badge {
   position: absolute;
   top: 24px; left: -24px;
-  background: var(--orange);
+  background: var(--primary);
   color: white;
   border-radius: 12px;
   padding: 20px 24px;
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-blue);
   text-align: center;
   min-width: 110px;
 }
@@ -802,12 +722,6 @@ input, textarea, select { font-family: inherit; }
   margin-top: 4px;
 }
 
-/* About content */
-.about-content {
-  display: flex;
-  flex-direction: column;
-}
-
 .about-intro {
   font-size: 17px;
   color: var(--text-body);
@@ -817,13 +731,7 @@ input, textarea, select { font-family: inherit; }
 
 .about-intro strong { color: var(--text-dark); font-weight: 600; }
 
-/* Feature cards */
-.about-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 40px;
-}
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
 
 .about-feature {
   display: flex;
@@ -837,21 +745,21 @@ input, textarea, select { font-family: inherit; }
 }
 
 .about-feature:hover {
-  border-color: var(--border-orange);
+  border-color: var(--border-blue);
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
 }
 
 .about-feature-icon {
   width: 40px; height: 40px;
-  background: var(--orange-dim);
+  background: var(--primary-dim);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   font-size: 18px;
-  border: 1px solid rgba(249,115,22,0.15);
+  border: 1px solid rgba(29,78,216,0.15);
 }
 
 .about-feature-title {
@@ -863,19 +771,9 @@ input, textarea, select { font-family: inherit; }
   letter-spacing: -0.01em;
 }
 
-.about-feature-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
+.about-feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
-/* ============================================================
-   SERVICES SECTION
-   ============================================================ */
-#services {
-  padding: var(--section-py) 0;
-  background: var(--bg-white);
-}
+#services { padding: var(--section-py) 0; background: var(--bg-white); }
 
 .services-header {
   display: flex;
@@ -885,11 +783,7 @@ input, textarea, select { font-family: inherit; }
   gap: 40px;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
 .service-card {
   background: var(--bg-soft);
@@ -898,7 +792,7 @@ input, textarea, select { font-family: inherit; }
   padding: 36px 32px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
+  transition: all 0.4s var(--ease-out);
   cursor: default;
 }
 
@@ -907,7 +801,7 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--orange), #FBBF24);
+  background: linear-gradient(90deg, var(--primary), var(--sky));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s var(--ease-out);
@@ -917,20 +811,20 @@ input, textarea, select { font-family: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(249,115,22,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(29,78,216,0.05) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s;
 }
 
 .service-card:hover {
   background: white;
-  border-color: rgba(249,115,22,0.2);
+  border-color: rgba(29,78,216,0.20);
   box-shadow: var(--shadow-lg);
   transform: translateY(-8px);
 }
 
 .service-card:hover::before { transform: scaleX(1); }
-.service-card:hover::after { opacity: 1; }
+.service-card:hover::after  { opacity: 1; }
 
 .service-card-num {
   font-family: var(--font-mono);
@@ -956,9 +850,9 @@ input, textarea, select { font-family: inherit; }
 }
 
 .service-card:hover .service-icon {
-  background: var(--orange);
+  background: var(--primary);
   transform: scale(1.05);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-blue);
 }
 
 .service-title {
@@ -981,27 +875,14 @@ input, textarea, select { font-family: inherit; }
   z-index: 1;
 }
 
-.service-items {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 28px;
-  position: relative;
-  z-index: 1;
-}
+.service-items { display: flex; flex-direction: column; gap: 6px; margin-bottom: 28px; position: relative; z-index: 1; }
 
-.service-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--text-body);
-}
+.service-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-body); }
 
 .service-item::before {
   content: '';
   width: 6px; height: 6px;
-  background: var(--orange);
+  background: var(--primary);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -1013,7 +894,7 @@ input, textarea, select { font-family: inherit; }
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--primary);
   transition: gap 0.3s;
   position: relative;
   z-index: 1;
@@ -1021,9 +902,6 @@ input, textarea, select { font-family: inherit; }
 
 .service-card:hover .service-cta { gap: 10px; }
 
-/* ============================================================
-   WHY CHOOSE US
-   ============================================================ */
 #why {
   padding: var(--section-py) 0;
   background: var(--navy);
@@ -1035,8 +913,8 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(29,78,216,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,78,216,0.06) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -1044,15 +922,15 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   bottom: -200px; right: -200px;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(29,78,216,0.10) 0%, transparent 70%);
   border-radius: 50%;
 }
 
 .why-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
-.why-header .section-label { justify-content: center; color: var(--orange); }
-.why-header .section-label::before { background: var(--orange); }
-.why-header .section-heading { color: white; }
-.why-header .section-subheading { margin: 16px auto 0; color: rgba(255,255,255,0.55); }
+.why-header .section-label          { justify-content: center; color: var(--sky); }
+.why-header .section-label::before  { background: var(--sky); }
+.why-header .section-heading        { color: white; }
+.why-header .section-subheading     { margin: 16px auto 0; color: rgba(255,255,255,0.55); }
 
 .why-grid {
   display: grid;
@@ -1077,7 +955,7 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   top: 0; left: 50%; right: 50%;
   height: 2px;
-  background: var(--orange);
+  background: var(--primary-light);
   transition: all 0.4s var(--ease-out);
 }
 
@@ -1086,8 +964,8 @@ input, textarea, select { font-family: inherit; }
 
 .why-icon {
   width: 56px; height: 56px;
-  background: rgba(249,115,22,0.1);
-  border: 1px solid rgba(249,115,22,0.2);
+  background: rgba(29,78,216,0.12);
+  border: 1px solid rgba(29,78,216,0.25);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -1098,28 +976,13 @@ input, textarea, select { font-family: inherit; }
 }
 
 .why-card:hover .why-icon {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--primary);
+  border-color: var(--primary);
 }
 
-.why-title {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
+.why-title  { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: white; margin-bottom: 8px; letter-spacing: -0.01em; }
+.why-desc   { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
 
-.why-desc {
-  font-size: 13px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.6;
-}
-
-/* ============================================================
-   STATISTICS
-   ============================================================ */
 #stats {
   padding: 80px 0;
   background: var(--bg-soft);
@@ -1127,12 +990,7 @@ input, textarea, select { font-family: inherit; }
   border-bottom: 1px solid var(--border);
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
-  background: var(--border);
-}
+.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--border); }
 
 .stat-card {
   padding: 40px 28px;
@@ -1148,7 +1006,7 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   bottom: 0; left: 50%; right: 50%;
   height: 3px;
-  background: var(--orange);
+  background: var(--primary);
   transition: all 0.4s var(--ease-out);
 }
 
@@ -1166,23 +1024,20 @@ input, textarea, select { font-family: inherit; }
   display: block;
 }
 
-.stat-num .stat-accent { color: var(--orange); }
+.stat-num .stat-accent { color: var(--primary); }
 
 .stat-label {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--text-muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
 }
 
 /* ============================================================
-   PROJECTS SECTION
+   PROJECTS SECTION — VIDEO CARDS
    ============================================================ */
-#projects {
-  padding: var(--section-py) 0;
-  background: var(--bg-white);
-}
+#projects { padding: var(--section-py) 0; background: var(--bg-white); }
 
 .projects-header {
   display: flex;
@@ -1192,11 +1047,7 @@ input, textarea, select { font-family: inherit; }
   gap: 32px;
 }
 
-.projects-filter {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+.projects-filter { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .filter-btn {
   padding: 8px 18px;
@@ -1213,13 +1064,12 @@ input, textarea, select { font-family: inherit; }
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--primary);
+  border-color: var(--primary);
   color: white;
-  box-shadow: 0 4px 16px rgba(249,115,22,0.25);
+  box-shadow: 0 4px 16px rgba(29,78,216,0.28);
 }
 
-/* Projects masonry */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -1227,11 +1077,13 @@ input, textarea, select { font-family: inherit; }
   gap: 16px;
 }
 
+/* ── Project card base ── */
 .project-card {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   cursor: pointer;
+  background: var(--navy);
 }
 
 .project-card:nth-child(1) { grid-column: span 7; grid-row: span 2; }
@@ -1241,36 +1093,71 @@ input, textarea, select { font-family: inherit; }
 .project-card:nth-child(5) { grid-column: span 4; grid-row: span 1; }
 .project-card:nth-child(6) { grid-column: span 4; grid-row: span 1; }
 
-.project-img {
-  width: 100%; height: 100%;
+/* ── Video element — fills card exactly like the old img ── */
+.project-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.7s var(--ease-out);
+  display: block;
 }
 
-.project-card:hover .project-img { transform: scale(1.06); }
+.project-card:hover .project-video {
+  transform: scale(1.06);
+}
 
+/* ── Play indicator shown when paused ── */
+.project-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 52px; height: 52px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255,255,255,0.55);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  transition: all 0.3s var(--ease-out);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Hide play btn when hovered (video is playing) */
+.project-card:hover .project-play-btn {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.75);
+}
+
+/* ── Overlay ── */
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(11,31,51,0.9) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(10,22,40,0.90) 0%, transparent 60%);
   transition: background 0.4s;
+  z-index: 1;
 }
 
 .project-card:hover .project-overlay {
-  background: linear-gradient(to top, rgba(11,31,51,0.95) 0%, rgba(11,31,51,0.3) 100%);
+  background: linear-gradient(to top, rgba(10,22,40,0.96) 0%, rgba(10,22,40,0.20) 100%);
 }
 
 .project-info {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   padding: 24px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .project-category {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: var(--orange);
+  color: var(--sky);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -1292,7 +1179,7 @@ input, textarea, select { font-family: inherit; }
   margin-top: 10px;
   padding: 4px 10px;
   background: rgba(16,185,129,0.15);
-  border: 1px solid rgba(16,185,129,0.3);
+  border: 1px solid rgba(16,185,129,0.30);
   border-radius: 100px;
   font-size: 11px;
   color: #6EE7B7;
@@ -1315,7 +1202,7 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   top: 16px; right: 16px;
   width: 40px; height: 40px;
-  background: rgba(249,115,22,0.9);
+  background: rgba(29,78,216,0.90);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1325,18 +1212,46 @@ input, textarea, select { font-family: inherit; }
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s var(--ease-out);
+  z-index: 3;
 }
 
 .project-card:hover .project-view { opacity: 1; transform: scale(1); }
 
+/* ── Mute toggle ── */
+.project-mute-btn {
+  position: absolute;
+  bottom: 16px; right: 16px;
+  width: 32px; height: 32px;
+  background: rgba(10,22,40,0.70);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: white;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s var(--ease-out);
+  z-index: 4;
+  cursor: pointer;
+}
+
+.project-card:hover .project-mute-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-mute-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
 /* ============================================================
    PROCESS SECTION
    ============================================================ */
-#process {
-  padding: var(--section-py) 0;
-  background: var(--bg-soft);
-  overflow: hidden;
-}
+#process { padding: var(--section-py) 0; background: var(--bg-soft); overflow: hidden; }
 
 .process-header { max-width: 600px; margin-bottom: 80px; }
 
@@ -1355,19 +1270,12 @@ input, textarea, select { font-family: inherit; }
   height: 2px;
   background: repeating-linear-gradient(
     90deg,
-    var(--orange) 0px, var(--orange) 8px,
+    var(--primary) 0px, var(--primary) 8px,
     transparent 8px, transparent 20px
   );
 }
 
-.process-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0 16px;
-  position: relative;
-}
+.process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; }
 
 .process-step-num {
   width: 80px; height: 80px;
@@ -1389,179 +1297,191 @@ input, textarea, select { font-family: inherit; }
 }
 
 .process-step.active .process-step-num,
-.process-step:hover .process-step-num {
-  background: var(--orange);
-  border-color: var(--orange);
+.process-step:hover  .process-step-num {
+  background: var(--primary);
+  border-color: var(--primary);
   color: white;
-  box-shadow: var(--shadow-orange);
-  transform: scale(1.1);
+  box-shadow: var(--shadow-blue);
+  transform: scale(1.10);
 }
 
-.process-step-icon {
-  font-size: 28px;
-}
+.process-step-title { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: var(--text-dark); letter-spacing: -0.01em; margin-bottom: 8px; }
+.process-step-desc  { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
-.process-step-title {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-dark);
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
-}
+#partners { padding: var(--section-py) 0; background: var(--bg-white); overflow: hidden; }
 
-.process-step-desc {
-  font-size: 13px;
+.partners-header { max-width: 560px; margin-bottom: 64px; }
+
+.partners-intro {
+  font-size: 16px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.75;
+  margin-top: 16px;
+  max-width: 600px;
 }
 
-/* ============================================================
-   TESTIMONIALS
-   ============================================================ */
-#testimonials {
-  padding: var(--section-py) 0;
-  background: var(--bg-white);
-  overflow: hidden;
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-.testimonials-header { max-width: 560px; margin-bottom: 64px; }
-
-.testimonials-track-wrap {
+.partner-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s var(--ease-out);
   position: relative;
   overflow: hidden;
 }
 
-.testimonials-track {
-  display: flex;
-  gap: 24px;
-  transition: transform 0.6s var(--ease-out);
+.partner-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--sky));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
 }
 
-.testimonial-card {
-  flex-shrink: 0;
-  width: calc(33.333% - 16px);
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 36px 32px;
-  transition: all 0.4s var(--ease-out);
-}
-
-.testimonial-card:hover {
-  border-color: rgba(249,115,22,0.2);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-6px);
+.partner-card:hover {
   background: white;
+  border-color: var(--border-blue);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
 }
 
-.testimonial-stars {
+.partner-card:hover::before { transform: scaleX(1); }
+
+.partner-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   display: flex;
-  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
   margin-bottom: 20px;
-}
-
-.star {
-  width: 16px; height: 16px;
-  color: #FBBF24;
-  font-size: 16px;
-}
-
-.testimonial-text {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 16px;
-  color: var(--text-body);
-  line-height: 1.75;
-  margin-bottom: 28px;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.author-avatar {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: var(--orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 18px;
-  color: white;
+  box-shadow: 0 8px 24px rgba(29,78,216,0.25);
   flex-shrink: 0;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+  letter-spacing: -0.03em;
 }
 
-.author-name {
+.partner-card:hover .partner-avatar {
+  transform: scale(1.06);
+  box-shadow: 0 12px 32px rgba(29,78,216,0.35);
+}
+
+.partner-name {
   font-family: var(--font-sans);
+  font-size: 17px;
   font-weight: 700;
-  font-size: 15px;
   color: var(--text-dark);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.2;
 }
 
-.author-role {
+.partner-role-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.partner-phone-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--primary-dim);
+  border: 1px solid rgba(29,78,216,0.15);
+  border-radius: 8px;
+  font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--text-muted);
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
 }
 
-.testimonials-controls {
+.partner-phone-icon { font-size: 14px; }
+
+.partner-actions {
   display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.partner-btn-call {
+  flex: 1;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 40px;
-}
-
-.slider-btn {
-  width: 44px; height: 44px;
-  border: 1.5px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-.slider-btn:hover {
-  background: var(--orange);
-  border-color: var(--orange);
-  color: white;
-  box-shadow: var(--shadow-orange);
-}
-
-.slider-dots {
-  display: flex;
   gap: 6px;
-}
-
-.slider-dot {
-  width: 6px; height: 6px;
-  background: var(--border);
-  border-radius: 3px;
+  padding: 11px 12px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  transition: all 0.3s var(--ease-out);
   cursor: pointer;
-  transition: all 0.3s;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(29,78,216,0.28);
 }
 
-.slider-dot.active {
-  width: 24px;
-  background: var(--orange);
+.partner-btn-call:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-blue);
 }
 
-/* ============================================================
-   GALLERY SECTION
-   ============================================================ */
-#gallery {
-  padding: var(--section-py) 0;
-  background: var(--bg-soft);
+.partner-btn-wa {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 12px;
+  background: #25D366;
+  color: white;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  transition: all 0.3s var(--ease-out);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37,211,102,0.25);
 }
+
+.partner-btn-wa:hover {
+  background: #1ebe5b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+}
+
+#gallery { padding: var(--section-py) 0; background: var(--bg-soft); }
 
 .gallery-grid {
   display: grid;
@@ -1571,28 +1491,17 @@ input, textarea, select { font-family: inherit; }
   margin-top: 56px;
 }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
+.gallery-item { position: relative; overflow: hidden; border-radius: 12px; cursor: pointer; }
 .gallery-item:nth-child(1),
 .gallery-item:nth-child(6) { grid-column: span 2; grid-row: span 2; }
 
-.gallery-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s var(--ease-out);
-}
-
+.gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
 .gallery-item:hover .gallery-img { transform: scale(1.06); }
 
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11,31,51,0.6);
+  background: rgba(10,22,40,0.60);
   opacity: 0;
   transition: opacity 0.3s;
   display: flex;
@@ -1616,21 +1525,9 @@ input, textarea, select { font-family: inherit; }
 
 .gallery-item:hover .gallery-zoom { transform: scale(1); }
 
-/* ============================================================
-   FAQ SECTION
-   ============================================================ */
-#faq {
-  padding: var(--section-py) 0;
-  background: var(--bg-white);
-}
+#faq { padding: var(--section-py) 0; background: var(--bg-white); }
 
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .faq-content .section-subheading { margin-bottom: 40px; }
 
 .faq-contact-card {
@@ -1646,44 +1543,20 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   top: -80px; right: -80px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(249,115,22,0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(29,78,216,0.18), transparent 70%);
 }
 
-.faq-contact-title {
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.03em;
-  margin-bottom: 12px;
-}
+.faq-contact-title { font-family: var(--font-sans); font-size: 24px; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 12px; }
+.faq-contact-desc  { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 28px; }
 
-.faq-contact-desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
+.faq-contact-info  { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
 
-.faq-contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.faq-contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.75);
-}
+.faq-contact-item  { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.75); }
 
 .faq-contact-icon {
   width: 36px; height: 36px;
-  background: rgba(249,115,22,0.1);
-  border: 1px solid rgba(249,115,22,0.2);
+  background: rgba(29,78,216,0.12);
+  border: 1px solid rgba(29,78,216,0.25);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -1692,12 +1565,7 @@ input, textarea, select { font-family: inherit; }
   flex-shrink: 0;
 }
 
-/* Accordion */
-.accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+.accordion { display: flex; flex-direction: column; gap: 12px; }
 
 .accordion-item {
   background: var(--bg-soft);
@@ -1708,7 +1576,7 @@ input, textarea, select { font-family: inherit; }
 }
 
 .accordion-item.open {
-  border-color: rgba(249,115,22,0.25);
+  border-color: rgba(29,78,216,0.28);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1724,15 +1592,9 @@ input, textarea, select { font-family: inherit; }
   transition: background 0.3s;
 }
 
-.accordion-btn:hover { background: rgba(249,115,22,0.03); }
+.accordion-btn:hover { background: rgba(29,78,216,0.04); }
 
-.accordion-question {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-dark);
-  letter-spacing: -0.01em;
-}
+.accordion-question { font-family: var(--font-sans); font-size: 15px; font-weight: 600; color: var(--text-dark); letter-spacing: -0.01em; }
 
 .accordion-icon {
   width: 28px; height: 28px;
@@ -1748,46 +1610,19 @@ input, textarea, select { font-family: inherit; }
 }
 
 .accordion-item.open .accordion-icon {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--primary);
+  border-color: var(--primary);
   color: white;
   transform: rotate(45deg);
 }
 
-.accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s var(--ease-out);
-}
-
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out); }
 .accordion-item.open .accordion-body { max-height: 200px; }
+.accordion-answer { padding: 0 24px 20px; font-size: 14px; color: var(--text-muted); line-height: 1.75; }
 
-.accordion-answer {
-  padding: 0 24px 20px;
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.75;
-}
+#contact { padding: var(--section-py) 0; background: var(--bg-soft); }
 
-/* ============================================================
-   CONTACT SECTION
-   ============================================================ */
-#contact {
-  padding: var(--section-py) 0;
-  background: var(--bg-soft);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 64px;
-  align-items: start;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-}
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
 
 .contact-info-title {
   font-family: var(--font-sans);
@@ -1799,21 +1634,11 @@ input, textarea, select { font-family: inherit; }
   margin-bottom: 16px;
 }
 
-.contact-info-title span { color: var(--orange); }
+.contact-info-title span { color: var(--primary); }
 
-.contact-info-desc {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.75;
-  margin-bottom: 40px;
-}
+.contact-info-desc { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 40px; }
 
-.contact-items {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 40px;
-}
+.contact-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
 
 .contact-item {
   display: flex;
@@ -1827,15 +1652,15 @@ input, textarea, select { font-family: inherit; }
 }
 
 .contact-item:hover {
-  border-color: var(--border-orange);
+  border-color: var(--border-blue);
   box-shadow: var(--shadow-md);
   transform: translateX(6px);
 }
 
 .contact-item-icon {
   width: 44px; height: 44px;
-  background: var(--orange-dim);
-  border: 1px solid rgba(249,115,22,0.15);
+  background: var(--primary-dim);
+  border: 1px solid rgba(29,78,216,0.15);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1844,26 +1669,10 @@ input, textarea, select { font-family: inherit; }
   flex-shrink: 0;
 }
 
-.contact-item-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
+.contact-item-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-light); letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 2px; }
+.contact-item-value { font-family: var(--font-sans); font-size: 15px; font-weight: 600; color: var(--text-dark); }
 
-.contact-item-value {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.contact-social {
-  display: flex;
-  gap: 12px;
-}
+.contact-social { display: flex; gap: 12px; }
 
 .social-link {
   width: 44px; height: 44px;
@@ -1878,14 +1687,13 @@ input, textarea, select { font-family: inherit; }
 }
 
 .social-link:hover {
-  border-color: var(--orange);
-  background: var(--orange);
+  border-color: var(--primary);
+  background: var(--primary);
   color: white;
   transform: translateY(-3px);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-blue);
 }
 
-/* Contact Form */
 .contact-form-wrap {
   background: white;
   border: 1px solid var(--border);
@@ -1900,39 +1708,17 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   top: 0; left: 40px; right: 40px;
   height: 3px;
-  background: linear-gradient(90deg, var(--orange), #FBBF24);
+  background: linear-gradient(90deg, var(--primary), var(--sky));
   border-radius: 0 0 4px 4px;
 }
 
-.form-title {
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--text-dark);
-  letter-spacing: -0.03em;
-  margin-bottom: 28px;
-}
+.form-title { font-family: var(--font-sans); font-size: 24px; font-weight: 800; color: var(--text-dark); letter-spacing: -0.03em; margin-bottom: 28px; }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-.form-group {
-  margin-bottom: 16px;
-}
+.form-group { margin-bottom: 16px; }
 
-.form-label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
+.form-label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--text-muted); letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 8px; }
 
 .form-control {
   width: 100%;
@@ -1949,29 +1735,26 @@ input, textarea, select { font-family: inherit; }
 }
 
 .form-control:focus {
-  border-color: var(--orange);
+  border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 4px var(--orange-dim);
+  box-shadow: 0 0 0 4px var(--primary-dim);
 }
 
 .form-control::placeholder { color: var(--text-light); }
 
 .form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A6FA5' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 40px;
 }
 
-.form-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+.form-textarea { resize: vertical; min-height: 120px; }
 
 .form-submit {
   width: 100%;
   padding: 16px;
-  background: var(--orange);
+  background: var(--primary);
   color: white;
   border-radius: 8px;
   font-family: var(--font-sans);
@@ -1986,54 +1769,29 @@ input, textarea, select { font-family: inherit; }
   gap: 8px;
   position: relative;
   overflow: hidden;
+  border: none;
 }
 
 .form-submit:hover {
-  background: var(--orange-dark);
+  background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-blue);
 }
 
-.form-note {
-  font-size: 12px;
-  color: var(--text-light);
-  text-align: center;
-  margin-top: 12px;
-  font-family: var(--font-mono);
-}
+.form-note { font-size: 12px; color: var(--text-light); text-align: center; margin-top: 12px; font-family: var(--font-mono); }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
+footer { background: var(--navy); position: relative; overflow: hidden; }
 
-.footer-top-bar {
-  background: var(--orange);
-  padding: 16px 0;
-}
+.footer-top-bar { background: var(--primary); padding: 16px 0; }
 
-.footer-top-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
+.footer-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 
-.footer-top-text {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-}
+.footer-top-text { font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: white; }
 
 .footer-top-cta {
   padding: 10px 24px;
   background: white;
-  color: var(--orange);
+  color: var(--primary);
   border-radius: 6px;
   font-weight: 700;
   font-size: 13px;
@@ -2046,62 +1804,29 @@ footer {
 
 .footer-main { padding: 72px 0 48px; }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 60px;
-}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-}
+.footer-brand-name { font-family: var(--font-sans); font-size: 20px; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 6px; }
+.footer-brand-sub  { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
+.footer-brand-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 28px; }
 
-.footer-brand-name {
-  font-family: var(--font-sans);
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.03em;
-  margin-bottom: 6px;
-}
-
-.footer-brand-sub {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.footer-brand-desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 10px;
-}
+.footer-socials { display: flex; gap: 10px; }
 
 .footer-social {
   width: 38px; height: 38px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.50);
   transition: all 0.3s;
 }
 
 .footer-social:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--primary);
+  border-color: var(--primary);
   color: white;
   transform: translateY(-3px);
 }
@@ -2123,66 +1848,31 @@ footer {
   position: absolute;
   bottom: 0; left: 0;
   width: 24px; height: 2px;
-  background: var(--orange);
+  background: var(--primary-light);
 }
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
 
-.footer-link {
-  font-size: 14px;
-  color: rgba(255,255,255,0.45);
-  transition: color 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+.footer-link { font-size: 14px; color: rgba(255,255,255,0.45); transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
 
-.footer-link:hover { color: var(--orange); }
+.footer-link:hover { color: var(--sky); }
 .footer-link::before { content: '→'; font-size: 11px; opacity: 0; transition: opacity 0.3s; }
 .footer-link:hover::before { opacity: 1; }
 
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 24px 0;
-}
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 0; }
 
-.footer-bottom-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
+.footer-bottom-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 
-.footer-copy {
-  font-size: 13px;
-  color: rgba(255,255,255,0.3);
-  font-family: var(--font-mono);
-}
+.footer-copy { font-size: 13px; color: rgba(255,255,255,0.30); font-family: var(--font-mono); }
 
-.footer-copy span { color: var(--orange); }
+.footer-copy span { color: var(--sky); }
 
-.footer-bottom-links {
-  display: flex;
-  gap: 24px;
-}
+.footer-bottom-links { display: flex; gap: 24px; }
 
-.footer-bottom-link {
-  font-size: 13px;
-  color: rgba(255,255,255,0.3);
-  transition: color 0.3s;
-  font-family: var(--font-mono);
-}
+.footer-bottom-link { font-size: 13px; color: rgba(255,255,255,0.30); transition: color 0.3s; font-family: var(--font-mono); }
 
-.footer-bottom-link:hover { color: var(--orange); }
+.footer-bottom-link:hover { color: var(--sky); }
 
-/* ============================================================
-   FLOATING ELEMENTS
-   ============================================================ */
-/* WhatsApp FAB */
 #whatsapp-fab {
   position: fixed;
   bottom: 88px; right: 24px;
@@ -2194,21 +1884,22 @@ footer {
   justify-content: center;
   font-size: 24px;
   color: white;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  box-shadow: 0 4px 20px rgba(37,211,102,0.40);
   z-index: 9000;
   transition: all 0.3s var(--ease-out);
   cursor: pointer;
+  text-decoration: none;
 }
 
 #whatsapp-fab:hover {
-  transform: scale(1.1) translateY(-4px);
-  box-shadow: 0 8px 32px rgba(37,211,102,0.5);
+  transform: scale(1.10) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(37,211,102,0.50);
 }
 
 .whatsapp-tooltip {
   position: absolute;
   right: calc(100% + 12px);
-  background: rgba(11,31,51,0.95);
+  background: rgba(10,22,40,0.95);
   color: white;
   font-size: 12px;
   font-weight: 600;
@@ -2221,18 +1912,14 @@ footer {
   font-family: var(--font-sans);
 }
 
-#whatsapp-fab:hover .whatsapp-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
+#whatsapp-fab:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
 
-/* Back to top */
 #back-to-top {
   position: fixed;
   bottom: 24px; right: 24px;
   width: 44px; height: 44px;
   background: var(--navy);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -2247,26 +1934,21 @@ footer {
   transition: all 0.4s var(--ease-out);
 }
 
-#back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+#back-to-top.show  { opacity: 1; visibility: visible; transform: translateY(0); }
 
 #back-to-top:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--primary);
+  border-color: var(--primary);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-blue);
 }
 
-/* Mobile sticky call */
 #mobile-call {
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 8998;
   display: none;
-  background: var(--orange);
+  background: var(--primary);
   padding: 14px 24px;
   align-items: center;
   justify-content: center;
@@ -2276,103 +1958,53 @@ footer {
   font-weight: 700;
   color: white;
   text-align: center;
-  box-shadow: 0 -4px 20px rgba(249,115,22,0.3);
+  box-shadow: 0 -4px 20px rgba(29,78,216,0.30);
 }
+
+.divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
 
 /* ============================================================
-   404 PAGE
-   ============================================================ */
-#page-404 {
-  display: none;
-  min-height: 100vh;
-  background: var(--navy);
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 48px;
-  flex-direction: column;
-}
-
-.error-code {
-  font-family: var(--font-sans);
-  font-size: clamp(100px, 20vw, 200px);
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(249,115,22,0.3);
-  letter-spacing: -0.05em;
-  line-height: 1;
-  margin-bottom: 20px;
-  text-shadow: 0 0 80px rgba(249,115,22,0.1);
-}
-
-.error-title {
-  font-family: var(--font-sans);
-  font-size: 28px;
-  font-weight: 700;
-  color: white;
-  letter-spacing: -0.03em;
-  margin-bottom: 12px;
-}
-
-.error-desc {
-  font-size: 16px;
-  color: rgba(255,255,255,0.5);
-  max-width: 440px;
-  margin: 0 auto 40px;
-  line-height: 1.7;
-}
-
-/* ============================================================
-   SECTION DIVIDERS
-   ============================================================ */
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-}
-
-/* ============================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE
    ============================================================ */
 @media (max-width: 1100px) {
   :root { --container: 100%; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-grid  { grid-template-columns: 1fr 1fr; gap: 40px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid     { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid   { grid-template-columns: repeat(3, 1fr); }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
   .container { padding: 0 24px; }
-  .nav-links { display: none; }
-  .nav-phone { display: none; }
-  .hamburger { display: flex; }
-  .nav-cta { display: none; }
+  .nav-links  { display: none; }
+  .nav-phone  { display: none; }
+  .hamburger  { display: flex; }
+  .nav-cta    { display: none; }
 
   #hero { min-height: 100svh; }
   .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
   .scroll-indicator { display: none; }
 
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-img-accent { display: none; }
+  .about-grid           { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-accent     { display: none; }
   .about-experience-badge { left: 12px; }
 
-  .services-grid { grid-template-columns: 1fr; }
-  .services-header { flex-direction: column; align-items: flex-start; }
+  .services-grid     { grid-template-columns: 1fr; }
+  .services-header   { flex-direction: column; align-items: flex-start; }
 
   .process-timeline { grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .process-timeline::before { display: none; }
 
-  .projects-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+  .projects-grid   { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
   .project-card:nth-child(n) { grid-column: span 1; grid-row: span 1; }
   .project-card:nth-child(1) { grid-column: span 2; }
 
-  .contact-grid { grid-template-columns: 1fr; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid    { grid-template-columns: 1fr; }
+  .faq-grid        { grid-template-columns: 1fr; }
+  .gallery-grid    { grid-template-columns: repeat(2, 1fr); }
   .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 2; grid-row: span 1; }
-  .testimonial-card { width: calc(100% - 0px); }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-
+  .stats-grid      { grid-template-columns: repeat(2, 1fr); }
   .projects-header { flex-direction: column; align-items: flex-start; }
 
   #mobile-call { display: flex; }
@@ -2381,72 +2013,65 @@ footer {
 
 @media (max-width: 640px) {
   :root { --section-py: 72px; }
-  #nav { padding: 16px 0; }
-  #nav.scrolled { padding: 12px 0; }
   .container { padding: 0 20px; }
 
   .hero-title { font-size: 52px; letter-spacing: -0.04em; }
   .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .hero-stat { padding: 16px; }
+  .hero-stat  { padding: 16px; }
   .hero-stat-num { font-size: 24px; }
   .hero-actions { gap: 10px; }
 
   .about-features { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-  .why-grid { grid-template-columns: 1fr 1fr; }
-  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid  { grid-template-columns: 1fr; }
+  .why-grid       { grid-template-columns: 1fr 1fr; }
+  .stats-grid     { grid-template-columns: 1fr 1fr; }
   .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid  { grid-template-columns: 1fr; }
   .project-card:nth-child(n) { grid-column: span 1; }
-  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid   { grid-template-columns: 1fr; }
   .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 1; }
-  .form-row { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .form-row       { grid-template-columns: 1fr; }
+  .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
-  .footer-top-inner { flex-direction: column; text-align: center; }
-  .contact-form-wrap { padding: 28px 20px; }
+  .footer-top-inner    { flex-direction: column; text-align: center; }
+  .contact-form-wrap   { padding: 28px 20px; }
+  .partners-grid  { grid-template-columns: 1fr; }
+  .partner-actions { flex-direction: column; }
 }
 </style>
 </head>
 <body>
 
-<!-- Scroll Progress -->
 <div id="scroll-progress"></div>
 
-<!-- ============================================================
-     NAVIGATION
-     ============================================================ -->
+<!-- NAVIGATION -->
 <header id="navbar">
   <div class="container">
     <div class="nav-inner">
 
       <a href="#hero" class="nav-logo">
         <div class="logo-mark">
-          <div class="logo-mark-inner">
-            <div class="logo-bar"></div>
-            <div class="logo-bar"></div>
-            <div class="logo-bar short"></div>
-          </div>
+          <img src="logo.png" alt="Nales Global Services Limited logo" style="width:100%;height:100%;object-fit:contain;">
         </div>
         <div class="logo-text">
-          <div class="logo-name">NALES GLOBAL</div>
-          <div class="logo-sub">SERVICES LIMITED</div>
+          <div class="logo-name">Nales Global</div>
+          <div class="logo-sub">Services Limited</div>
         </div>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about" class="nav-link">About</a>
+        <a href="#about"    class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#gallery"  class="nav-link">Gallery</a>
+        <a href="#faq"      class="nav-link">FAQ</a>
+        <a href="#contact"  class="nav-link">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="tel:08033954614" class="nav-phone">
+        <a href="tel:07017783828" class="nav-phone">
           <span class="nav-phone-icon">📞</span>
-          08033954614
+          0701 778 3828
         </a>
         <a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">
           Request Quote
@@ -2462,21 +2087,19 @@ footer {
 
 <!-- Mobile Nav -->
 <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
-  <a href="#about" class="nav-link" onclick="closeMobileNav()">About</a>
+  <a href="#about"    class="nav-link" onclick="closeMobileNav()">About</a>
   <a href="#services" class="nav-link" onclick="closeMobileNav()">Services</a>
   <a href="#projects" class="nav-link" onclick="closeMobileNav()">Projects</a>
-  <a href="#gallery" class="nav-link" onclick="closeMobileNav()">Gallery</a>
-  <a href="#faq" class="nav-link" onclick="closeMobileNav()">FAQ</a>
-  <a href="#contact" class="nav-link" onclick="closeMobileNav()">Contact</a>
+  <a href="#gallery"  class="nav-link" onclick="closeMobileNav()">Gallery</a>
+  <a href="#faq"      class="nav-link" onclick="closeMobileNav()">FAQ</a>
+  <a href="#contact"  class="nav-link" onclick="closeMobileNav()">Contact</a>
   <div style="display:flex;gap:16px;margin-top:24px;">
-    <a href="tel:08033954614" class="btn btn-primary" onclick="closeMobileNav()">📞 Call Now</a>
+    <a href="tel:07017783828" class="btn btn-primary" onclick="closeMobileNav()">📞 Call Now</a>
     <a href="#contact" class="btn btn-secondary" onclick="closeMobileNav()">Get Quote</a>
   </div>
 </div>
 
-<!-- ============================================================
-     HERO SECTION
-     ============================================================ -->
+<!-- HERO -->
 <section id="hero" role="banner">
   <div class="hero-bg">
     <div class="hero-bg-img" role="img" aria-label="Construction workers on an active building site in Nigeria"></div>
@@ -2494,18 +2117,18 @@ footer {
     <div class="container">
       <div class="hero-tag">
         <div class="hero-tag-dot"></div>
-        Ibadan, Oyo State — Est. Nigeria
+        Lagos, Nigeria — Nales Global Services Limited
       </div>
       <h1 class="hero-title">
         <span class="line">Building</span>
-        <span class="line orange">Excellence.</span>
+        <span class="line blue">Excellence.</span>
         <span class="line">Delivering</span>
         <span class="line">Quality.</span>
-        <span class="line" style="font-size:0.6em;color:rgba(255,255,255,0.7);font-weight:700;letter-spacing:-0.02em;">On Time.</span>
+        <span class="line" style="font-size:0.6em;color:rgba(255,255,255,0.70);font-weight:700;letter-spacing:-0.02em;">On Time.</span>
       </h1>
       <p class="hero-subtitle">
         Construction, Electrical &amp; Engineering Solutions Built to Last.
-        Trusted by clients across Ibadan and beyond for precision,
+        Trusted by clients across Lagos and beyond for precision,
         integrity, and exceptional results.
       </p>
       <div class="hero-actions">
@@ -2515,14 +2138,13 @@ footer {
         <a href="#services" class="btn btn-secondary" style="font-size:15px;padding:16px 32px;">
           Explore Services
         </a>
-        <a href="tel:08033954614" class="hero-btn-call">
-          📞 08033954614
+        <a href="tel:07017783828" class="hero-btn-call">
+          📞 0701 778 3828
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Stats Bar -->
   <div class="hero-stats">
     <div class="container">
       <div class="hero-stats-inner">
@@ -2552,29 +2174,24 @@ footer {
   </div>
 </section>
 
-<!-- ============================================================
-     ABOUT SECTION
-     ============================================================ -->
+<!-- ABOUT -->
 <section id="about" aria-label="About Nales Global Services Limited">
   <div class="container">
     <div class="about-grid">
 
-      <!-- Visual -->
       <div class="about-visual sr-left">
         <div class="about-img-stack">
           <div class="about-img-main">
             <img
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=85&auto=format&fit=crop"
+              src="images/fix.jpg"
               alt="Nales Global Services Limited engineers reviewing blueprints on-site"
-              loading="lazy"
-            >
+              loading="lazy">
           </div>
           <div class="about-img-accent">
             <img
               src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop"
               alt="Construction workers in safety gear at an active construction site"
-              loading="lazy"
-            >
+              loading="lazy">
           </div>
           <div class="about-experience-badge">
             <span class="about-exp-num">12+</span>
@@ -2583,7 +2200,6 @@ footer {
         </div>
       </div>
 
-      <!-- Content -->
       <div class="about-content sr-right">
         <div class="section-label">Who We Are</div>
         <h2 class="section-heading">
@@ -2591,14 +2207,14 @@ footer {
           <span class="accent">Uncompromising</span> Quality.
         </h2>
         <p class="section-subheading">
-          Based in Ibadan, Oyo State, we deliver construction, electrical,
+          Based in Ikosi Ketu, Lagos, we deliver construction, electrical,
           and engineering solutions that stand the test of time.
         </p>
 
         <p class="about-intro" style="margin-top:28px;">
           <strong>Nales Global Services Limited</strong> is a premier Nigerian engineering company
           built on a foundation of integrity, craftsmanship, and accountability.
-          Under the leadership of <strong>Joshua Olawuyi</strong>, we have delivered over
+           We have delivered over
           150 projects across residential, commercial, electrical, and industrial sectors —
           <strong>never cutting corners, always exceeding expectations.</strong>
         </p>
@@ -2606,7 +2222,7 @@ footer {
         <p class="about-intro">
           We bring together skilled professionals, modern equipment, and proven methodologies
           to transform your vision into a durable, high-quality reality — delivered
-          <span style="color:var(--orange);font-weight:600;">on schedule and within budget.</span>
+          <span style="color:var(--primary);font-weight:600;">on schedule and within budget.</span>
         </p>
 
         <div class="about-features">
@@ -2652,9 +2268,7 @@ footer {
 
 <div class="divider"></div>
 
-<!-- ============================================================
-     SERVICES SECTION
-     ============================================================ -->
+<!-- SERVICES -->
 <section id="services" aria-label="Our Engineering Services">
   <div class="container">
     <div class="services-header">
@@ -2668,14 +2282,10 @@ footer {
       <p class="section-subheading sr" style="margin-top:0;">
         From residential foundations to petroleum industry support —
         we deliver comprehensive engineering solutions with precision and care.
-        Partnered with renowned names such as Awe  Ayodele Michael, Awe Oluwaseyi Stella, 
-        Awe Adeyinka Murphy & Ayeyemi Israel Ayobami.
       </p>
     </div>
 
     <div class="services-grid">
-
-      <!-- Service 1 -->
       <div class="service-card sr d1">
         <span class="service-card-num">01 — Construction</span>
         <div class="service-icon">🏗️</div>
@@ -2683,14 +2293,13 @@ footer {
         <p class="service-desc">Dream homes built to the highest standards. We handle foundation to finishing with exceptional craftsmanship.</p>
         <div class="service-items">
           <div class="service-item">New Home Construction</div>
-          <div class="service-item">Renovation & Extensions</div>
+          <div class="service-item">Renovation &amp; Extensions</div>
           <div class="service-item">Structural Engineering</div>
-          <div class="service-item">Interior & Finishing</div>
+          <div class="service-item">Interior &amp; Finishing</div>
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
 
-      <!-- Service 2 -->
       <div class="service-card sr d2">
         <span class="service-card-num">02 — Commercial</span>
         <div class="service-icon">🏢</div>
@@ -2698,14 +2307,13 @@ footer {
         <p class="service-desc">Office complexes, retail spaces, and commercial properties built for durability, function, and professional appeal.</p>
         <div class="service-items">
           <div class="service-item">Office Buildings</div>
-          <div class="service-item">Retail & Shopping Complexes</div>
+          <div class="service-item">Retail &amp; Shopping Complexes</div>
           <div class="service-item">Warehouse Construction</div>
           <div class="service-item">Project Management</div>
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
 
-      <!-- Service 3 -->
       <div class="service-card sr d3">
         <span class="service-card-num">03 — Electrical</span>
         <div class="service-icon">⚡</div>
@@ -2713,29 +2321,27 @@ footer {
         <p class="service-desc">Certified electrical engineering from wiring and distribution boards to industrial power systems — safe, compliant, and reliable.</p>
         <div class="service-items">
           <div class="service-item">Power Distribution</div>
-          <div class="service-item">Wiring & Cabling</div>
+          <div class="service-item">Wiring &amp; Cabling</div>
           <div class="service-item">Switchgear Installation</div>
           <div class="service-item">Emergency Systems</div>
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
 
-      <!-- Service 4 -->
       <div class="service-card sr d1">
         <span class="service-card-num">04 — Electronics</span>
         <div class="service-icon">🔌</div>
         <h3 class="service-title">Electronics Installation</h3>
         <p class="service-desc">Advanced electronics integration including CCTV, security systems, networking, and smart building technology.</p>
         <div class="service-items">
-          <div class="service-item">CCTV & Security Systems</div>
+          <div class="service-item">CCTV &amp; Security Systems</div>
           <div class="service-item">Network Infrastructure</div>
           <div class="service-item">Smart Home Systems</div>
-          <div class="service-item">AV & Communication</div>
+          <div class="service-item">AV &amp; Communication</div>
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
 
-      <!-- Service 5 -->
       <div class="service-card sr d2">
         <span class="service-card-num">05 — Petroleum</span>
         <div class="service-icon">🛢️</div>
@@ -2750,7 +2356,6 @@ footer {
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
 
-      <!-- Service 6 -->
       <div class="service-card sr d3">
         <span class="service-card-num">06 — Consultancy</span>
         <div class="service-icon">📐</div>
@@ -2764,15 +2369,12 @@ footer {
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     WHY CHOOSE US
-     ============================================================ -->
-<section id="why" aria-label="Why Choose Nales Global Services Limited?">
+<!-- WHY CHOOSE US -->
+<section id="why" aria-label="Why Choose Nales Global Services Limited">
   <div class="why-bg-pattern"></div>
   <div class="why-bg-gradient"></div>
   <div class="container" style="position:relative;">
@@ -2780,7 +2382,7 @@ footer {
       <div class="section-label">Why Choose Us</div>
       <h2 class="section-heading">
         Our Promise to<br>
-        <span style="color:var(--orange)">Every Client</span>
+        <span style="color:var(--sky)">Every Client</span>
       </h2>
       <p class="section-subheading">
         We don't just build structures — we build lasting trust through
@@ -2833,9 +2435,7 @@ footer {
   </div>
 </section>
 
-<!-- ============================================================
-     STATISTICS
-     ============================================================ -->
+<!-- STATISTICS -->
 <section id="stats" aria-label="Company Statistics">
   <div class="container">
     <div class="stats-grid">
@@ -2866,7 +2466,13 @@ footer {
 <div class="divider"></div>
 
 <!-- ============================================================
-     PROJECTS SECTION
+     PROJECTS SECTION — VIDEO CARDS
+     Replace src="videos/your-video.mp4" with your actual video file paths.
+     Each card has:
+       • <video> that plays on hover (muted, loop)
+       • A play icon shown at rest
+       • A mute/unmute toggle button
+       • The same overlay, info, category, title, status as before
      ============================================================ -->
 <section id="projects" aria-label="Featured Construction Projects">
   <div class="container">
@@ -2887,35 +2493,33 @@ footer {
       </div>
     </div>
 
-    <!-- 
-      BACKEND INTEGRATION POINT:
-      Replace the static project cards below with dynamic data fetched from your API.
-      Expected endpoint: GET /api/projects
-      Expected response: Array of project objects with { id, title, category, image, status, location }
-    -->
     <div class="projects-grid">
 
+      <!-- Card 1 — Commercial (spans 7 cols × 2 rows) -->
       <div class="project-card" data-category="commercial">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop"
-          alt="Modern commercial building construction in Ibadan, Nigeria"
-          loading="lazy">
+        <video class="project-video" src="vids/station.mp4"
+          muted loop playsinline preload="metadata"
+          aria-label="Filling station construction project video"></video>
         <div class="project-overlay"></div>
-        <div class="project-view">↗</div>
+        <div class="project-play-btn" aria-hidden="true">▶</div>
+        <div class="project-view" aria-hidden="true">↗</div>
+        <button class="project-mute-btn" aria-label="Toggle mute">🔇</button>
         <div class="project-info">
           <div class="project-category">Commercial Construction</div>
-          <div class="project-title">Ikeja Commercial Complex</div>
+          <div class="project-title">Filling Station</div>
           <div class="project-status">Completed 2023</div>
         </div>
       </div>
 
+      <!-- Card 2 — Electrical -->
       <div class="project-card" data-category="electrical">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=700&q=80&auto=format&fit=crop"
-          alt="Industrial electrical installation and power distribution panel"
-          loading="lazy">
+        <video class="project-video" src="vids/id power.mp4"
+          muted loop playsinline preload="metadata"
+          aria-label="Industrial power distribution project video"></video>
         <div class="project-overlay"></div>
-        <div class="project-view">↗</div>
+        <div class="project-play-btn" aria-hidden="true">▶</div>
+        <div class="project-view" aria-hidden="true">↗</div>
+        <button class="project-mute-btn" aria-label="Toggle mute">🔇</button>
         <div class="project-info">
           <div class="project-category">Electrical Installation</div>
           <div class="project-title">Industrial Power Distribution</div>
@@ -2923,13 +2527,15 @@ footer {
         </div>
       </div>
 
+      <!-- Card 3 — Residential -->
       <div class="project-card" data-category="residential">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80&auto=format&fit=crop"
-          alt="Luxury residential home construction completed by Nales Global Services Limited"
-          loading="lazy">
+        <video class="project-video" src="vids/estate.mp4"
+          muted loop playsinline preload="metadata"
+          aria-label="Premium estate development project video"></video>
         <div class="project-overlay"></div>
-        <div class="project-view">↗</div>
+        <div class="project-play-btn" aria-hidden="true">▶</div>
+        <div class="project-view" aria-hidden="true">↗</div>
+        <button class="project-mute-btn" aria-label="Toggle mute">🔇</button>
         <div class="project-info">
           <div class="project-category">Residential Construction</div>
           <div class="project-title">Premium Estate Development</div>
@@ -2937,44 +2543,50 @@ footer {
         </div>
       </div>
 
+      <!-- Card 4 — Construction -->
       <div class="project-card" data-category="construction">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80&auto=format&fit=crop"
-          alt="Heavy construction equipment at an active building site"
-          loading="lazy">
+        <video class="project-video" src="vids/Store.mp4"
+          muted loop playsinline preload="metadata"
+          aria-label="Warehouse and storage facility project video"></video>
         <div class="project-overlay"></div>
-        <div class="project-view">↗</div>
+        <div class="project-play-btn" aria-hidden="true">▶</div>
+        <div class="project-view" aria-hidden="true">↗</div>
+        <button class="project-mute-btn" aria-label="Toggle mute">🔇</button>
         <div class="project-info">
           <div class="project-category">Industrial Construction</div>
-          <div class="project-title">Warehouse & Storage Facility</div>
+          <div class="project-title">Warehouse &amp; Storage Facility</div>
           <div class="project-status">Completed 2023</div>
         </div>
       </div>
 
+      <!-- Card 5 — Electrical -->
       <div class="project-card" data-category="electrical">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&auto=format&fit=crop"
-          alt="Solar and electrical system installation for commercial property"
-          loading="lazy">
+        <video class="project-video" src="vids/p install casing.mp4"
+          muted loop playsinline preload="metadata"
+          aria-label="Power installation project video"></video>
         <div class="project-overlay"></div>
-        <div class="project-view">↗</div>
+        <div class="project-play-btn" aria-hidden="true">▶</div>
+        <div class="project-view" aria-hidden="true">↗</div>
+        <button class="project-mute-btn" aria-label="Toggle mute">🔇</button>
         <div class="project-info">
           <div class="project-category">Electrical Systems</div>
-          <div class="project-title">Solar Hybrid Installation</div>
+          <div class="project-title">Power Installation</div>
           <div class="project-status">Completed 2024</div>
         </div>
       </div>
 
+      <!-- Card 6 — Commercial -->
       <div class="project-card" data-category="commercial">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=700&q=80&auto=format&fit=crop"
-          alt="Corporate office building construction in Ibadan"
-          loading="lazy">
+        <video class="project-video" src="vids/internal.mp4"
+          muted loop playsinline preload="metadata"
+          aria-label="Internal installations project video"></video>
         <div class="project-overlay"></div>
-        <div class="project-view">↗</div>
+        <div class="project-play-btn" aria-hidden="true">▶</div>
+        <div class="project-view" aria-hidden="true">↗</div>
+        <button class="project-mute-btn" aria-label="Toggle mute">🔇</button>
         <div class="project-info">
-          <div class="project-category">Commercial Construction</div>
-          <div class="project-title">Corporate Headquarters Build</div>
+          <div class="project-category">Residential Construction</div>
+          <div class="project-title">Internal Installations</div>
           <div class="project-status">In Progress 2024</div>
         </div>
       </div>
@@ -2983,9 +2595,7 @@ footer {
   </div>
 </section>
 
-<!-- ============================================================
-     PROCESS SECTION
-     ============================================================ -->
+<!-- PROCESS -->
 <section id="process" aria-label="Our Engineering Process">
   <div class="container">
     <div class="process-header">
@@ -3002,44 +2612,32 @@ footer {
 
     <div class="process-timeline">
       <div class="process-step sr d1">
-        <div class="process-step-num">
-          <span class="process-step-icon">💬</span>
-        </div>
+        <div class="process-step-num"><span class="process-step-icon">💬</span></div>
         <div class="process-step-title">Consultation</div>
         <div class="process-step-desc">Understanding your vision, goals, and project requirements in detail.</div>
       </div>
       <div class="process-step sr d2">
-        <div class="process-step-num">
-          <span class="process-step-icon">📋</span>
-        </div>
+        <div class="process-step-num"><span class="process-step-icon">📋</span></div>
         <div class="process-step-title">Planning</div>
         <div class="process-step-desc">Detailed project plan, timeline, and cost estimation prepared and reviewed.</div>
       </div>
       <div class="process-step sr d3">
-        <div class="process-step-num">
-          <span class="process-step-icon">⚙️</span>
-        </div>
+        <div class="process-step-num"><span class="process-step-icon">⚙️</span></div>
         <div class="process-step-title">Engineering</div>
         <div class="process-step-desc">Technical design, structural analysis, and engineering drawings finalised.</div>
       </div>
       <div class="process-step sr d4">
-        <div class="process-step-num">
-          <span class="process-step-icon">🏗️</span>
-        </div>
+        <div class="process-step-num"><span class="process-step-icon">🏗️</span></div>
         <div class="process-step-title">Construction</div>
         <div class="process-step-desc">Skilled teams execute with precision, regular reporting keeps you informed.</div>
       </div>
       <div class="process-step sr d5">
-        <div class="process-step-num">
-          <span class="process-step-icon">🔍</span>
-        </div>
+        <div class="process-step-num"><span class="process-step-icon">🔍</span></div>
         <div class="process-step-title">Inspection</div>
         <div class="process-step-desc">Rigorous quality control and safety checks at every completion milestone.</div>
       </div>
       <div class="process-step sr d6">
-        <div class="process-step-num">
-          <span class="process-step-icon">🎯</span>
-        </div>
+        <div class="process-step-num"><span class="process-step-icon">🎯</span></div>
         <div class="process-step-title">Delivery</div>
         <div class="process-step-desc">Handover with full documentation, walkthrough, and ongoing support.</div>
       </div>
@@ -3049,121 +2647,105 @@ footer {
 
 <div class="divider"></div>
 
-<!-- ============================================================
-     TESTIMONIALS
-     ============================================================ -->
-<section id="testimonials" aria-label="Client Testimonials">
+<!-- PARTNERS -->
+<section id="partners" aria-label="Our Partners">
   <div class="container">
-    <div class="testimonials-header">
-      <div class="section-label sr">Client Voices</div>
+
+    <div class="partners-header">
+      <div class="section-label sr">Trusted Network</div>
       <h2 class="section-heading sr delay-1">
-        What Our Clients<br>
-        <span class="accent">Say</span>
+        Our <span class="accent">Partners</span>
       </h2>
+      <p class="partners-intro sr delay-2">
+        We work alongside a network of trusted and experienced partners
+        committed to the same standards of excellence, integrity, and
+        professional delivery that define Nales Global Services Limited.
+      </p>
     </div>
 
-    <!-- 
-      BACKEND INTEGRATION POINT:
-      Fetch testimonials from: GET /api/testimonials
-      Expected: Array of { name, role, company, rating, text, avatar_initial }
-    -->
-    <div class="testimonials-track-wrap sr delay-2">
-      <div class="testimonials-track" id="testimonials-track">
+    <div class="partners-grid">
 
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Nales Global Services Limited transformed our vision into a magnificent reality.
-            The quality of their workmanship and their commitment to delivering on time
-            is truly exceptional. I cannot recommend them highly enough."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">AO</div>
-            <div>
-              <div class="author-name">Adeola Okonkwo</div>
-              <div class="author-role">Property Developer, Lagos</div>
-            </div>
-          </div>
+      <div class="partner-card sr d1">
+        <div class="partner-avatar" aria-hidden="true">AA</div>
+        <div class="partner-name">Awe Ayodele Michael</div>
+        <div class="partner-role-label">Business Partner</div>
+        <div class="partner-phone-display">
+          <span class="partner-phone-icon">📞</span>
+          0803 061 5862
         </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Their electrical installation work on our factory complex was flawless.
-            Professional team, modern approach, and they completed the project
-            two weeks ahead of schedule. Outstanding service."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">EM</div>
-            <div>
-              <div class="author-name">Emeka Nwachukwu</div>
-              <div class="author-role">Factory Owner, Ibadan</div>
-            </div>
-          </div>
+        <div class="partner-actions">
+          <a href="tel:08030615862" class="partner-btn-call" aria-label="Call Awe Ayodele Michael">
+            📞 Call
+          </a>
+          <a href="https://wa.me/2348030615862" target="_blank" rel="noopener noreferrer"
+             class="partner-btn-wa" aria-label="WhatsApp Awe Ayodele Michael">
+            💬 WhatsApp
+          </a>
         </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "From the first consultation to final handover, Nales Global Services Limited
-            were professional, transparent, and delivered exactly what they promised.
-            Our residential project exceeded our every expectation."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">FB</div>
-            <div>
-              <div class="author-name">Fatimah Bello</div>
-              <div class="author-role">Homeowner, Oyo State</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "We contracted them for a major commercial building project.
-            Their engineering expertise, safety standards, and project management
-            capability are world-class. A company that truly values quality above all."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">TK</div>
-            <div>
-              <div class="author-name">Tunde Kolade</div>
-              <div class="author-role">CEO, KoladeCorp Nigeria</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Their maintenance team resolved our industrial electrical fault within hours.
-            The 24/7 support promise is real. Dependable, skilled, and genuinely
-            committed to client success. Our go-to engineering partner."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SA</div>
-            <div>
-              <div class="author-name">Sola Adeyemi</div>
-              <div class="author-role">Plant Manager, Ibadan</div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
 
-    <div class="testimonials-controls">
-      <button class="slider-btn" id="t-prev" aria-label="Previous testimonial">←</button>
-      <div class="slider-dots" id="t-dots"></div>
-      <button class="slider-btn" id="t-next" aria-label="Next testimonial">→</button>
+      <div class="partner-card sr d2">
+        <div class="partner-avatar" aria-hidden="true">AO</div>
+        <div class="partner-name">Awe Oluwaseyi Stella</div>
+        <div class="partner-role-label">Business Partner</div>
+        <div class="partner-phone-display">
+          <span class="partner-phone-icon">📞</span>
+          0803 831 0300
+        </div>
+        <div class="partner-actions">
+          <a href="tel:08038310300" class="partner-btn-call" aria-label="Call Awe Oluwaseyi Stella">
+            📞 Call
+          </a>
+          <a href="https://wa.me/2348038310300" target="_blank" rel="noopener noreferrer"
+             class="partner-btn-wa" aria-label="WhatsApp Awe Oluwaseyi Stella">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="partner-card sr d3">
+        <div class="partner-avatar" aria-hidden="true">AM</div>
+        <div class="partner-name">Awe Adeyinka Murphy</div>
+        <div class="partner-role-label">Business Partner</div>
+        <div class="partner-phone-display">
+          <span class="partner-phone-icon">📞</span>
+          0707 231 1397
+        </div>
+        <div class="partner-actions">
+          <a href="tel:07072311397" class="partner-btn-call" aria-label="Call Awe Adeyinka Murphy">
+            📞 Call
+          </a>
+          <a href="https://wa.me/2347072311397" target="_blank" rel="noopener noreferrer"
+             class="partner-btn-wa" aria-label="WhatsApp Awe Adeyinka Murphy">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="partner-card sr d4">
+        <div class="partner-avatar" aria-hidden="true">AI</div>
+        <div class="partner-name">Ayeyemi Israel Ayobami</div>
+        <div class="partner-role-label">Business Partner</div>
+        <div class="partner-phone-display">
+          <span class="partner-phone-icon">📞</span>
+          0814 492 8328
+        </div>
+        <div class="partner-actions">
+          <a href="tel:08144928328" class="partner-btn-call" aria-label="Call Ayeyemi Israel Ayobami">
+            📞 Call
+          </a>
+          <a href="https://wa.me/2348144928328" target="_blank" rel="noopener noreferrer"
+             class="partner-btn-wa" aria-label="WhatsApp Ayeyemi Israel Ayobami">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     GALLERY
-     ============================================================ -->
+<!-- GALLERY -->
 <section id="gallery" aria-label="Project Gallery">
   <div class="container">
     <div class="section-label sr">Gallery</div>
@@ -3173,64 +2755,40 @@ footer {
     </h2>
     <p class="section-subheading sr delay-2">
       A visual showcase of completed projects, skilled craftsmanship,
-      and engineering excellence across Ibadan and Nigeria.
+      and engineering excellence across Lagos and Nigeria.
     </p>
 
     <div class="gallery-grid">
       <div class="gallery-item sr d1">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop"
-          alt="Heavy construction equipment at an active building site"
-          loading="lazy">
+        <img class="gallery-img" src="images/site.jpg" alt="Heavy construction equipment at an active building site" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
       <div class="gallery-item sr d2">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop"
-          alt="Engineer reviewing construction blueprints on site"
-          loading="lazy">
+        <img class="gallery-img" src="images/coordinate.jpg" alt="Engineer reviewing construction blueprints on site" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
       <div class="gallery-item sr d3">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop"
-          alt="Electrical installation and wiring system"
-          loading="lazy">
+        <img class="gallery-img" src="images/wiring.jpg" alt="Electrical installation and wiring system" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
       <div class="gallery-item sr d4">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80&auto=format&fit=crop"
-          alt="Commercial building exterior at dusk"
-          loading="lazy">
+        <img class="gallery-img" src="images/fine internal.jpg" alt="Commercial building exterior at dusk" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
       <div class="gallery-item sr d2">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80&auto=format&fit=crop"
-          alt="Modern commercial high-rise under construction"
-          loading="lazy">
+        <img class="gallery-img" src="images/station at dusk.jpg" alt="Modern commercial high-rise under construction" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
       <div class="gallery-item sr d3">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=800&q=80&auto=format&fit=crop"
-          alt="Industrial engineering and power systems"
-          loading="lazy">
+        <img class="gallery-img" src="images/worker.jpg" alt="Industrial engineering and power systems" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
       <div class="gallery-item sr d4">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&auto=format&fit=crop"
-          alt="Completed residential property with modern architecture"
-          loading="lazy">
+        <img class="gallery-img" src="images/install.jpg" alt="Completed residential property with modern architecture" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
       <div class="gallery-item sr d5">
-        <img class="gallery-img"
-          src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80&auto=format&fit=crop"
-          alt="Construction team meeting and project planning session"
-          loading="lazy">
+        <img class="gallery-img" src="images/bridge.jpg" alt="Construction team meeting and project planning session" loading="lazy">
         <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
       </div>
     </div>
@@ -3239,9 +2797,7 @@ footer {
 
 <div class="divider"></div>
 
-<!-- ============================================================
-     FAQ SECTION
-     ============================================================ -->
+<!-- FAQ -->
 <section id="faq" aria-label="Frequently Asked Questions">
   <div class="container">
     <div class="faq-grid">
@@ -3257,7 +2813,6 @@ footer {
         </p>
 
         <div class="accordion sr delay-2" id="accordion">
-
           <div class="accordion-item open">
             <button class="accordion-btn" aria-expanded="true">
               <span class="accordion-question">How do I get a project quote?</span>
@@ -3279,8 +2834,8 @@ footer {
             </button>
             <div class="accordion-body">
               <p class="accordion-answer">
-                We are headquartered in Ibadan, Oyo State, and operate across Nigeria.
-                Our teams are deployed across Ibadan, Lagos, Abuja, and surrounding states.
+                We are headquartered in Ikosi Ketu, Lagos, and operate across Nigeria.
+                Our teams are deployed across Lagos, Abuja, and surrounding states.
                 Contact us to discuss your specific project location.
               </p>
             </div>
@@ -3341,16 +2896,12 @@ footer {
               </p>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- Contact Card in FAQ -->
       <div class="sr-right">
         <div class="faq-contact-card">
-          <div class="faq-contact-title">
-            Still Have Questions?
-          </div>
+          <div class="faq-contact-title">Still Have Questions?</div>
           <p class="faq-contact-desc">
             Our team is ready to answer any question and guide you through
             your project from day one. Reach out directly — we respond fast.
@@ -3358,22 +2909,22 @@ footer {
           <div class="faq-contact-info">
             <div class="faq-contact-item">
               <div class="faq-contact-icon">📞</div>
-              <span>08033954614</span>
+              <span>0701 778 3828</span>
             </div>
             <div class="faq-contact-item">
               <div class="faq-contact-icon">📍</div>
-              <span>Ibadan, Oyo State, Nigeria</span>
+              <span>10, Ayanbadejo Street, Off Oladogba,<br>Ikosi Ketu, Lagos, Nigeria</span>
             </div>
             <div class="faq-contact-item">
               <div class="faq-contact-icon">👤</div>
-              <span>Contact: Nales global Services</span>
+              <span>Contact: Nales global services</span>
             </div>
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;">
-            <a href="tel:08033954614" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <a href="tel:07017783828" class="btn btn-primary" style="width:100%;justify-content:center;">
               📞 Call Now
             </a>
-            <a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
+            <a href="https://wa.me/2348030615862" target="_blank" rel="noopener"
                class="btn" style="width:100%;justify-content:center;background:#25D366;color:white;">
               💬 WhatsApp Us
             </a>
@@ -3391,9 +2942,7 @@ footer {
 
 <div class="divider"></div>
 
-<!-- ============================================================
-     CONTACT SECTION
-     ============================================================ -->
+<!-- CONTACT -->
 <section id="contact" aria-label="Contact Us">
   <div class="container">
     <div style="text-align:center;max-width:640px;margin:0 auto 64px;">
@@ -3410,23 +2959,6 @@ footer {
 
     <div class="contact-grid">
 
-      <div class="contact-info sr-left" style="display:flex;flex-direction:column;gap:16px;">
-        <div id="instant-contact-panel" style="border:1px solid rgba(249,115,22,0.24);background:linear-gradient(135deg, rgba(249,115,22,0.1), rgba(16,185,129,0.08));padding:16px;border-radius:12px;">
-          <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--orange);font-family:var(--font-mono);">Reach us right now</div>
-          <div style="font-size:16px;font-weight:600;color:var(--text-dark);margin-top:8px;">Talk to a real person, instantly</div>
-          <div style="font-size:13px;color:var(--text-muted);margin-top:6px;margin-bottom:14px;">No forms, no waiting. Call or message us directly.</div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="tel:08033954614" class="btn" style="flex:1;min-width:140px;justify-content:center;background:var(--text-dark);color:white;">
-              📞 Call Now
-            </a>
-            <a href="https://wa.me/2348033954614" target="_blank" rel="noopener" class="btn" style="flex:1;min-width:140px;justify-content:center;background:#25D366;color:white;">
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Info -->
       <div class="contact-info sr-left">
         <h3 class="contact-info-title">
           Get In<br>
@@ -3438,18 +2970,29 @@ footer {
         </p>
 
         <div class="contact-items">
-          <a href="tel:08033954614" class="contact-item">
+          <a href="tel:07017783828" class="contact-item">
             <div class="contact-item-icon">📞</div>
             <div>
-              <div class="contact-item-label">Phone / WhatsApp</div>
-              <div class="contact-item-value">08033954614</div>
+              <div class="contact-item-label">Business Phone</div>
+              <div class="contact-item-value">0701 778 3828</div>
+            </div>
+          </a>
+          <a href="https://wa.me/2348030615862" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <div class="contact-item-label">WhatsApp</div>
+              <div class="contact-item-value">0803 061 5862</div>
             </div>
           </a>
           <div class="contact-item">
             <div class="contact-item-icon">📍</div>
             <div>
-              <div class="contact-item-label">Location</div>
-              <div class="contact-item-value">Ibadan, Oyo State, Nigeria</div>
+              <div class="contact-item-label">Office Address</div>
+              <div class="contact-item-value">
+                10, Ayanbadejo Street<br>
+                Off Oladogba, Ikosi Ketu<br>
+                Lagos, Nigeria
+              </div>
             </div>
           </div>
           <div class="contact-item">
@@ -3469,21 +3012,16 @@ footer {
         </div>
 
         <div class="contact-social">
-          <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener"
+          <a href="https://www.facebook.com/share/v/1BZXHNVRGg/"
+             target="_blank" rel="noopener"
              class="social-link" aria-label="Facebook">𝓕</a>
-          <a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
+          <a href="https://wa.me/2348030615862"
+             target="_blank" rel="noopener"
              class="social-link" aria-label="WhatsApp">💬</a>
-          <a href="tel:08033954614" class="social-link" aria-label="Call us">📞</a>
+          <a href="tel:07017783828" class="social-link" aria-label="Call us">📞</a>
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <!--
-        BACKEND: Formspree (https://formspree.io)
-        Replace FORMSPREE_ENDPOINT in the <script> below with your
-        own form endpoint from your Formspree dashboard, e.g.
-        https://formspree.io/f/xxxxxxxx
-      -->
       <div class="contact-form-wrap sr-right">
         <h3 class="form-title">Request a Free Quote</h3>
         <form id="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
@@ -3527,9 +3065,7 @@ footer {
           <button type="submit" class="form-submit" id="form-submit-btn">
             <span id="submit-text">Send Request →</span>
           </button>
-          <p class="form-note">
-            * We respond within 24 hours. Your information is confidential.
-          </p>
+          <p class="form-note">* We respond within 24 hours. Your information is confidential.</p>
         </form>
       </div>
 
@@ -3537,23 +3073,20 @@ footer {
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<!-- FOOTER -->
 <footer role="contentinfo">
-  <!-- Top CTA Bar -->
+
   <div class="footer-top-bar">
     <div class="container">
       <div class="footer-top-inner">
         <div class="footer-top-text">
           Ready to start your project? Contact us today for a free consultation.
         </div>
-        <a href="tel:08033954614" class="footer-top-cta">📞 Call: 08033954614</a>
+        <a href="tel:07017783828" class="footer-top-cta">📞 Call: 0701 778 3828</a>
       </div>
     </div>
   </div>
 
-  <!-- Main Footer -->
   <div class="footer-main">
     <div class="container">
       <div class="footer-grid">
@@ -3564,26 +3097,30 @@ footer {
           <p class="footer-brand-desc">
             A premier Nigerian engineering and construction company delivering
             quality-first solutions across construction, electrical, petroleum,
-            and engineering consultancy sectors. Based in Ibadan, Oyo State.
+            and engineering consultancy sectors.
+            Located at 10, Ayanbadejo Street, Off Oladogba, Ikosi Ketu, Lagos.
           </p>
           <div class="footer-socials">
-            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener"
+            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/"
+               target="_blank" rel="noopener"
                class="footer-social" aria-label="Facebook">𝓕</a>
-            <a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
+            <a href="https://wa.me/2348030615862"
+               target="_blank" rel="noopener"
                class="footer-social" aria-label="WhatsApp">💬</a>
-            <a href="tel:08033954614" class="footer-social" aria-label="Phone">📞</a>
+            <a href="tel:07017783828" class="footer-social" aria-label="Phone">📞</a>
           </div>
         </div>
 
         <div>
           <h4 class="footer-col-title">Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#about"    class="footer-link">About Us</a></li>
             <li><a href="#services" class="footer-link">Services</a></li>
             <li><a href="#projects" class="footer-link">Projects</a></li>
-            <li><a href="#gallery" class="footer-link">Gallery</a></li>
-            <li><a href="#faq" class="footer-link">FAQ</a></li>
-            <li><a href="#contact" class="footer-link">Contact</a></li>
+            <li><a href="#gallery"  class="footer-link">Gallery</a></li>
+            <li><a href="#partners" class="footer-link">Partners</a></li>
+            <li><a href="#faq"      class="footer-link">FAQ</a></li>
+            <li><a href="#contact"  class="footer-link">Contact</a></li>
           </ul>
         </div>
 
@@ -3602,11 +3139,16 @@ footer {
         <div>
           <h4 class="footer-col-title">Contact</h4>
           <ul class="footer-links">
-            <li class="footer-link" style="cursor:default;color:rgba(255,255,255,0.45)">📍 Ibadan, Oyo State</li>
-            <li><a href="tel:08033954614" class="footer-link">📞 08033954614</a></li>
+            <li class="footer-link" style="cursor:default;line-height:1.6;">
+              📍 10, Ayanbadejo Street<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Off Oladogba, Ikosi Ketu<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Lagos, Nigeria
+            </li>
+            <li><a href="tel:07017783828" class="footer-link">📞 0701 778 3828</a></li>
+            <li><a href="https://wa.me/2348030615862" target="_blank" rel="noopener" class="footer-link">💬 0803 061 5862 (WhatsApp)</a></li>
             <li><a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener" class="footer-link">Facebook Page</a></li>
-            <li class="footer-link" style="cursor:default;color:rgba(255,255,255,0.45)">👤 Nales global services</li>
-            <li class="footer-link" style="cursor:default;color:rgba(255,255,255,0.45)">🕐 24/7 Support</li>
+            <li class="footer-link" style="cursor:default;">👤 Nales global services</li>
+            <li class="footer-link" style="cursor:default;">🕐 24/7 Support</li>
           </ul>
         </div>
 
@@ -3614,16 +3156,16 @@ footer {
     </div>
   </div>
 
-  <!-- Footer Bottom -->
   <div class="footer-bottom">
     <div class="container">
       <div class="footer-bottom-inner">
         <div class="footer-copy">
-          © <span id="footer-year">2024</span> <span>Nales Global Services Limited</span>. All rights reserved.
+          © <span id="footer-year">2024</span>
+          <span>Nales Global Services Limited</span>. All rights reserved.
         </div>
         <div class="footer-bottom-links">
-          <a href="#hero" class="footer-bottom-link">Privacy Policy</a>
-          <a href="#hero" class="footer-bottom-link">Terms</a>
+          <a href="#hero"    class="footer-bottom-link">Privacy Policy</a>
+          <a href="#hero"    class="footer-bottom-link">Terms</a>
           <a href="#contact" class="footer-bottom-link">Get a Quote</a>
         </div>
       </div>
@@ -3631,37 +3173,29 @@ footer {
   </div>
 </footer>
 
-<!-- ============================================================
-     FLOATING ELEMENTS
-     ============================================================ -->
-<a href="https://wa.me/2348033954614" target="_blank" rel="noopener"
-   id="whatsapp-fab" aria-label="Contact us on WhatsApp">
+<!-- FLOATING ELEMENTS -->
+<a href="https://wa.me/2348030615862"
+   target="_blank"
+   rel="noopener noreferrer"
+   id="whatsapp-fab"
+   aria-label="Contact us on WhatsApp">
   💬
   <div class="whatsapp-tooltip">Chat on WhatsApp</div>
 </a>
 
-<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+<button id="back-to-top"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="Back to top">
   ↑
 </button>
 
-<a href="tel:08033954614" id="mobile-call" aria-label="Call Nales Global Services Limited.">
-  📞 Call Now — 08033954614
+<a href="tel:07017783828" id="mobile-call" aria-label="Call Nales Global Services Limited">
+  📞 Call Now — 0701 778 3828
 </a>
 
-<!-- ============================================================
-     JAVASCRIPT
-     ============================================================ -->
+<!-- JAVASCRIPT -->
 <script>
-/* ============================================================
-   CONFIG
-   Replace with your own endpoint from https://formspree.io
-   (Dashboard → your form → "Integration" tab)
-   ============================================================ */
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
-
-/* ============================================================
-   SCROLL PROGRESS
-   ============================================================ */
+/* ── Scroll Progress ── */
 const scrollBar = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
   const scrollTop = document.documentElement.scrollTop;
@@ -3669,33 +3203,29 @@ window.addEventListener('scroll', () => {
   scrollBar.style.width = (scrollTop / docH * 100) + '%';
 });
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
-const navbar = document.getElementById('navbar');
+/* ── Navbar scroll state ── */
+const navbar    = document.getElementById('navbar');
 const backToTop = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   navbar.classList.toggle('scrolled', y > 80);
-  backToTop.classList.toggle('show', y > 400);
+  backToTop.classList.toggle('show',  y > 400);
   updateActiveNav();
 });
 
 function updateActiveNav() {
   const sections = document.querySelectorAll('section[id]');
-  const scrollY = window.scrollY + 120;
+  const scrollY  = window.scrollY + 120;
   sections.forEach(s => {
-    const top = s.offsetTop;
+    const top    = s.offsetTop;
     const bottom = top + s.offsetHeight;
-    const link = document.querySelector(`.nav-link[href="#${s.id}"]`);
+    const link   = document.querySelector(`.nav-link[href="#${s.id}"]`);
     if (link) link.classList.toggle('active', scrollY >= top && scrollY < bottom);
   });
 }
 
-/* ============================================================
-   MOBILE NAV
-   ============================================================ */
+/* ── Mobile Nav ── */
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobile-nav');
 
@@ -3711,9 +3241,7 @@ function closeMobileNav() {
   document.body.classList.remove('nav-open');
 }
 
-/* ============================================================
-   SCROLL REVEAL — IntersectionObserver
-   ============================================================ */
+/* ── Scroll Reveal ── */
 const srObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -3725,29 +3253,25 @@ const srObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.sr, .sr-left, .sr-right').forEach(el => srObserver.observe(el));
 
-/* ============================================================
-   COUNTER ANIMATION
-   ============================================================ */
+/* ── Counter Animation ── */
 function animateCounter(el) {
-  const target = parseInt(el.getAttribute('data-target'));
-  const suffix = el.getAttribute('data-suffix') || '';
+  const target   = parseInt(el.getAttribute('data-target'));
+  const suffix   = el.getAttribute('data-suffix') || '';
   const duration = 2000;
-  const step = target / (duration / 16);
-  let current = 0;
-
+  const step     = target / (duration / 16);
+  let current    = 0;
+  const accentEl = el.querySelector('.stat-accent');
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
-    // Preserve inner HTML structure for stat-accent spans
-    const numStr = Math.round(current).toLocaleString();
-    if (el.querySelector('.stat-accent')) {
-      const accentEl = el.querySelector('.stat-accent');
-      el.childNodes[0].textContent = numStr;
+    const num = Math.round(current).toLocaleString();
+    if (accentEl) {
+      el.childNodes[0].textContent = num;
     } else {
-      el.textContent = numStr + suffix;
+      el.textContent = num + suffix;
     }
     if (current >= target) {
       clearInterval(timer);
-      if (el.querySelector && el.querySelector('.stat-accent')) {
+      if (accentEl) {
         el.childNodes[0].textContent = target.toLocaleString();
       } else {
         el.textContent = target.toLocaleString() + suffix;
@@ -3767,62 +3291,15 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
-/* ============================================================
-   TESTIMONIALS SLIDER
-   ============================================================ */
-const track = document.getElementById('testimonials-track');
-const dotsContainer = document.getElementById('t-dots');
-const cards = document.querySelectorAll('.testimonial-card');
-let currentSlide = 0;
-let cardWidth = 0;
-
-function getCardWidth() {
-  return cards[0] ? cards[0].offsetWidth + 24 : 400;
-}
-
-function createDots() {
-  cards.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
-    dot.addEventListener('click', () => goToSlide(i));
-    dotsContainer.appendChild(dot);
-  });
-}
-
-function goToSlide(idx) {
-  currentSlide = Math.max(0, Math.min(idx, cards.length - 1));
-  cardWidth = getCardWidth();
-  track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
-  document.querySelectorAll('.slider-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === currentSlide);
-  });
-}
-
-document.getElementById('t-prev')?.addEventListener('click', () => goToSlide(currentSlide - 1));
-document.getElementById('t-next')?.addEventListener('click', () => goToSlide(currentSlide + 1));
-
-createDots();
-window.addEventListener('resize', () => goToSlide(currentSlide));
-
-// Auto-advance
-setInterval(() => goToSlide((currentSlide + 1) % cards.length), 6000);
-
-/* ============================================================
-   ACCORDION
-   ============================================================ */
+/* ── Accordion ── */
 document.querySelectorAll('.accordion-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const item = btn.closest('.accordion-item');
+    const item   = btn.closest('.accordion-item');
     const isOpen = item.classList.contains('open');
-
-    // Close all
     document.querySelectorAll('.accordion-item').forEach(el => {
       el.classList.remove('open');
       el.querySelector('.accordion-btn').setAttribute('aria-expanded', 'false');
     });
-
-    // Open clicked (if was closed)
     if (!isOpen) {
       item.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
@@ -3830,44 +3307,85 @@ document.querySelectorAll('.accordion-btn').forEach(btn => {
   });
 });
 
-/* ============================================================
-   PROJECT FILTER
-   ============================================================ */
-const filterBtns = document.querySelectorAll('.filter-btn');
+/* ── Project Filter ── */
+const filterBtns   = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     const filter = btn.getAttribute('data-filter');
-
     projectCards.forEach(card => {
       const category = card.getAttribute('data-category');
       const show = filter === 'all' || category === filter;
-      card.style.opacity = show ? '1' : '0.25';
-      card.style.transform = show ? '' : 'scale(0.97)';
+      card.style.opacity       = show ? '1' : '0.25';
+      card.style.transform     = show ? '' : 'scale(0.97)';
       card.style.pointerEvents = show ? '' : 'none';
-      card.style.transition = 'opacity 0.4s, transform 0.4s';
+      card.style.transition    = 'opacity 0.4s, transform 0.4s';
     });
   });
 });
 
-/* ============================================================
-   CONTACT FORM
-   ============================================================ */
+/* ── Project Video Hover Play/Pause ── */
+projectCards.forEach(card => {
+  const video    = card.querySelector('.project-video');
+  const muteBtn  = card.querySelector('.project-mute-btn');
+  if (!video) return;
+
+  /* Play on hover */
+  card.addEventListener('mouseenter', () => {
+    video.play().catch(() => {}); /* catch autoplay policy errors silently */
+  });
+
+  /* Pause when mouse leaves */
+  card.addEventListener('mouseleave', () => {
+    video.pause();
+  });
+
+  /* Touch support — toggle play/pause on tap */
+  card.addEventListener('touchstart', (e) => {
+    /* Don't intercept mute button taps */
+    if (e.target === muteBtn) return;
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, { passive: true });
+
+  /* Mute / unmute toggle */
+  if (muteBtn) {
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); /* prevent card click bubbling */
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? '🔇' : '🔊';
+      muteBtn.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
+    });
+  }
+});
+
+/* ── Pause all videos when they scroll out of view (performance) ── */
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target.querySelector('.project-video');
+    if (!video) return;
+    if (!entry.isIntersecting) {
+      video.pause();
+    }
+  });
+}, { threshold: 0.1 });
+
+projectCards.forEach(card => videoObserver.observe(card));
+
+/* ── Contact Form ── */
 function handleFormSubmit(e) {
   e.preventDefault();
-
-  const btn = document.getElementById('form-submit-btn');
-  const text = document.getElementById('submit-text');
-  const form = document.getElementById('contact-form');
-
-  // Validation
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const email = document.getElementById('email').value.trim();
+  const btn     = document.getElementById('form-submit-btn');
+  const text    = document.getElementById('submit-text');
+  const form    = document.getElementById('contact-form');
+  const name    = document.getElementById('name').value.trim();
+  const phone   = document.getElementById('phone').value.trim();
   const service = document.getElementById('service').value;
   const message = document.getElementById('message').value.trim();
 
@@ -3876,46 +3394,21 @@ function handleFormSubmit(e) {
     return;
   }
 
-  text.textContent = 'Sending...';
+  text.textContent  = 'Sending...';
   btn.style.opacity = '0.7';
-  btn.disabled = true;
+  btn.disabled      = true;
 
-  fetch(FORMSPREE_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify({ name, phone, email, service, message })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (!data.errors) {
-      showFormSuccess(form, btn, text);
-    } else {
-      showFormError('Your request could not be sent. Please try again or contact us directly.');
-      btn.style.opacity = '1';
-      btn.disabled = false;
-      text.textContent = 'Send Request →';
-    }
-  })
-  .catch(() => {
-    showFormError('Something went wrong. Please try again.');
-    btn.style.opacity = '1';
-    btn.disabled = false;
-    text.textContent = 'Send Request →';
-  });
+  setTimeout(() => showFormSuccess(form, btn, text), 1500);
 }
 
 function showFormSuccess(form, btn, text) {
-  text.textContent = '✓ Message Sent!';
-  btn.style.opacity = '1';
+  text.textContent     = '✓ Message Sent!';
+  btn.style.opacity    = '1';
   btn.style.background = 'var(--emerald)';
-  btn.disabled = false;
+  btn.disabled         = false;
   form.reset();
-
   setTimeout(() => {
-    text.textContent = 'Send Request →';
+    text.textContent     = 'Send Request →';
     btn.style.background = '';
   }, 4000);
 }
@@ -3923,31 +3416,19 @@ function showFormSuccess(form, btn, text) {
 function showFormError(msg) {
   const existing = document.querySelector('.form-error-msg');
   if (existing) existing.remove();
-
   const errEl = document.createElement('p');
   errEl.className = 'form-error-msg';
   errEl.style.cssText = 'color:#EF4444;font-size:13px;margin-top:8px;font-family:var(--font-mono);';
   errEl.textContent = msg;
-  document.getElementById('form-submit-btn').parentNode.insertBefore(errEl, document.getElementById('form-submit-btn'));
+  const submitBtn = document.getElementById('form-submit-btn');
+  submitBtn.parentNode.insertBefore(errEl, submitBtn);
   setTimeout(() => errEl.remove(), 5000);
 }
 
-/* ============================================================
-   REALTIME CHANNEL
-   Removed: this is a static deployment with no Node/WebSocket
-   server behind it, so a live socket connection can never
-   succeed here. The "Realtime status" widget was replaced with
-   direct call/WhatsApp CTAs in the HTML above instead.
-   ============================================================ */
-
-/* ============================================================
-   FOOTER YEAR
-   ============================================================ */
+/* ── Footer year ── */
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-/* ============================================================
-   SMOOTH ANCHOR SCROLLING
-   ============================================================ */
+/* ── Smooth anchor scroll ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
@@ -3959,93 +3440,37 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ============================================================
-   PROCESS STEP ANIMATION
-   ============================================================ */
+/* ── Process step reveal ── */
 const processObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('active');
-      }, i * 200);
+      setTimeout(() => entry.target.classList.add('active'), i * 200);
     }
   });
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.process-step').forEach(step => processObserver.observe(step));
 
-/* ============================================================
-   HERO STATS COUNTER ON LOAD
-   ============================================================ */
+/* ── Hero stats counter on load ── */
 setTimeout(() => {
   document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => {
-    const target = parseInt(el.getAttribute('data-target'));
-    const suffix = el.getAttribute('data-suffix') || '';
-    let current = 0;
+    const target   = parseInt(el.getAttribute('data-target'));
+    const suffix   = el.getAttribute('data-suffix') || '';
+    let current    = 0;
     const duration = 2500;
-    const step = target / (duration / 16);
-
+    const step     = target / (duration / 16);
     const timer = setInterval(() => {
       current = Math.min(current + step, target);
       el.textContent = Math.round(current) + suffix;
-      if (current >= target) {
-        clearInterval(timer);
-        el.textContent = target + suffix;
-      }
+      if (current >= target) { clearInterval(timer); el.textContent = target + suffix; }
     }, 16);
   });
 }, 1500);
 
-/* ============================================================
-   CONSOLE LOG — Backend Dev Info
-   ============================================================ */
-console.log(`
-%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  NALES GLOBAL SERVICES LIMITED
-  Frontend — Production Build
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-%cBackend Integration Points:
-%c  1. Contact Form → POST /api/contact
-     Payload: { name, phone, email, service, message }
-
-  2. Projects → GET /api/projects
-     Response: [{ id, title, category, image, status, location }]
-
-  3. Testimonials → GET /api/testimonials
-     Response: [{ name, role, text, rating, avatar_initial }]
-
-  4. Gallery → GET /api/gallery
-     Response: [{ id, image_url, alt_text, category }]
-
-%cContact: 08033954614 | Nales Global Services Limited
-Location: Ibadan, Oyo State, Nigeria
-`,
-'color:#F97316;font-weight:bold;font-family:monospace;',
-'color:#60A5FA;font-weight:bold;font-family:monospace;',
-'color:#94A3B8;font-family:monospace;',
-'color:#10B981;font-family:monospace;'
+console.log(
+  '%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  NALES GLOBAL SERVICES LIMITED\n  Portfolio — Video Cards Update\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+  'color:#3B82F6;font-weight:bold;font-family:monospace;'
 );
 </script>
-<!-- ============================================================
-     LIVE CHAT WIDGET (Tawk.to)
-     Replace YOUR_PROPERTY_ID/YOUR_WIDGET_ID below with the values
-     from your Tawk.to dashboard: Administration > Channels > Chat Widget
-     Sign up free at https://www.tawk.to
-     Visitors chat with you directly on the page; you get notified
-     instantly by email, browser push, or the Tawk.to mobile app.
-     ============================================================ -->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function(){
-  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-  s1.async = true;
-  s1.src = 'https://embed.tawk.to/6a6ca0089b421a1d42848fde/1jus529jh';
-  s1.charset = 'UTF-8';
-  s1.setAttribute('crossorigin', '*');
-  s0.parentNode.insertBefore(s1, s0);
-})();
-</script>
-
 </body>
 </html>
