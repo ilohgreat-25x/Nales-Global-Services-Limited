@@ -66,27 +66,15 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-body {
-  font-family: var(--font-body);
-  background: var(--bg-white);
-  color: var(--text-body);
-  overflow-x: hidden;
-  line-height: 1.6;
-}
+body { font-family: var(--font-body); background: var(--bg-white); color: var(--text-body); overflow-x: hidden; line-height: 1.6; }
 
 body.nav-open { overflow: hidden; }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg-gray); }
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
-
 ::selection { background: var(--primary); color: white; }
 
 img { max-width: 100%; display: block; }
@@ -96,1870 +84,613 @@ ul { list-style: none; }
 input, textarea, select { font-family: inherit; }
 
 #scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  width: 0%;
+  position: fixed; top: 0; left: 0;
+  height: 3px; width: 0%;
   background: linear-gradient(90deg, var(--primary), var(--sky));
-  z-index: 99999;
-  transition: width 0.1s linear;
+  z-index: 99999; transition: width 0.1s linear;
   box-shadow: 0 0 8px var(--primary);
 }
 
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 40px;
-}
+.container { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
 
 .section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 20px;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 20px;
 }
+.section-label::before { content: ''; width: 28px; height: 2px; background: var(--primary); display: block; flex-shrink: 0; }
 
-.section-label::before {
-  content: '';
-  width: 28px; height: 2px;
-  background: var(--primary);
-  display: block;
-  flex-shrink: 0;
-}
-
-.section-heading {
-  font-family: var(--font-sans);
-  font-size: clamp(36px, 5vw, 60px);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-  color: var(--text-dark);
-}
-
+.section-heading { font-family: var(--font-sans); font-size: clamp(36px, 5vw, 60px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; color: var(--text-dark); }
 .section-heading .accent { color: var(--primary); }
-
-.section-subheading {
-  font-size: 17px;
-  color: var(--text-muted);
-  max-width: 560px;
-  line-height: 1.75;
-  margin-top: 16px;
-}
+.section-subheading { font-size: 17px; color: var(--text-muted); max-width: 560px; line-height: 1.75; margin-top: 16px; }
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 6px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: all var(--transition);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 28px; border-radius: 6px;
+  font-family: var(--font-sans); font-size: 14px; font-weight: 600;
+  letter-spacing: 0.01em; transition: all var(--transition);
+  cursor: pointer; position: relative; overflow: hidden; white-space: nowrap;
 }
-
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: white;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
+.btn::before { content: ''; position: absolute; inset: 0; background: white; opacity: 0; transition: opacity 0.3s; }
 .btn:hover::before { opacity: 0.08; }
+.btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 20px rgba(29,78,216,0.30); }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue); }
+.btn-secondary { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.4); }
+.btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.10); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
 
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 4px 20px rgba(29,78,216,0.30);
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-blue);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 1.5px solid rgba(255,255,255,0.4);
-}
-
-.btn-secondary:hover {
-  border-color: white;
-  background: rgba(255,255,255,0.10);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--navy);
-  border: 1.5px solid var(--border);
-}
-
-.btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-2px);
-}
-
-.btn-dark {
-  background: var(--navy);
-  color: white;
-}
-
-.btn-dark:hover {
-  background: var(--navy-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-.sr        { opacity: 0; transform: translateY(28px);   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
-.sr-left   { opacity: 0; transform: translateX(-28px);  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
-.sr-right  { opacity: 0; transform: translateX(28px);   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr        { opacity: 0; transform: translateY(28px);  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr-left   { opacity: 0; transform: translateX(-28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.sr-right  { opacity: 0; transform: translateX(28px);  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
 .sr.visible, .sr-left.visible, .sr-right.visible { opacity: 1; transform: none; }
-.sr.d1  { transition-delay: 0.10s; }
-.sr.d2  { transition-delay: 0.20s; }
-.sr.d3  { transition-delay: 0.30s; }
-.sr.d4  { transition-delay: 0.40s; }
-.sr.d5  { transition-delay: 0.50s; }
-.sr.d6  { transition-delay: 0.60s; }
+.sr.d1 { transition-delay: 0.10s; } .sr.d2 { transition-delay: 0.20s; }
+.sr.d3 { transition-delay: 0.30s; } .sr.d4 { transition-delay: 0.40s; }
+.sr.d5 { transition-delay: 0.50s; } .sr.d6 { transition-delay: 0.60s; }
 
-#navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 9000;
-  padding: 20px 0;
-  transition: all 0.4s var(--ease-out);
-}
-
-#navbar.scrolled {
-  padding: 12px 0;
-  background: rgba(10,22,40,0.97);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-}
-
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.logo-mark {
-  width: 44px; height: 44px;
-  background: transparent;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 3px;
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
-  flex-shrink: 0;
-}
-
-.logo-mark:hover {
-  transform: rotate(-5deg) scale(1.05);
-  box-shadow: var(--shadow-blue);
-}
-
-.logo-mark-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-}
-
-.logo-bar { width: 20px; height: 3px; background: white; border-radius: 2px; }
-.logo-bar.short { width: 12px; align-self: flex-start; }
-
-.logo-name {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 16px;
-  color: white;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.logo-sub {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.nav-link {
-  padding: 8px 14px;
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.72);
-  border-radius: 6px;
-  transition: all 0.25s;
-  white-space: nowrap;
-}
-
-.nav-link:hover   { color: white; background: rgba(255,255,255,0.07); }
-.nav-link.active  { color: var(--sky); }
-
+/* ── NAVBAR ── */
+#navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 9000; padding: 20px 0; transition: all 0.4s var(--ease-out); }
+#navbar.scrolled { padding: 12px 0; background: rgba(10,22,40,0.97); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.nav-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.logo-mark { width: 44px; height: 44px; background: transparent; border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s var(--ease-out); flex-shrink: 0; }
+.logo-mark:hover { transform: rotate(-5deg) scale(1.05); }
+.logo-name { font-family: var(--font-sans); font-weight: 700; font-size: 16px; color: white; line-height: 1.1; letter-spacing: -0.02em; }
+.logo-sub { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.10em; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-link { padding: 8px 14px; font-family: var(--font-sans); font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,0.72); border-radius: 6px; transition: all 0.25s; white-space: nowrap; }
+.nav-link:hover { color: white; background: rgba(255,255,255,0.07); }
+.nav-link.active { color: var(--sky); }
 .nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-
-.nav-phone {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: rgba(255,255,255,0.75);
-  transition: color 0.3s;
-}
-
+.nav-phone { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; color: rgba(255,255,255,0.75); transition: color 0.3s; }
 .nav-phone:hover { color: var(--sky); }
-
-.nav-phone-icon {
-  width: 28px; height: 28px;
-  background: var(--primary-dim);
-  border: 1px solid var(--border-blue);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-  cursor: pointer;
-  z-index: 9001;
-}
-
-.hamburger span {
-  width: 24px; height: 2px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s var(--ease-out);
-  display: block;
-}
-
+.nav-phone-icon { width: 28px; height: 28px; background: var(--primary-dim); border: 1px solid var(--border-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; z-index: 9001; }
+.hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s var(--ease-out); display: block; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-.mobile-nav {
-  position: fixed;
-  inset: 0;
-  background: rgba(10,22,40,0.99);
-  backdrop-filter: blur(24px);
-  z-index: 8999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s var(--ease-out);
-}
-
+.mobile-nav { position: fixed; inset: 0; background: rgba(10,22,40,0.99); backdrop-filter: blur(24px); z-index: 8999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; visibility: hidden; transition: all 0.4s var(--ease-out); }
 .mobile-nav.open { opacity: 1; visibility: visible; }
-
-.mobile-nav .nav-link {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  padding: 12px 24px;
-  color: rgba(255,255,255,0.80);
-}
-
+.mobile-nav .nav-link { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; padding: 12px 24px; color: rgba(255,255,255,0.80); }
 .mobile-nav .nav-link:hover { color: var(--sky); }
 
-#hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
+/* ── HERO ── */
+#hero { min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
-
 .hero-bg-img {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center 30%;
-  transform: scale(1.05);
-  animation: heroZoom 20s ease-out forwards;
+  background-size: cover; background-position: center 30%;
+  transform: scale(1.05); animation: heroZoom 20s ease-out forwards;
 }
-
 @keyframes heroZoom { to { transform: scale(1); } }
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, rgba(10,22,40,0.93) 40%, rgba(10,22,40,0.52) 100%),
-    linear-gradient(to bottom, rgba(10,22,40,0.30) 0%, transparent 40%, rgba(10,22,40,0.82) 100%);
-}
-
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(29,78,216,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(29,78,216,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.hero-noise {
-  position: absolute;
-  inset: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 200px;
-}
-
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,22,40,0.93) 40%, rgba(10,22,40,0.52) 100%), linear-gradient(to bottom, rgba(10,22,40,0.30) 0%, transparent 40%, rgba(10,22,40,0.82) 100%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(29,78,216,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(29,78,216,0.05) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-noise { position: absolute; inset: 0; opacity: 0.025; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 200px; }
 .hero-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-
-.hero-line {
-  position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.25), transparent);
-  height: 1px;
-  animation: scanLine 8s ease-in-out infinite;
-}
-
+.hero-line { position: absolute; background: linear-gradient(90deg, transparent, rgba(56,189,248,0.25), transparent); height: 1px; animation: scanLine 8s ease-in-out infinite; }
 .hero-line:nth-child(1) { top: 25%; width: 100%; animation-delay: 0s; }
 .hero-line:nth-child(2) { top: 55%; width: 80%; left: 10%; animation-delay: 3s; }
 .hero-line:nth-child(3) { top: 75%; width: 60%; left: 20%; animation-delay: 6s; }
-
-@keyframes scanLine {
-  0%, 100% { opacity: 0; transform: scaleX(0); }
-  25%,  75% { opacity: 1; transform: scaleX(1); }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 140px 0 100px;
-  width: 100%;
-}
-
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 16px 6px 8px;
-  background: rgba(29,78,216,0.14);
-  border: 1px solid rgba(29,78,216,0.35);
-  border-radius: 100px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: #93C5FD;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  animation: fadeUp 0.8s var(--ease-out) 0.3s both;
-}
-
-.hero-tag-dot {
-  width: 6px; height: 6px;
-  background: var(--sky);
-  border-radius: 50%;
-  animation: blink 2s ease infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
-}
-
-.hero-title {
-  font-family: var(--font-sans);
-  font-size: clamp(52px, 8vw, 108px);
-  font-weight: 900;
-  letter-spacing: -0.045em;
-  line-height: 0.95;
-  color: white;
-  margin-bottom: 28px;
-  animation: fadeUp 0.9s var(--ease-out) 0.5s both;
-}
-
-.hero-title .line   { display: block; }
-.hero-title .blue   { color: var(--sky); }
-
-.hero-subtitle {
-  font-size: clamp(16px, 2vw, 20px);
-  color: rgba(255,255,255,0.68);
-  max-width: 520px;
-  line-height: 1.7;
-  margin-bottom: 44px;
-  animation: fadeUp 0.8s var(--ease-out) 0.7s both;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  animation: fadeUp 0.8s var(--ease-out) 0.85s both;
-}
-
-.hero-btn-call {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 20px;
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(255,255,255,0.20);
-  border-radius: 6px;
-  color: white;
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 500;
-  transition: all var(--transition);
-}
-
-.hero-btn-call:hover {
-  background: rgba(255,255,255,0.14);
-  border-color: white;
-}
-
-.hero-stats {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(10,22,40,0.88);
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  z-index: 2;
-  animation: fadeUp 0.8s var(--ease-out) 1.1s both;
-}
-
-.hero-stats-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-
-.hero-stat {
-  padding: 24px 32px;
-  border-right: 1px solid rgba(255,255,255,0.06);
-  text-align: center;
-}
-
+@keyframes scanLine { 0%, 100% { opacity: 0; transform: scaleX(0); } 25%, 75% { opacity: 1; transform: scaleX(1); } }
+.hero-content { position: relative; z-index: 2; padding: 140px 0 100px; width: 100%; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px 6px 8px; background: rgba(29,78,216,0.14); border: 1px solid rgba(29,78,216,0.35); border-radius: 100px; font-family: var(--font-mono); font-size: 11px; color: #93C5FD; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 28px; animation: fadeUp 0.8s var(--ease-out) 0.3s both; }
+.hero-tag-dot { width: 6px; height: 6px; background: var(--sky); border-radius: 50%; animation: blink 2s ease infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.hero-title { font-family: var(--font-sans); font-size: clamp(52px, 8vw, 108px); font-weight: 900; letter-spacing: -0.045em; line-height: 0.95; color: white; margin-bottom: 28px; animation: fadeUp 0.9s var(--ease-out) 0.5s both; }
+.hero-title .line { display: block; }
+.hero-title .blue { color: var(--sky); }
+.hero-subtitle { font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.68); max-width: 520px; line-height: 1.7; margin-bottom: 44px; animation: fadeUp 0.8s var(--ease-out) 0.7s both; }
+.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.8s var(--ease-out) 0.85s both; }
+.hero-btn-call { display: flex; align-items: center; gap: 8px; padding: 14px 20px; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.20); border-radius: 6px; color: white; font-family: var(--font-mono); font-size: 14px; font-weight: 500; transition: all var(--transition); }
+.hero-btn-call:hover { background: rgba(255,255,255,0.14); border-color: white; }
+.hero-stats { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(10,22,40,0.88); backdrop-filter: blur(16px); border-top: 1px solid rgba(255,255,255,0.06); z-index: 2; animation: fadeUp 0.8s var(--ease-out) 1.1s both; }
+.hero-stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.hero-stat { padding: 24px 32px; border-right: 1px solid rgba(255,255,255,0.06); text-align: center; }
 .hero-stat:last-child { border-right: none; }
-
-.hero-stat-num {
-  font-family: var(--font-sans);
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--sky);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  display: block;
-}
-
-.hero-stat-label {
-  font-size: 12px;
-  color: rgba(255,255,255,0.50);
-  font-family: var(--font-mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 4px;
-}
-
-.scroll-indicator {
-  position: absolute;
-  bottom: 100px; right: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  z-index: 3;
-  animation: fadeUp 0.8s var(--ease-out) 1.3s both;
-}
-
-.scroll-indicator-text {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: rgba(255,255,255,0.40);
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  writing-mode: vertical-lr;
-}
-
-.scroll-indicator-line {
-  width: 1px; height: 56px;
-  background: linear-gradient(to bottom, rgba(56,189,248,0.80), transparent);
-  animation: scrollPulse 2s ease infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { transform: scaleY(1); opacity: 0.6; }
-  50%       { transform: scaleY(0.7); opacity: 1; }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-#about {
-  padding: var(--section-py) 0;
-  background: var(--bg-soft);
-  overflow: hidden;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-visual { position: relative; }
-
-.about-img-stack { position: relative; }
-
-.about-img-main {
-  width: 100%;
-  aspect-ratio: 4/5;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-}
-
-.about-img-main img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s var(--ease-out);
-}
-
-.about-img-main:hover img { transform: scale(1.04); }
-
-.about-img-main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 50%, rgba(10,22,40,0.60) 100%);
-  z-index: 1;
-}
-
-.about-img-accent {
-  position: absolute;
-  bottom: -24px; right: -24px;
-  width: 60%; aspect-ratio: 4/3;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 4px solid white;
-  box-shadow: var(--shadow-xl);
-}
-
-.about-img-accent img { width: 100%; height: 100%; object-fit: cover; }
-
-.about-experience-badge {
-  position: absolute;
-  top: 24px; left: -24px;
-  background: var(--primary);
-  color: white;
-  border-radius: 12px;
-  padding: 20px 24px;
-  box-shadow: var(--shadow-blue);
-  text-align: center;
-  min-width: 110px;
-}
-
-.about-exp-num {
-  font-family: var(--font-sans);
-  font-size: 42px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  display: block;
-}
-
-.about-exp-text {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  opacity: 0.9;
-  line-height: 1.3;
-  margin-top: 4px;
-}
-
-.about-intro {
-  font-size: 17px;
-  color: var(--text-body);
-  line-height: 1.8;
-  margin-bottom: 36px;
-}
-
-.about-intro strong { color: var(--text-dark); font-weight: 600; }
-
-.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
-
-.about-feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 20px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all var(--transition);
-}
-
-.about-feature:hover {
-  border-color: var(--border-blue);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
-}
-
-.about-feature-icon {
-  width: 40px; height: 40px;
-  background: var(--primary-dim);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 18px;
-  border: 1px solid rgba(29,78,216,0.15);
-}
-
-.about-feature-title {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 4px;
-  letter-spacing: -0.01em;
-}
-
-.about-feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-
-#services { padding: var(--section-py) 0; background: var(--bg-white); }
-
-.services-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 64px;
-  gap: 40px;
-}
-
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-.service-card {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px 32px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s var(--ease-out);
-  cursor: default;
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--sky));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s var(--ease-out);
-}
-
-.service-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(29,78,216,0.05) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.service-card:hover {
-  background: white;
-  border-color: rgba(29,78,216,0.20);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-8px);
-}
-
-.service-card:hover::before { transform: scaleX(1); }
-.service-card:hover::after  { opacity: 1; }
-
-.service-card-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.12em;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.service-icon {
-  width: 56px; height: 56px;
-  background: var(--navy);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  font-size: 24px;
-  transition: all 0.3s var(--ease-out);
-  position: relative;
-  z-index: 1;
-}
-
-.service-card:hover .service-icon {
-  background: var(--primary);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-blue);
-}
-
-.service-title {
-  font-family: var(--font-sans);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-dark);
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-  position: relative;
-  z-index: 1;
-}
-
-.service-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 1;
-}
-
-.service-items { display: flex; flex-direction: column; gap: 6px; margin-bottom: 28px; position: relative; z-index: 1; }
-
-.service-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-body); }
-
-.service-item::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--primary);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.service-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--primary);
-  transition: gap 0.3s;
-  position: relative;
-  z-index: 1;
-}
-
-.service-card:hover .service-cta { gap: 10px; }
-
-#why {
-  padding: var(--section-py) 0;
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-.why-bg-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(29,78,216,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(29,78,216,0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-.why-bg-gradient {
-  position: absolute;
-  bottom: -200px; right: -200px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(29,78,216,0.10) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
-.why-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
-.why-header .section-label          { justify-content: center; color: var(--sky); }
-.why-header .section-label::before  { background: var(--sky); }
-.why-header .section-heading        { color: white; }
-.why-header .section-subheading     { margin: 16px auto 0; color: rgba(255,255,255,0.55); }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.why-card {
-  padding: 36px 28px;
-  background: rgba(255,255,255,0.02);
-  text-align: center;
-  transition: background 0.3s;
-  position: relative;
-}
-
-.why-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%; right: 50%;
-  height: 2px;
-  background: var(--primary-light);
-  transition: all 0.4s var(--ease-out);
-}
-
-.why-card:hover { background: rgba(255,255,255,0.04); }
-.why-card:hover::before { left: 0; right: 0; }
-
-.why-icon {
-  width: 56px; height: 56px;
-  background: rgba(29,78,216,0.12);
-  border: 1px solid rgba(29,78,216,0.25);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin: 0 auto 20px;
-  transition: all 0.3s;
-}
-
-.why-card:hover .why-icon {
-  background: var(--primary);
-  border-color: var(--primary);
-}
-
-.why-title  { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: white; margin-bottom: 8px; letter-spacing: -0.01em; }
-.why-desc   { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
-
-#stats {
-  padding: 80px 0;
-  background: var(--bg-soft);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--border); }
-
-.stat-card {
-  padding: 40px 28px;
-  background: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: background var(--transition);
-}
-
-.stat-card::before {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 50%; right: 50%;
-  height: 3px;
-  background: var(--primary);
-  transition: all 0.4s var(--ease-out);
-}
-
-.stat-card:hover { background: var(--bg-soft); }
-.stat-card:hover::before { left: 0; right: 0; }
-
-.stat-num {
-  font-family: var(--font-sans);
-  font-size: 52px;
-  font-weight: 900;
-  color: var(--navy);
-  letter-spacing: -0.05em;
-  line-height: 1;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.stat-num .stat-accent { color: var(--primary); }
-
-.stat-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-}
+.hero-stat-num { font-family: var(--font-sans); font-size: 32px; font-weight: 800; color: var(--sky); letter-spacing: -0.04em; line-height: 1; display: block; }
+.hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.50); font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+.scroll-indicator { position: absolute; bottom: 100px; right: 48px; display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 3; animation: fadeUp 0.8s var(--ease-out) 1.3s both; }
+.scroll-indicator-text { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.40); letter-spacing: 0.20em; text-transform: uppercase; writing-mode: vertical-lr; }
+.scroll-indicator-line { width: 1px; height: 56px; background: linear-gradient(to bottom, rgba(56,189,248,0.80), transparent); animation: scrollPulse 2s ease infinite; }
+@keyframes scrollPulse { 0%, 100% { transform: scaleY(1); opacity: 0.6; } 50% { transform: scaleY(0.7); opacity: 1; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ============================================================
-   PROJECTS SECTION — VIDEO CARDS
+   VIDEO SHOWCASE — Horizontal Scroll Strip
+   Placed between Hero and About for maximum visual impact.
    ============================================================ */
-#projects { padding: var(--section-py) 0; background: var(--bg-white); }
-
-.projects-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 40px;
-  gap: 32px;
+#video-showcase {
+  background: var(--navy);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
 }
 
-.projects-filter { display: flex; gap: 8px; flex-wrap: wrap; }
+/* Top & bottom gradient fade-edges */
+#video-showcase::before,
+#video-showcase::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 3;
+  pointer-events: none;
+}
+#video-showcase::before { left: 0; background: linear-gradient(to right, var(--navy) 0%, transparent 100%); }
+#video-showcase::after  { right: 0; background: linear-gradient(to left, var(--navy) 0%, transparent 100%); }
 
-.filter-btn {
-  padding: 8px 18px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 100px;
+.showcase-header {
+  text-align: center;
+  padding: 72px 40px 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.showcase-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sky); margin-bottom: 16px;
+}
+.showcase-label::before { content: ''; width: 28px; height: 2px; background: var(--sky); display: block; }
+
+.showcase-title {
   font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.25s;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  background: var(--primary);
-  border-color: var(--primary);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
   color: white;
-  box-shadow: 0 4px 16px rgba(29,78,216,0.28);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+.showcase-title .accent { color: var(--sky); }
+
+.showcase-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.50);
+  margin-top: 12px;
+  font-family: var(--font-body);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 260px;
-  gap: 16px;
-}
-
-/* ── Project card base ── */
-.project-card {
+/* ── Scroll track ── */
+.showcase-track-wrap {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  cursor: pointer;
-  background: var(--navy);
+  padding-bottom: 56px;
 }
 
+.showcase-track {
+  display: flex;
+  gap: 20px;
+  padding: 0 80px 0 80px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;         /* Firefox */
+  cursor: grab;
+  user-select: none;
+}
+.showcase-track::-webkit-scrollbar { display: none; }
+.showcase-track.grabbing { cursor: grabbing; }
+
+/* ── Individual video panel ── */
+.showcase-panel {
+  flex: 0 0 auto;
+  width: clamp(300px, 38vw, 640px);
+  height: clamp(260px, 32vw, 520px);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  scroll-snap-align: start;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.40);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+  background: var(--navy-mid);
+}
+
+.showcase-panel:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(56,189,248,0.20);
+}
+
+.showcase-panel video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+.showcase-panel:hover video { transform: scale(1.04); }
+
+.showcase-panel-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.88) 0%, transparent 55%);
+  z-index: 1;
+  transition: background 0.4s;
+}
+.showcase-panel:hover .showcase-panel-overlay {
+  background: linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.20) 100%);
+}
+
+.showcase-panel-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 28px;
+  z-index: 2;
+}
+.showcase-panel-cat {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--sky); letter-spacing: 0.15em;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.showcase-panel-title {
+  font-family: var(--font-sans); font-size: 20px;
+  font-weight: 700; color: white;
+  letter-spacing: -0.02em; line-height: 1.2;
+}
+.showcase-panel-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.60);
+  margin-top: 6px;
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out), opacity 0.4s;
+  opacity: 0;
+}
+.showcase-panel:hover .showcase-panel-desc { max-height: 60px; opacity: 1; }
+
+/* Play / Pause indicator */
+.showcase-play-badge {
+  position: absolute; top: 16px; left: 16px;
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: white;
+  z-index: 3;
+  transition: all 0.3s var(--ease-out);
+}
+.showcase-panel:hover .showcase-play-badge {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ── Navigation arrows ── */
+.showcase-nav {
+  display: flex; justify-content: center; align-items: center;
+  gap: 16px; padding: 0 0 56px;
+  position: relative; z-index: 2;
+}
+
+.showcase-arrow {
+  width: 48px; height: 48px;
+  border: 1.5px solid rgba(255,255,255,0.20);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+}
+.showcase-arrow:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-blue);
+}
+
+.showcase-dots {
+  display: flex; gap: 8px; align-items: center;
+}
+.showcase-dot {
+  width: 6px; height: 6px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.showcase-dot.active {
+  background: var(--sky);
+  width: 24px;
+  border-radius: 3px;
+}
+
+/* ── ABOUT ── */
+#about { padding: var(--section-py) 0; background: var(--bg-soft); overflow: hidden; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-visual { position: relative; }
+.about-img-stack { position: relative; }
+.about-img-main { width: 100%; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; position: relative; }
+.about-img-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-out); }
+.about-img-main:hover img { transform: scale(1.04); }
+.about-img-main::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, rgba(10,22,40,0.60) 100%); z-index: 1; }
+.about-img-accent { position: absolute; bottom: -24px; right: -24px; width: 60%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; border: 4px solid white; box-shadow: var(--shadow-xl); }
+.about-img-accent img { width: 100%; height: 100%; object-fit: cover; }
+.about-experience-badge { position: absolute; top: 24px; left: -24px; background: var(--primary); color: white; border-radius: 12px; padding: 20px 24px; box-shadow: var(--shadow-blue); text-align: center; min-width: 110px; }
+.about-exp-num { font-family: var(--font-sans); font-size: 42px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; display: block; }
+.about-exp-text { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; line-height: 1.3; margin-top: 4px; }
+.about-intro { font-size: 17px; color: var(--text-body); line-height: 1.8; margin-bottom: 36px; }
+.about-intro strong { color: var(--text-dark); font-weight: 600; }
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+.about-feature { display: flex; align-items: flex-start; gap: 14px; padding: 20px; background: white; border: 1px solid var(--border); border-radius: 12px; transition: all var(--transition); }
+.about-feature:hover { border-color: var(--border-blue); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.about-feature-icon { width: 40px; height: 40px; background: var(--primary-dim); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; border: 1px solid rgba(29,78,216,0.15); }
+.about-feature-title { font-family: var(--font-sans); font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; letter-spacing: -0.01em; }
+.about-feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+/* ── SERVICES ── */
+#services { padding: var(--section-py) 0; background: var(--bg-white); }
+.services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 40px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 16px; padding: 36px 32px; position: relative; overflow: hidden; transition: all 0.4s var(--ease-out); cursor: default; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--sky)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease-out); }
+.service-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(29,78,216,0.05) 0%, transparent 70%); opacity: 0; transition: opacity 0.4s; }
+.service-card:hover { background: white; border-color: rgba(29,78,216,0.20); box-shadow: var(--shadow-lg); transform: translateY(-8px); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover::after { opacity: 1; }
+.service-card-num { font-family: var(--font-mono); font-size: 11px; color: var(--text-light); letter-spacing: 0.12em; margin-bottom: 20px; display: block; }
+.service-icon { width: 56px; height: 56px; background: var(--navy); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 24px; transition: all 0.3s var(--ease-out); position: relative; z-index: 1; }
+.service-card:hover .service-icon { background: var(--primary); transform: scale(1.05); box-shadow: var(--shadow-blue); }
+.service-title { font-family: var(--font-sans); font-size: 20px; font-weight: 700; color: var(--text-dark); letter-spacing: -0.02em; margin-bottom: 12px; position: relative; z-index: 1; }
+.service-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; position: relative; z-index: 1; }
+.service-items { display: flex; flex-direction: column; gap: 6px; margin-bottom: 28px; position: relative; z-index: 1; }
+.service-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-body); }
+.service-item::before { content: ''; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; flex-shrink: 0; }
+.service-cta { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-sans); font-size: 13px; font-weight: 700; color: var(--primary); transition: gap 0.3s; position: relative; z-index: 1; }
+.service-card:hover .service-cta { gap: 10px; }
+
+/* ── WHY ── */
+#why { padding: var(--section-py) 0; background: var(--navy); position: relative; overflow: hidden; }
+.why-bg-pattern { position: absolute; inset: 0; background-image: linear-gradient(rgba(29,78,216,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(29,78,216,0.06) 1px, transparent 1px); background-size: 48px 48px; }
+.why-bg-gradient { position: absolute; bottom: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(29,78,216,0.10) 0%, transparent 70%); border-radius: 50%; }
+.why-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+.why-header .section-label { justify-content: center; color: var(--sky); }
+.why-header .section-label::before { background: var(--sky); }
+.why-header .section-heading { color: white; }
+.why-header .section-subheading { margin: 16px auto 0; color: rgba(255,255,255,0.55); }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; }
+.why-card { padding: 36px 28px; background: rgba(255,255,255,0.02); text-align: center; transition: background 0.3s; position: relative; }
+.why-card::before { content: ''; position: absolute; top: 0; left: 50%; right: 50%; height: 2px; background: var(--primary-light); transition: all 0.4s var(--ease-out); }
+.why-card:hover { background: rgba(255,255,255,0.04); }
+.why-card:hover::before { left: 0; right: 0; }
+.why-icon { width: 56px; height: 56px; background: rgba(29,78,216,0.12); border: 1px solid rgba(29,78,216,0.25); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 20px; transition: all 0.3s; }
+.why-card:hover .why-icon { background: var(--primary); border-color: var(--primary); }
+.why-title { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: white; margin-bottom: 8px; letter-spacing: -0.01em; }
+.why-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+/* ── STATS ── */
+#stats { padding: 80px 0; background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--border); }
+.stat-card { padding: 40px 28px; background: white; text-align: center; position: relative; overflow: hidden; transition: background var(--transition); }
+.stat-card::before { content: ''; position: absolute; bottom: 0; left: 50%; right: 50%; height: 3px; background: var(--primary); transition: all 0.4s var(--ease-out); }
+.stat-card:hover { background: var(--bg-soft); }
+.stat-card:hover::before { left: 0; right: 0; }
+.stat-num { font-family: var(--font-sans); font-size: 52px; font-weight: 900; color: var(--navy); letter-spacing: -0.05em; line-height: 1; margin-bottom: 8px; display: block; }
+.stat-num .stat-accent { color: var(--primary); }
+.stat-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.10em; text-transform: uppercase; }
+
+/* ── PROJECTS VIDEO CARDS ── */
+#projects { padding: var(--section-py) 0; background: var(--bg-white); }
+.projects-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 32px; }
+.projects-filter { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-btn { padding: 8px 18px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 100px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.25s; }
+.filter-btn.active, .filter-btn:hover { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 4px 16px rgba(29,78,216,0.28); }
+.projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 260px; gap: 16px; }
+.project-card { position: relative; overflow: hidden; border-radius: 16px; cursor: pointer; background: var(--navy); }
 .project-card:nth-child(1) { grid-column: span 7; grid-row: span 2; }
 .project-card:nth-child(2) { grid-column: span 5; grid-row: span 1; }
 .project-card:nth-child(3) { grid-column: span 5; grid-row: span 1; }
 .project-card:nth-child(4) { grid-column: span 4; grid-row: span 1; }
 .project-card:nth-child(5) { grid-column: span 4; grid-row: span 1; }
 .project-card:nth-child(6) { grid-column: span 4; grid-row: span 1; }
-
-/* ── Video element — fills card exactly like the old img ── */
-.project-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s var(--ease-out);
-  display: block;
-}
-
-.project-card:hover .project-video {
-  transform: scale(1.06);
-}
-
-/* ── Play indicator shown when paused ── */
-.project-play-btn {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 52px; height: 52px;
-  background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(6px);
-  border: 2px solid rgba(255,255,255,0.55);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: white;
-  transition: all 0.3s var(--ease-out);
-  z-index: 3;
-  pointer-events: none;
-}
-
-/* Hide play btn when hovered (video is playing) */
-.project-card:hover .project-play-btn {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.75);
-}
-
-/* ── Overlay ── */
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10,22,40,0.90) 0%, transparent 60%);
-  transition: background 0.4s;
-  z-index: 1;
-}
-
-.project-card:hover .project-overlay {
-  background: linear-gradient(to top, rgba(10,22,40,0.96) 0%, rgba(10,22,40,0.20) 100%);
-}
-
-.project-info {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 24px;
-  z-index: 2;
-}
-
-.project-category {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--sky);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.project-title {
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.project-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  padding: 4px 10px;
-  background: rgba(16,185,129,0.15);
-  border: 1px solid rgba(16,185,129,0.30);
-  border-radius: 100px;
-  font-size: 11px;
-  color: #6EE7B7;
-  font-family: var(--font-mono);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: all 0.3s;
-}
-
+.project-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease-out); display: block; }
+.project-card:hover .project-video { transform: scale(1.06); }
+.project-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1); width: 52px; height: 52px; background: rgba(255,255,255,0.18); backdrop-filter: blur(6px); border: 2px solid rgba(255,255,255,0.55); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white; transition: all 0.3s var(--ease-out); z-index: 3; pointer-events: none; }
+.project-card:hover .project-play-btn { opacity: 0; transform: translate(-50%, -50%) scale(0.75); }
+.project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.90) 0%, transparent 60%); transition: background 0.4s; z-index: 1; }
+.project-card:hover .project-overlay { background: linear-gradient(to top, rgba(10,22,40,0.96) 0%, rgba(10,22,40,0.20) 100%); }
+.project-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; z-index: 2; }
+.project-category { font-family: var(--font-mono); font-size: 10px; color: var(--sky); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px; }
+.project-title { font-family: var(--font-sans); font-size: 18px; font-weight: 700; color: white; letter-spacing: -0.02em; line-height: 1.2; }
+.project-status { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 4px 10px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.30); border-radius: 100px; font-size: 11px; color: #6EE7B7; font-family: var(--font-mono); opacity: 0; transform: translateY(8px); transition: all 0.3s; }
 .project-card:hover .project-status { opacity: 1; transform: translateY(0); }
-
-.project-status::before {
-  content: '';
-  width: 5px; height: 5px;
-  background: var(--emerald);
-  border-radius: 50%;
-}
-
-.project-view {
-  position: absolute;
-  top: 16px; right: 16px;
-  width: 40px; height: 40px;
-  background: rgba(29,78,216,0.90);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 14px;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.3s var(--ease-out);
-  z-index: 3;
-}
-
+.project-status::before { content: ''; width: 5px; height: 5px; background: var(--emerald); border-radius: 50%; }
+.project-view { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; background: rgba(29,78,216,0.90); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; opacity: 0; transform: scale(0.8); transition: all 0.3s var(--ease-out); z-index: 3; }
 .project-card:hover .project-view { opacity: 1; transform: scale(1); }
+.project-mute-btn { position: absolute; bottom: 16px; right: 16px; width: 32px; height: 32px; background: rgba(10,22,40,0.70); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.20); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: white; opacity: 0; transform: scale(0.8); transition: all 0.3s var(--ease-out); z-index: 4; cursor: pointer; }
+.project-card:hover .project-mute-btn { opacity: 1; transform: scale(1); }
+.project-mute-btn:hover { background: var(--primary); border-color: var(--primary); }
 
-/* ── Mute toggle ── */
-.project-mute-btn {
-  position: absolute;
-  bottom: 16px; right: 16px;
-  width: 32px; height: 32px;
-  background: rgba(10,22,40,0.70);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  color: white;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.3s var(--ease-out);
-  z-index: 4;
-  cursor: pointer;
-}
+/* ── PROCESS ── */
+#process { padding: var(--section-py) 0; background: var(--bg-soft); overflow: hidden; }
+.process-header { max-width: 600px; margin-bottom: 80px; }
+.process-timeline { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; }
+.process-timeline::before { content: ''; position: absolute; top: 40px; left: calc(100% / 12); right: calc(100% / 12); height: 2px; background: repeating-linear-gradient(90deg, var(--primary) 0px, var(--primary) 8px, transparent 8px, transparent 20px); }
+.process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; }
+.process-step-num { width: 80px; height: 80px; border-radius: 50%; background: white; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-size: 22px; font-weight: 800; color: var(--text-dark); position: relative; z-index: 1; transition: all 0.4s var(--ease-out); box-shadow: var(--shadow-md); margin-bottom: 24px; }
+.process-step.active .process-step-num, .process-step:hover .process-step-num { background: var(--primary); border-color: var(--primary); color: white; box-shadow: var(--shadow-blue); transform: scale(1.10); }
+.process-step-title { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: var(--text-dark); letter-spacing: -0.01em; margin-bottom: 8px; }
+.process-step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
-.project-card:hover .project-mute-btn {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.project-mute-btn:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-}
+/* ── PARTNERS ── */
+#partners { padding: var(--section-py) 0; background: var(--bg-white); overflow: hidden; }
+.partners-header { max-width: 560px; margin-bottom: 64px; }
+.partners-intro { font-size: 16px; color: var(--text-muted); line-height: 1.75; margin-top: 16px; max-width: 600px; }
+.partners-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.partner-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 20px; padding: 36px 28px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.4s var(--ease-out); position: relative; overflow: hidden; }
+.partner-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--sky)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease-out); }
+.partner-card:hover { background: white; border-color: var(--border-blue); box-shadow: var(--shadow-lg); transform: translateY(-8px); }
+.partner-card:hover::before { transform: scaleX(1); }
+.partner-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-size: 28px; font-weight: 800; color: white; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(29,78,216,0.25); flex-shrink: 0; transition: transform 0.3s var(--ease-out), box-shadow 0.3s; letter-spacing: -0.03em; }
+.partner-card:hover .partner-avatar { transform: scale(1.06); box-shadow: 0 12px 32px rgba(29,78,216,0.35); }
+.partner-name { font-family: var(--font-sans); font-size: 17px; font-weight: 700; color: var(--text-dark); letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
+.partner-role-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; font-weight: 500; }
+.partner-phone-display { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary-dim); border: 1px solid rgba(29,78,216,0.15); border-radius: 8px; font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 20px; width: 100%; justify-content: center; }
+.partner-phone-icon { font-size: 14px; }
+.partner-actions { display: flex; gap: 10px; width: 100%; margin-top: auto; }
+.partner-btn-call { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 12px; background: var(--primary); color: white; border-radius: 8px; font-family: var(--font-sans); font-size: 12.5px; font-weight: 600; transition: all 0.3s var(--ease-out); cursor: pointer; border: none; text-decoration: none; box-shadow: 0 4px 14px rgba(29,78,216,0.28); }
+.partner-btn-call:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue); }
+.partner-btn-wa { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 12px; background: #25D366; color: white; border-radius: 8px; font-family: var(--font-sans); font-size: 12.5px; font-weight: 600; transition: all 0.3s var(--ease-out); cursor: pointer; border: none; text-decoration: none; box-shadow: 0 4px 14px rgba(37,211,102,0.25); }
+.partner-btn-wa:hover { background: #1ebe5b; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
 
 /* ============================================================
-   PROCESS SECTION
+   GALLERY — Diverse Engineering Showcase
    ============================================================ */
-#process { padding: var(--section-py) 0; background: var(--bg-soft); overflow: hidden; }
-
-.process-header { max-width: 600px; margin-bottom: 80px; }
-
-.process-timeline {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0;
-}
-
-.process-timeline::before {
-  content: '';
-  position: absolute;
-  top: 40px; left: calc(100% / 12);
-  right: calc(100% / 12);
-  height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--primary) 0px, var(--primary) 8px,
-    transparent 8px, transparent 20px
-  );
-}
-
-.process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; }
-
-.process-step-num {
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--text-dark);
-  position: relative;
-  z-index: 1;
-  transition: all 0.4s var(--ease-out);
-  box-shadow: var(--shadow-md);
-  margin-bottom: 24px;
-}
-
-.process-step.active .process-step-num,
-.process-step:hover  .process-step-num {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
-  box-shadow: var(--shadow-blue);
-  transform: scale(1.10);
-}
-
-.process-step-title { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: var(--text-dark); letter-spacing: -0.01em; margin-bottom: 8px; }
-.process-step-desc  { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-
-#partners { padding: var(--section-py) 0; background: var(--bg-white); overflow: hidden; }
-
-.partners-header { max-width: 560px; margin-bottom: 64px; }
-
-.partners-intro {
-  font-size: 16px;
-  color: var(--text-muted);
-  line-height: 1.75;
-  margin-top: 16px;
-  max-width: 600px;
-}
-
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.partner-card {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 36px 28px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.4s var(--ease-out);
-  position: relative;
-  overflow: hidden;
-}
-
-.partner-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--sky));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s var(--ease-out);
-}
-
-.partner-card:hover {
-  background: white;
-  border-color: var(--border-blue);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-8px);
-}
-
-.partner-card:hover::before { transform: scaleX(1); }
-
-.partner-avatar {
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 28px;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 24px rgba(29,78,216,0.25);
-  flex-shrink: 0;
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
-  letter-spacing: -0.03em;
-}
-
-.partner-card:hover .partner-avatar {
-  transform: scale(1.06);
-  box-shadow: 0 12px 32px rgba(29,78,216,0.35);
-}
-
-.partner-name {
-  font-family: var(--font-sans);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text-dark);
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-
-.partner-role-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-.partner-phone-display {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: var(--primary-dim);
-  border: 1px solid rgba(29,78,216,0.15);
-  border-radius: 8px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 20px;
-  width: 100%;
-  justify-content: center;
-}
-
-.partner-phone-icon { font-size: 14px; }
-
-.partner-actions {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  margin-top: auto;
-}
-
-.partner-btn-call {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 11px 12px;
-  background: var(--primary);
-  color: white;
-  border-radius: 8px;
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  font-weight: 600;
-  transition: all 0.3s var(--ease-out);
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(29,78,216,0.28);
-}
-
-.partner-btn-call:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-blue);
-}
-
-.partner-btn-wa {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 11px 12px;
-  background: #25D366;
-  color: white;
-  border-radius: 8px;
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  font-weight: 600;
-  transition: all 0.3s var(--ease-out);
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(37,211,102,0.25);
-}
-
-.partner-btn-wa:hover {
-  background: #1ebe5b;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37,211,102,0.35);
-}
-
 #gallery { padding: var(--section-py) 0; background: var(--bg-soft); }
+
+/* Gallery label row above grid */
+.gallery-category-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin: 24px 0 40px;
+}
+.gallery-cat-tag {
+  padding: 5px 14px;
+  background: var(--primary-dim);
+  border: 1px solid var(--border-blue);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 220px;
   gap: 12px;
-  margin-top: 56px;
 }
 
+/* Featured large items */
 .gallery-item { position: relative; overflow: hidden; border-radius: 12px; cursor: pointer; }
-.gallery-item:nth-child(1),
-.gallery-item:nth-child(6) { grid-column: span 2; grid-row: span 2; }
+.gallery-item.tall   { grid-row: span 2; }
+.gallery-item.wide   { grid-column: span 2; }
+.gallery-item.large  { grid-column: span 2; grid-row: span 2; }
 
 .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
 .gallery-item:hover .gallery-img { transform: scale(1.06); }
 
 .gallery-overlay {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background: rgba(10,22,40,0.60);
-  opacity: 0;
-  transition: opacity 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px;
 }
-
 .gallery-item:hover .gallery-overlay { opacity: 1; }
 
-.gallery-zoom {
-  width: 52px; height: 52px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  transform: scale(0.7);
-  transition: transform 0.3s var(--ease-out);
-}
-
+.gallery-zoom { width: 52px; height: 52px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; transform: scale(0.7); transition: transform 0.3s var(--ease-out); }
 .gallery-item:hover .gallery-zoom { transform: scale(1); }
 
+.gallery-caption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.80);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s 0.05s;
+}
+.gallery-item:hover .gallery-caption { opacity: 1; transform: translateY(0); }
+
+/* ── FAQ ── */
 #faq { padding: var(--section-py) 0; background: var(--bg-white); }
-
 .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.faq-content .section-subheading { margin-bottom: 40px; }
-
-.faq-contact-card {
-  background: var(--navy);
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.faq-contact-card::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(29,78,216,0.18), transparent 70%);
-}
-
+.faq-contact-card { background: var(--navy); border-radius: 20px; padding: 40px; position: relative; overflow: hidden; }
+.faq-contact-card::before { content: ''; position: absolute; top: -80px; right: -80px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(29,78,216,0.18), transparent 70%); }
 .faq-contact-title { font-family: var(--font-sans); font-size: 24px; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 12px; }
-.faq-contact-desc  { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 28px; }
-
-.faq-contact-info  { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
-
-.faq-contact-item  { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.75); }
-
-.faq-contact-icon {
-  width: 36px; height: 36px;
-  background: rgba(29,78,216,0.12);
-  border: 1px solid rgba(29,78,216,0.25);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
+.faq-contact-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 28px; }
+.faq-contact-info { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.faq-contact-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.75); }
+.faq-contact-icon { width: 36px; height: 36px; background: rgba(29,78,216,0.12); border: 1px solid rgba(29,78,216,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 .accordion { display: flex; flex-direction: column; gap: 12px; }
-
-.accordion-item {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.accordion-item.open {
-  border-color: rgba(29,78,216,0.28);
-  box-shadow: var(--shadow-sm);
-}
-
-.accordion-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 24px;
-  text-align: left;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
+.accordion-item { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }
+.accordion-item.open { border-color: rgba(29,78,216,0.28); box-shadow: var(--shadow-sm); }
+.accordion-btn { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; text-align: left; cursor: pointer; transition: background 0.3s; }
 .accordion-btn:hover { background: rgba(29,78,216,0.04); }
-
 .accordion-question { font-family: var(--font-sans); font-size: 15px; font-weight: 600; color: var(--text-dark); letter-spacing: -0.01em; }
-
-.accordion-icon {
-  width: 28px; height: 28px;
-  border: 1.5px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: var(--text-muted);
-  flex-shrink: 0;
-  transition: all 0.3s;
-}
-
-.accordion-item.open .accordion-icon {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
-  transform: rotate(45deg);
-}
-
+.accordion-icon { width: 28px; height: 28px; border: 1.5px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-muted); flex-shrink: 0; transition: all 0.3s; }
+.accordion-item.open .accordion-icon { background: var(--primary); border-color: var(--primary); color: white; transform: rotate(45deg); }
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out); }
 .accordion-item.open .accordion-body { max-height: 200px; }
 .accordion-answer { padding: 0 24px 20px; font-size: 14px; color: var(--text-muted); line-height: 1.75; }
 
+/* ── CONTACT ── */
 #contact { padding: var(--section-py) 0; background: var(--bg-soft); }
-
 .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
-
-.contact-info-title {
-  font-family: var(--font-sans);
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--text-dark);
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin-bottom: 16px;
-}
-
+.contact-info-title { font-family: var(--font-sans); font-size: 36px; font-weight: 800; color: var(--text-dark); letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 16px; }
 .contact-info-title span { color: var(--primary); }
-
 .contact-info-desc { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 40px; }
-
 .contact-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all var(--transition);
-}
-
-.contact-item:hover {
-  border-color: var(--border-blue);
-  box-shadow: var(--shadow-md);
-  transform: translateX(6px);
-}
-
-.contact-item-icon {
-  width: 44px; height: 44px;
-  background: var(--primary-dim);
-  border: 1px solid rgba(29,78,216,0.15);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
+.contact-item { display: flex; align-items: center; gap: 16px; padding: 18px 20px; background: white; border: 1px solid var(--border); border-radius: 12px; transition: all var(--transition); }
+.contact-item:hover { border-color: var(--border-blue); box-shadow: var(--shadow-md); transform: translateX(6px); }
+.contact-item-icon { width: 44px; height: 44px; background: var(--primary-dim); border: 1px solid rgba(29,78,216,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
 .contact-item-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-light); letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 2px; }
 .contact-item-value { font-family: var(--font-sans); font-size: 15px; font-weight: 600; color: var(--text-dark); }
-
 .contact-social { display: flex; gap: 12px; }
-
-.social-link {
-  width: 44px; height: 44px;
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: var(--text-muted);
-  transition: all 0.3s;
-}
-
-.social-link:hover {
-  border-color: var(--primary);
-  background: var(--primary);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-blue);
-}
-
-.contact-form-wrap {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 44px;
-  box-shadow: var(--shadow-lg);
-  position: relative;
-}
-
-.contact-form-wrap::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 40px; right: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--sky));
-  border-radius: 0 0 4px 4px;
-}
-
+.social-link { width: 44px; height: 44px; border: 1.5px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--text-muted); transition: all 0.3s; }
+.social-link:hover { border-color: var(--primary); background: var(--primary); color: white; transform: translateY(-3px); box-shadow: var(--shadow-blue); }
+.contact-form-wrap { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 48px 44px; box-shadow: var(--shadow-lg); position: relative; }
+.contact-form-wrap::before { content: ''; position: absolute; top: 0; left: 40px; right: 40px; height: 3px; background: linear-gradient(90deg, var(--primary), var(--sky)); border-radius: 0 0 4px 4px; }
 .form-title { font-family: var(--font-sans); font-size: 24px; font-weight: 800; color: var(--text-dark); letter-spacing: -0.03em; margin-bottom: 28px; }
-
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
 .form-group { margin-bottom: 16px; }
-
 .form-label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--text-muted); letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 8px; }
-
-.form-control {
-  width: 100%;
-  padding: 13px 16px;
-  background: var(--bg-soft);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--text-dark);
-  outline: none;
-  transition: all 0.3s;
-  appearance: none;
-}
-
-.form-control:focus {
-  border-color: var(--primary);
-  background: white;
-  box-shadow: 0 0 0 4px var(--primary-dim);
-}
-
+.form-control { width: 100%; padding: 13px 16px; background: var(--bg-soft); border: 1.5px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 14px; color: var(--text-dark); outline: none; transition: all 0.3s; appearance: none; }
+.form-control:focus { border-color: var(--primary); background: white; box-shadow: 0 0 0 4px var(--primary-dim); }
 .form-control::placeholder { color: var(--text-light); }
-
-.form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A6FA5' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-}
-
+.form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A6FA5' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 .form-textarea { resize: vertical; min-height: 120px; }
-
-.form-submit {
-  width: 100%;
-  padding: 16px;
-  background: var(--primary);
-  color: white;
-  border-radius: 8px;
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transition: all var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-  overflow: hidden;
-  border: none;
-}
-
-.form-submit:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-blue);
-}
-
+.form-submit { width: 100%; padding: 16px; background: var(--primary); color: white; border-radius: 8px; font-family: var(--font-sans); font-size: 15px; font-weight: 700; letter-spacing: 0.02em; cursor: pointer; transition: all var(--transition); display: flex; align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden; border: none; }
+.form-submit:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue); }
 .form-note { font-size: 12px; color: var(--text-light); text-align: center; margin-top: 12px; font-family: var(--font-mono); }
 
+/* ── FOOTER ── */
 footer { background: var(--navy); position: relative; overflow: hidden; }
-
 .footer-top-bar { background: var(--primary); padding: 16px 0; }
-
 .footer-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-
 .footer-top-text { font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: white; }
-
-.footer-top-cta {
-  padding: 10px 24px;
-  background: white;
-  color: var(--primary);
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 13px;
-  transition: all 0.3s;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
+.footer-top-cta { padding: 10px 24px; background: white; color: var(--primary); border-radius: 6px; font-weight: 700; font-size: 13px; transition: all 0.3s; white-space: nowrap; flex-shrink: 0; }
 .footer-top-cta:hover { background: var(--navy); color: white; }
-
 .footer-main { padding: 72px 0 48px; }
-
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
-
 .footer-brand-name { font-family: var(--font-sans); font-size: 20px; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 6px; }
-.footer-brand-sub  { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
+.footer-brand-sub { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
 .footer-brand-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 28px; }
-
 .footer-socials { display: flex; gap: 10px; }
-
-.footer-social {
-  width: 38px; height: 38px;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: rgba(255,255,255,0.50);
-  transition: all 0.3s;
-}
-
-.footer-social:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
-  transform: translateY(-3px);
-}
-
-.footer-col-title {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 700;
-  color: white;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.footer-col-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 24px; height: 2px;
-  background: var(--primary-light);
-}
-
+.footer-social { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: rgba(255,255,255,0.50); transition: all 0.3s; }
+.footer-social:hover { background: var(--primary); border-color: var(--primary); color: white; transform: translateY(-3px); }
+.footer-col-title { font-family: var(--font-sans); font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px; position: relative; padding-bottom: 12px; }
+.footer-col-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 24px; height: 2px; background: var(--primary-light); }
 .footer-links { display: flex; flex-direction: column; gap: 10px; }
-
 .footer-link { font-size: 14px; color: rgba(255,255,255,0.45); transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
-
 .footer-link:hover { color: var(--sky); }
 .footer-link::before { content: '→'; font-size: 11px; opacity: 0; transition: opacity 0.3s; }
 .footer-link:hover::before { opacity: 1; }
-
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 0; }
-
 .footer-bottom-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-
 .footer-copy { font-size: 13px; color: rgba(255,255,255,0.30); font-family: var(--font-mono); }
-
 .footer-copy span { color: var(--sky); }
-
 .footer-bottom-links { display: flex; gap: 24px; }
-
 .footer-bottom-link { font-size: 13px; color: rgba(255,255,255,0.30); transition: color 0.3s; font-family: var(--font-mono); }
-
 .footer-bottom-link:hover { color: var(--sky); }
 
-#whatsapp-fab {
-  position: fixed;
-  bottom: 88px; right: 24px;
-  width: 56px; height: 56px;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: white;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.40);
-  z-index: 9000;
-  transition: all 0.3s var(--ease-out);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-#whatsapp-fab:hover {
-  transform: scale(1.10) translateY(-4px);
-  box-shadow: 0 8px 32px rgba(37,211,102,0.50);
-}
-
-.whatsapp-tooltip {
-  position: absolute;
-  right: calc(100% + 12px);
-  background: rgba(10,22,40,0.95);
-  color: white;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 6px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(8px);
-  transition: all 0.3s;
-  font-family: var(--font-sans);
-}
-
+/* ── FLOATING ── */
+#whatsapp-fab { position: fixed; bottom: 88px; right: 24px; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.40); z-index: 9000; transition: all 0.3s var(--ease-out); cursor: pointer; text-decoration: none; }
+#whatsapp-fab:hover { transform: scale(1.10) translateY(-4px); box-shadow: 0 8px 32px rgba(37,211,102,0.50); }
+.whatsapp-tooltip { position: absolute; right: calc(100% + 12px); background: rgba(10,22,40,0.95); color: white; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 6px; white-space: nowrap; opacity: 0; transform: translateX(8px); transition: all 0.3s; font-family: var(--font-sans); }
 #whatsapp-fab:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
-
-#back-to-top {
-  position: fixed;
-  bottom: 24px; right: 24px;
-  width: 44px; height: 44px;
-  background: var(--navy);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: white;
-  cursor: pointer;
-  z-index: 9000;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(16px);
-  transition: all 0.4s var(--ease-out);
-}
-
-#back-to-top.show  { opacity: 1; visibility: visible; transform: translateY(0); }
-
-#back-to-top:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-blue);
-}
-
-#mobile-call {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 8998;
-  display: none;
-  background: var(--primary);
-  padding: 14px 24px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 700;
-  color: white;
-  text-align: center;
-  box-shadow: 0 -4px 20px rgba(29,78,216,0.30);
-}
+#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; background: var(--navy); border: 1px solid rgba(255,255,255,0.10); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: white; cursor: pointer; z-index: 9000; opacity: 0; visibility: hidden; transform: translateY(16px); transition: all 0.4s var(--ease-out); }
+#back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+#back-to-top:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-blue); }
+#mobile-call { position: fixed; bottom: 0; left: 0; right: 0; z-index: 8998; display: none; background: var(--primary); padding: 14px 24px; align-items: center; justify-content: center; gap: 10px; font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: white; text-align: center; box-shadow: 0 -4px 20px rgba(29,78,216,0.30); }
 
 .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
 
@@ -1968,75 +699,75 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
    ============================================================ */
 @media (max-width: 1100px) {
   :root { --container: 100%; }
-  .footer-grid  { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid     { grid-template-columns: repeat(2, 1fr); }
-  .stats-grid   { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .showcase-panel { width: clamp(260px, 44vw, 500px); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 900px) {
   .container { padding: 0 24px; }
-  .nav-links  { display: none; }
-  .nav-phone  { display: none; }
-  .hamburger  { display: flex; }
-  .nav-cta    { display: none; }
-
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .hamburger { display: flex; }
   #hero { min-height: 100svh; }
   .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
   .scroll-indicator { display: none; }
-
-  .about-grid           { grid-template-columns: 1fr; gap: 48px; }
-  .about-img-accent     { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-accent { display: none; }
   .about-experience-badge { left: 12px; }
-
-  .services-grid     { grid-template-columns: 1fr; }
-  .services-header   { flex-direction: column; align-items: flex-start; }
-
+  .services-grid { grid-template-columns: 1fr; }
+  .services-header { flex-direction: column; align-items: flex-start; }
   .process-timeline { grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .process-timeline::before { display: none; }
-
-  .projects-grid   { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+  .projects-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
   .project-card:nth-child(n) { grid-column: span 1; grid-row: span 1; }
   .project-card:nth-child(1) { grid-column: span 2; }
-
-  .contact-grid    { grid-template-columns: 1fr; }
-  .faq-grid        { grid-template-columns: 1fr; }
-  .gallery-grid    { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 2; grid-row: span 1; }
-  .stats-grid      { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.large { grid-column: span 2; grid-row: span 1; }
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-item.tall { grid-row: span 1; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-header { flex-direction: column; align-items: flex-start; }
-
   #mobile-call { display: flex; }
   body { padding-bottom: 56px; }
+  .showcase-panel { width: clamp(240px, 72vw, 420px); height: clamp(200px, 50vw, 360px); }
+  #video-showcase::before, #video-showcase::after { width: 40px; }
 }
 
 @media (max-width: 640px) {
   :root { --section-py: 72px; }
   .container { padding: 0 20px; }
-
   .hero-title { font-size: 52px; letter-spacing: -0.04em; }
   .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .hero-stat  { padding: 16px; }
+  .hero-stat { padding: 16px; }
   .hero-stat-num { font-size: 24px; }
   .hero-actions { gap: 10px; }
-
   .about-features { grid-template-columns: 1fr; }
-  .services-grid  { grid-template-columns: 1fr; }
-  .why-grid       { grid-template-columns: 1fr 1fr; }
-  .stats-grid     { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
   .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .projects-grid  { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
   .project-card:nth-child(n) { grid-column: span 1; }
-  .gallery-grid   { grid-template-columns: 1fr; }
-  .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 1; }
-  .form-row       { grid-template-columns: 1fr; }
-  .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item.large, .gallery-item.wide { grid-column: span 2; grid-row: span 1; }
+  .gallery-item.tall { grid-row: span 1; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
-  .footer-top-inner    { flex-direction: column; text-align: center; }
-  .contact-form-wrap   { padding: 28px 20px; }
-  .partners-grid  { grid-template-columns: 1fr; }
+  .footer-top-inner { flex-direction: column; text-align: center; }
+  .contact-form-wrap { padding: 28px 20px; }
+  .partners-grid { grid-template-columns: 1fr; }
   .partner-actions { flex-direction: column; }
+  .showcase-panel { width: calc(100vw - 60px); height: 56vw; min-height: 200px; }
+  #video-showcase::before, #video-showcase::after { width: 20px; }
+  .showcase-track { padding: 0 30px; gap: 14px; }
+  .showcase-header { padding: 48px 20px 32px; }
 }
 </style>
 </head>
@@ -2044,11 +775,10 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
 
 <div id="scroll-progress"></div>
 
-<!-- NAVIGATION -->
+<!-- ── NAVIGATION ── -->
 <header id="navbar">
   <div class="container">
     <div class="nav-inner">
-
       <a href="#hero" class="nav-logo">
         <div class="logo-mark">
           <img src="logo.png" alt="Nales Global Services Limited logo" style="width:100%;height:100%;object-fit:contain;">
@@ -2058,7 +788,6 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <div class="logo-sub">Services Limited</div>
         </div>
       </a>
-
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about"    class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
@@ -2067,20 +796,16 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         <a href="#faq"      class="nav-link">FAQ</a>
         <a href="#contact"  class="nav-link">Contact</a>
       </nav>
-
       <div class="nav-actions">
         <a href="tel:07017783828" class="nav-phone">
           <span class="nav-phone-icon">📞</span>
           0701 778 3828
         </a>
-        <a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">
-          Request Quote
-        </a>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Request Quote</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
         </button>
       </div>
-
     </div>
   </div>
 </header>
@@ -2099,10 +824,10 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
   </div>
 </div>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section id="hero" role="banner">
   <div class="hero-bg">
-    <div class="hero-bg-img" role="img" aria-label="Construction workers on an active building site in Nigeria"></div>
+    <div class="hero-bg-img" role="img" aria-label="Construction site in Nigeria"></div>
     <div class="hero-overlay"></div>
     <div class="hero-grid"></div>
     <div class="hero-noise"></div>
@@ -2112,7 +837,6 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
       <div class="hero-line"></div>
     </div>
   </div>
-
   <div class="hero-content">
     <div class="container">
       <div class="hero-tag">
@@ -2132,19 +856,12 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         integrity, and exceptional results.
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary" style="font-size:15px;padding:16px 32px;">
-          Request a Quote ↗
-        </a>
-        <a href="#services" class="btn btn-secondary" style="font-size:15px;padding:16px 32px;">
-          Explore Services
-        </a>
-        <a href="tel:07017783828" class="hero-btn-call">
-          📞 0701 778 3828
-        </a>
+        <a href="#contact" class="btn btn-primary" style="font-size:15px;padding:16px 32px;">Request a Quote ↗</a>
+        <a href="#video-showcase" class="btn btn-secondary" style="font-size:15px;padding:16px 32px;">Watch Our Work ▶</a>
+        <a href="tel:07017783828" class="hero-btn-call">📞 0701 778 3828</a>
       </div>
     </div>
   </div>
-
   <div class="hero-stats">
     <div class="container">
       <div class="hero-stats-inner">
@@ -2167,31 +884,143 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
       </div>
     </div>
   </div>
-
   <div class="scroll-indicator">
     <div class="scroll-indicator-text">Scroll</div>
     <div class="scroll-indicator-line"></div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ============================================================
+     VIDEO SHOWCASE — Horizontal Scroll
+     Place your video files in the vids/ folder.
+     The panels auto-play on hover (desktop) and on intersection (mobile).
+     ============================================================ -->
+<section id="video-showcase" aria-label="Services Video Showcase">
+
+  <div class="showcase-header sr">
+    <div class="showcase-label">Our Work in Motion</div>
+    <h2 class="showcase-title">
+      Engineering <span class="accent">Excellence</span><br>Across Every Sector
+    </h2>
+    <p class="showcase-sub">Drag or scroll horizontally — hover a panel to watch it come alive</p>
+  </div>
+
+  <div class="showcase-track-wrap">
+    <div class="showcase-track" id="showcaseTrack" role="list">
+
+      <!-- Panel 1 -->
+<div class="showcase-panel" role="listitem">
+  <img src="images/tink.jpg" 
+    alt="Warehouse and storage facility construction"
+    loading="lazy"
+    style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div class="showcase-panel-overlay"></div>
+  <div class="showcase-panel-info">
+    <div class="showcase-panel-cat">Industrial</div>
+    <div class="showcase-panel-title">Warehouse &amp; Storage Facility</div>
+    <div class="showcase-panel-desc">Large-span structural steel warehouse built for heavy industrial use.</div>
+  </div>
+</div>
+
+
+
+      <!-- Panel 2 -->
+<div class="showcase-panel" role="listitem">
+  <img src="images/vake.jpg" 
+    alt="Warehouse and storage facility construction"
+    loading="lazy"
+    style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div class="showcase-panel-overlay"></div>
+  <div class="showcase-panel-info">
+    <div class="showcase-panel-cat">Industrial</div>
+    <div class="showcase-panel-title">Warehouse &amp; Storage Facility</div>
+    <div class="showcase-panel-desc">Large-span structural steel warehouse built for heavy industrial use.</div>
+  </div>
+</div>
+
+
+
+      <!-- Panel 3 -->
+<div class="showcase-panel" role="listitem">
+  <img src="images/burj.jpg" 
+    alt="Warehouse and storage facility construction"
+    loading="lazy"
+    style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div class="showcase-panel-overlay"></div>
+  <div class="showcase-panel-info">
+    <div class="showcase-panel-cat">Industrial</div>
+    <div class="showcase-panel-title">Warehouse &amp; Storage Facility</div>
+    <div class="showcase-panel-desc">Large-span structural steel warehouse built for heavy industrial use.</div>
+  </div>
+</div>
+
+      <!-- Panel 4 -->
+<div class="showcase-panel" role="listitem">
+  <img src="images/bridge.jpg" 
+    alt="Warehouse and storage facility construction"
+    loading="lazy"
+    style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div class="showcase-panel-overlay"></div>
+  <div class="showcase-panel-info">
+    <div class="showcase-panel-cat">Industrial</div>
+    <div class="showcase-panel-title">Warehouse &amp; Storage Facility</div>
+    <div class="showcase-panel-desc">Large-span structural steel warehouse built for heavy industrial use.</div>
+  </div>
+</div>
+
+      <!-- Panel 5 -->
+<div class="showcase-panel" role="listitem">
+  <img src="images/hoohoo.jpg" 
+    alt="Warehouse and storage facility construction"
+    loading="lazy"
+    style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div class="showcase-panel-overlay"></div>
+  <div class="showcase-panel-info">
+    <div class="showcase-panel-cat">Industrial</div>
+    <div class="showcase-panel-title">Warehouse &amp; Storage Facility</div>
+    <div class="showcase-panel-desc">Large-span structural steel warehouse built for heavy industrial use.</div>
+  </div>
+</div>
+
+
+      <!-- Panel 6 -->
+<div class="showcase-panel" role="listitem">
+  <img src="images/yoo.jpg" 
+    alt="Warehouse and storage facility construction"
+    loading="lazy"
+    style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div class="showcase-panel-overlay"></div>
+  <div class="showcase-panel-info">
+    <div class="showcase-panel-cat">Industrial</div>
+    <div class="showcase-panel-title">Warehouse &amp; Storage Facility</div>
+    <div class="showcase-panel-desc">Large-span structural steel warehouse built for heavy industrial use.</div>
+  </div>
+</div>
+
+
+    </div><!-- /.showcase-track -->
+  </div><!-- /.showcase-track-wrap -->
+
+  <!-- Navigation -->
+  <div class="showcase-nav" aria-label="Showcase navigation">
+    <button class="showcase-arrow" id="showcasePrev" aria-label="Previous">←</button>
+    <div class="showcase-dots" id="showcaseDots" role="tablist"></div>
+    <button class="showcase-arrow" id="showcaseNext" aria-label="Next">→</button>
+  </div>
+
+</section>
+
+<!-- ── ABOUT ── -->
 <section id="about" aria-label="About Nales Global Services Limited">
   <div class="container">
     <div class="about-grid">
-
       <div class="about-visual sr-left">
         <div class="about-img-stack">
           <div class="about-img-main">
-            <img
-              src="images/fix.jpg"
-              alt="Nales Global Services Limited engineers reviewing blueprints on-site"
-              loading="lazy">
+            <img src="images/fix.jpg" alt="Nales Global Services engineers on site" loading="lazy">
           </div>
           <div class="about-img-accent">
-            <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop"
-              alt="Construction workers in safety gear at an active construction site"
-              loading="lazy">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop" alt="Construction workers in safety gear" loading="lazy">
           </div>
           <div class="about-experience-badge">
             <span class="about-exp-num">12+</span>
@@ -2199,7 +1028,6 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           </div>
         </div>
       </div>
-
       <div class="about-content sr-right">
         <div class="section-label">Who We Are</div>
         <h2 class="section-heading">
@@ -2210,21 +1038,18 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           Based in Ikosi Ketu, Lagos, we deliver construction, electrical,
           and engineering solutions that stand the test of time.
         </p>
-
         <p class="about-intro" style="margin-top:28px;">
           <strong>Nales Global Services Limited</strong> is a premier Nigerian engineering company
           built on a foundation of integrity, craftsmanship, and accountability.
-           We have delivered over
-          150 projects across residential, commercial, electrical, and industrial sectors —
+          We have delivered over 150 projects across residential, commercial,
+          electrical, and industrial sectors —
           <strong>never cutting corners, always exceeding expectations.</strong>
         </p>
-
         <p class="about-intro">
           We bring together skilled professionals, modern equipment, and proven methodologies
           to transform your vision into a durable, high-quality reality — delivered
           <span style="color:var(--primary);font-weight:600;">on schedule and within budget.</span>
         </p>
-
         <div class="about-features">
           <div class="about-feature sr d1">
             <div class="about-feature-icon">🏆</div>
@@ -2255,42 +1080,36 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
             </div>
           </div>
         </div>
-
         <div style="display:flex;gap:14px;flex-wrap:wrap;">
           <a href="#contact" class="btn btn-primary">Get a Free Quote →</a>
           <a href="#services" class="btn btn-outline">View Services</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- SERVICES -->
+<!-- ── SERVICES ── -->
 <section id="services" aria-label="Our Engineering Services">
   <div class="container">
     <div class="services-header">
       <div>
         <div class="section-label sr">What We Build</div>
-        <h2 class="section-heading sr delay-1">
-          Engineering Solutions<br>
-          <span class="accent">You Can Trust</span>
-        </h2>
+        <h2 class="section-heading sr d1">Engineering Solutions<br><span class="accent">You Can Trust</span></h2>
       </div>
       <p class="section-subheading sr" style="margin-top:0;">
         From residential foundations to petroleum industry support —
         we deliver comprehensive engineering solutions with precision and care.
       </p>
     </div>
-
     <div class="services-grid">
       <div class="service-card sr d1">
         <span class="service-card-num">01 — Construction</span>
         <div class="service-icon">🏗️</div>
         <h3 class="service-title">Residential Construction</h3>
-        <p class="service-desc">Dream homes built to the highest standards. We handle foundation to finishing with exceptional craftsmanship.</p>
+        <p class="service-desc">Dream homes built to the highest standards. Foundation to finishing with exceptional craftsmanship.</p>
         <div class="service-items">
           <div class="service-item">New Home Construction</div>
           <div class="service-item">Renovation &amp; Extensions</div>
@@ -2299,12 +1118,11 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
-
       <div class="service-card sr d2">
         <span class="service-card-num">02 — Commercial</span>
         <div class="service-icon">🏢</div>
         <h3 class="service-title">Commercial Buildings</h3>
-        <p class="service-desc">Office complexes, retail spaces, and commercial properties built for durability, function, and professional appeal.</p>
+        <p class="service-desc">Office complexes, retail spaces, and commercial properties built for durability and professional appeal.</p>
         <div class="service-items">
           <div class="service-item">Office Buildings</div>
           <div class="service-item">Retail &amp; Shopping Complexes</div>
@@ -2313,12 +1131,11 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
-
       <div class="service-card sr d3">
         <span class="service-card-num">03 — Electrical</span>
         <div class="service-icon">⚡</div>
         <h3 class="service-title">Electrical Installations</h3>
-        <p class="service-desc">Certified electrical engineering from wiring and distribution boards to industrial power systems — safe, compliant, and reliable.</p>
+        <p class="service-desc">Certified electrical engineering from wiring and distribution boards to industrial power systems.</p>
         <div class="service-items">
           <div class="service-item">Power Distribution</div>
           <div class="service-item">Wiring &amp; Cabling</div>
@@ -2327,7 +1144,6 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
-
       <div class="service-card sr d1">
         <span class="service-card-num">04 — Electronics</span>
         <div class="service-icon">🔌</div>
@@ -2341,12 +1157,11 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
-
       <div class="service-card sr d2">
         <span class="service-card-num">05 — Petroleum</span>
         <div class="service-icon">🛢️</div>
         <h3 class="service-title">Petroleum Industry Support</h3>
-        <p class="service-desc">Specialist engineering and construction support services for the Nigerian petroleum sector — precise, certified, and safe.</p>
+        <p class="service-desc">Specialist engineering and construction support for the Nigerian petroleum sector — precise, certified, safe.</p>
         <div class="service-items">
           <div class="service-item">Pipeline Infrastructure</div>
           <div class="service-item">Facility Construction</div>
@@ -2355,7 +1170,6 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         </div>
         <a href="#contact" class="service-cta">Request a Quote <span>→</span></a>
       </div>
-
       <div class="service-card sr d3">
         <span class="service-card-num">06 — Consultancy</span>
         <div class="service-icon">📐</div>
@@ -2373,118 +1187,53 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
   </div>
 </section>
 
-<!-- WHY CHOOSE US -->
+<!-- ── WHY CHOOSE US ── -->
 <section id="why" aria-label="Why Choose Nales Global Services Limited">
   <div class="why-bg-pattern"></div>
   <div class="why-bg-gradient"></div>
   <div class="container" style="position:relative;">
     <div class="why-header">
       <div class="section-label">Why Choose Us</div>
-      <h2 class="section-heading">
-        Our Promise to<br>
-        <span style="color:var(--sky)">Every Client</span>
-      </h2>
-      <p class="section-subheading">
-        We don't just build structures — we build lasting trust through
-        consistent quality, integrity, and results that speak for themselves.
-      </p>
+      <h2 class="section-heading">Our Promise to<br><span style="color:var(--sky)">Every Client</span></h2>
+      <p class="section-subheading">We build lasting trust through consistent quality, integrity, and results that speak for themselves.</p>
     </div>
-
     <div class="why-grid">
-      <div class="why-card sr d1">
-        <div class="why-icon">🏆</div>
-        <div class="why-title">Quality Workmanship</div>
-        <div class="why-desc">Every project delivered to the highest standard of craftsmanship. No shortcuts, no compromises.</div>
-      </div>
-      <div class="why-card sr d2">
-        <div class="why-icon">📅</div>
-        <div class="why-title">On-Time Delivery</div>
-        <div class="why-desc">98% on-time completion rate. We respect your timeline as much as we respect your project.</div>
-      </div>
-      <div class="why-card sr d3">
-        <div class="why-icon">👷</div>
-        <div class="why-title">Experienced Team</div>
-        <div class="why-desc">Certified engineers and seasoned professionals with over a decade of field expertise.</div>
-      </div>
-      <div class="why-card sr d4">
-        <div class="why-icon">🚜</div>
-        <div class="why-title">Modern Equipment</div>
-        <div class="why-desc">State-of-the-art machinery and tools for precision, efficiency, and safety.</div>
-      </div>
-      <div class="why-card sr d1">
-        <div class="why-icon">🛡️</div>
-        <div class="why-title">Safety Standards</div>
-        <div class="why-desc">Comprehensive safety protocols across every site, every day. Zero compromise on worker and client safety.</div>
-      </div>
-      <div class="why-card sr d2">
-        <div class="why-icon">💬</div>
-        <div class="why-title">Clear Communication</div>
-        <div class="why-desc">Regular updates, honest reporting, and open dialogue throughout the entire project lifecycle.</div>
-      </div>
-      <div class="why-card sr d3">
-        <div class="why-icon">🔧</div>
-        <div class="why-title">Reliable Support</div>
-        <div class="why-desc">Post-delivery maintenance and support available 24/7 for all our clients.</div>
-      </div>
-      <div class="why-card sr d4">
-        <div class="why-icon">✅</div>
-        <div class="why-title">No Shortcuts</div>
-        <div class="why-desc">We build for the long term. Our reputation depends on the durability of every structure we create.</div>
-      </div>
+      <div class="why-card sr d1"><div class="why-icon">🏆</div><div class="why-title">Quality Workmanship</div><div class="why-desc">Every project delivered to the highest standard. No shortcuts, no compromises.</div></div>
+      <div class="why-card sr d2"><div class="why-icon">📅</div><div class="why-title">On-Time Delivery</div><div class="why-desc">98% on-time completion. We respect your timeline as much as your project.</div></div>
+      <div class="why-card sr d3"><div class="why-icon">👷</div><div class="why-title">Experienced Team</div><div class="why-desc">Certified engineers with over a decade of field expertise.</div></div>
+      <div class="why-card sr d4"><div class="why-icon">🚜</div><div class="why-title">Modern Equipment</div><div class="why-desc">State-of-the-art machinery for precision, efficiency, and safety.</div></div>
+      <div class="why-card sr d1"><div class="why-icon">🛡️</div><div class="why-title">Safety Standards</div><div class="why-desc">Comprehensive safety protocols on every site, every day.</div></div>
+      <div class="why-card sr d2"><div class="why-icon">💬</div><div class="why-title">Clear Communication</div><div class="why-desc">Regular updates and honest reporting throughout the project lifecycle.</div></div>
+      <div class="why-card sr d3"><div class="why-icon">🔧</div><div class="why-title">Reliable Support</div><div class="why-desc">Post-delivery maintenance and 24/7 emergency support for all clients.</div></div>
+      <div class="why-card sr d4"><div class="why-icon">✅</div><div class="why-title">No Shortcuts</div><div class="why-desc">We build for the long term. Our reputation depends on durability.</div></div>
     </div>
   </div>
 </section>
 
-<!-- STATISTICS -->
+<!-- ── STATISTICS ── -->
 <section id="stats" aria-label="Company Statistics">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-card sr d1">
-        <span class="stat-num" data-target="150" data-suffix="+">0<span class="stat-accent">+</span></span>
-        <div class="stat-label">Projects Completed</div>
-      </div>
-      <div class="stat-card sr d2">
-        <span class="stat-num" data-target="120" data-suffix="+">0<span class="stat-accent">+</span></span>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-      <div class="stat-card sr d3">
-        <span class="stat-num" data-target="12" data-suffix="+">0<span class="stat-accent">+</span></span>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-card sr d4">
-        <span class="stat-num" data-target="98" data-suffix="%">0<span class="stat-accent">%</span></span>
-        <div class="stat-label">On-Time Delivery</div>
-      </div>
-      <div class="stat-card sr d5">
-        <span class="stat-num" data-target="24" data-suffix="/7">0<span class="stat-accent">/7</span></span>
-        <div class="stat-label">Support Available</div>
-      </div>
+      <div class="stat-card sr d1"><span class="stat-num" data-target="150" data-suffix="+">0<span class="stat-accent">+</span></span><div class="stat-label">Projects Completed</div></div>
+      <div class="stat-card sr d2"><span class="stat-num" data-target="120" data-suffix="+">0<span class="stat-accent">+</span></span><div class="stat-label">Happy Clients</div></div>
+      <div class="stat-card sr d3"><span class="stat-num" data-target="12"  data-suffix="+">0<span class="stat-accent">+</span></span><div class="stat-label">Years Experience</div></div>
+      <div class="stat-card sr d4"><span class="stat-num" data-target="98"  data-suffix="%">0<span class="stat-accent">%</span></span><div class="stat-label">On-Time Delivery</div></div>
+      <div class="stat-card sr d5"><span class="stat-num" data-target="24"  data-suffix="/7">0<span class="stat-accent">/7</span></span><div class="stat-label">Support Available</div></div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================
-     PROJECTS SECTION — VIDEO CARDS
-     Replace src="videos/your-video.mp4" with your actual video file paths.
-     Each card has:
-       • <video> that plays on hover (muted, loop)
-       • A play icon shown at rest
-       • A mute/unmute toggle button
-       • The same overlay, info, category, title, status as before
-     ============================================================ -->
+<!-- ── PROJECTS — Video Cards ── -->
 <section id="projects" aria-label="Featured Construction Projects">
   <div class="container">
     <div class="projects-header">
       <div>
         <div class="section-label sr">Our Portfolio</div>
-        <h2 class="section-heading sr delay-1">
-          Projects That<br>
-          <span class="accent">Define Us</span>
-        </h2>
+        <h2 class="section-heading sr d1">Projects That<br><span class="accent">Define Us</span></h2>
       </div>
-      <div class="projects-filter sr" aria-label="Filter projects by category">
+      <div class="projects-filter sr" aria-label="Filter projects">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="construction">Construction</button>
         <button class="filter-btn" data-filter="electrical">Electrical</button>
@@ -2492,14 +1241,9 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
         <button class="filter-btn" data-filter="residential">Residential</button>
       </div>
     </div>
-
     <div class="projects-grid">
-
-      <!-- Card 1 — Commercial (spans 7 cols × 2 rows) -->
       <div class="project-card" data-category="commercial">
-        <video class="project-video" src="vids/station.mp4"
-          muted loop playsinline preload="metadata"
-          aria-label="Filling station construction project video"></video>
+        <video class="project-video" src="vids/station.mp4" muted loop playsinline preload="metadata" aria-label="Filling station project"></video>
         <div class="project-overlay"></div>
         <div class="project-play-btn" aria-hidden="true">▶</div>
         <div class="project-view" aria-hidden="true">↗</div>
@@ -2510,12 +1254,8 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <div class="project-status">Completed 2023</div>
         </div>
       </div>
-
-      <!-- Card 2 — Electrical -->
       <div class="project-card" data-category="electrical">
-        <video class="project-video" src="vids/id power.mp4"
-          muted loop playsinline preload="metadata"
-          aria-label="Industrial power distribution project video"></video>
+        <video class="project-video" src="vids/id power.mp4" muted loop playsinline preload="metadata" aria-label="Industrial power distribution"></video>
         <div class="project-overlay"></div>
         <div class="project-play-btn" aria-hidden="true">▶</div>
         <div class="project-view" aria-hidden="true">↗</div>
@@ -2526,12 +1266,8 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <div class="project-status">Completed 2023</div>
         </div>
       </div>
-
-      <!-- Card 3 — Residential -->
       <div class="project-card" data-category="residential">
-        <video class="project-video" src="vids/estate.mp4"
-          muted loop playsinline preload="metadata"
-          aria-label="Premium estate development project video"></video>
+        <video class="project-video" src="vids/estate.mp4" muted loop playsinline preload="metadata" aria-label="Premium estate development"></video>
         <div class="project-overlay"></div>
         <div class="project-play-btn" aria-hidden="true">▶</div>
         <div class="project-view" aria-hidden="true">↗</div>
@@ -2542,12 +1278,8 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <div class="project-status">Completed 2022</div>
         </div>
       </div>
-
-      <!-- Card 4 — Construction -->
       <div class="project-card" data-category="construction">
-        <video class="project-video" src="vids/Store.mp4"
-          muted loop playsinline preload="metadata"
-          aria-label="Warehouse and storage facility project video"></video>
+        <video class="project-video" src="vids/Store.mp4" muted loop playsinline preload="metadata" aria-label="Warehouse facility"></video>
         <div class="project-overlay"></div>
         <div class="project-play-btn" aria-hidden="true">▶</div>
         <div class="project-view" aria-hidden="true">↗</div>
@@ -2558,12 +1290,8 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <div class="project-status">Completed 2023</div>
         </div>
       </div>
-
-      <!-- Card 5 — Electrical -->
       <div class="project-card" data-category="electrical">
-        <video class="project-video" src="vids/p install casing.mp4"
-          muted loop playsinline preload="metadata"
-          aria-label="Power installation project video"></video>
+        <video class="project-video" src="vids/p install casing.mp4" muted loop playsinline preload="metadata" aria-label="Power installation"></video>
         <div class="project-overlay"></div>
         <div class="project-play-btn" aria-hidden="true">▶</div>
         <div class="project-view" aria-hidden="true">↗</div>
@@ -2574,12 +1302,8 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <div class="project-status">Completed 2024</div>
         </div>
       </div>
-
-      <!-- Card 6 — Commercial -->
       <div class="project-card" data-category="commercial">
-        <video class="project-video" src="vids/internal.mp4"
-          muted loop playsinline preload="metadata"
-          aria-label="Internal installations project video"></video>
+        <video class="project-video" src="vids/internal.mp4" muted loop playsinline preload="metadata" aria-label="Internal installations"></video>
         <div class="project-overlay"></div>
         <div class="project-play-btn" aria-hidden="true">▶</div>
         <div class="project-view" aria-hidden="true">↗</div>
@@ -2590,310 +1314,364 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <div class="project-status">In Progress 2024</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ── PROCESS ── -->
 <section id="process" aria-label="Our Engineering Process">
   <div class="container">
     <div class="process-header">
       <div class="section-label sr">How We Work</div>
-      <h2 class="section-heading sr delay-1">
-        Our Engineering<br>
-        <span class="accent">Process</span>
-      </h2>
-      <p class="section-subheading sr delay-2">
-        A structured, transparent approach that ensures every project is
-        delivered with precision, on time, and to the highest standard.
-      </p>
+      <h2 class="section-heading sr d1">Our Engineering<br><span class="accent">Process</span></h2>
+      <p class="section-subheading sr d2">A structured, transparent approach that ensures every project is delivered with precision, on time, and to the highest standard.</p>
     </div>
-
     <div class="process-timeline">
-      <div class="process-step sr d1">
-        <div class="process-step-num"><span class="process-step-icon">💬</span></div>
-        <div class="process-step-title">Consultation</div>
-        <div class="process-step-desc">Understanding your vision, goals, and project requirements in detail.</div>
-      </div>
-      <div class="process-step sr d2">
-        <div class="process-step-num"><span class="process-step-icon">📋</span></div>
-        <div class="process-step-title">Planning</div>
-        <div class="process-step-desc">Detailed project plan, timeline, and cost estimation prepared and reviewed.</div>
-      </div>
-      <div class="process-step sr d3">
-        <div class="process-step-num"><span class="process-step-icon">⚙️</span></div>
-        <div class="process-step-title">Engineering</div>
-        <div class="process-step-desc">Technical design, structural analysis, and engineering drawings finalised.</div>
-      </div>
-      <div class="process-step sr d4">
-        <div class="process-step-num"><span class="process-step-icon">🏗️</span></div>
-        <div class="process-step-title">Construction</div>
-        <div class="process-step-desc">Skilled teams execute with precision, regular reporting keeps you informed.</div>
-      </div>
-      <div class="process-step sr d5">
-        <div class="process-step-num"><span class="process-step-icon">🔍</span></div>
-        <div class="process-step-title">Inspection</div>
-        <div class="process-step-desc">Rigorous quality control and safety checks at every completion milestone.</div>
-      </div>
-      <div class="process-step sr d6">
-        <div class="process-step-num"><span class="process-step-icon">🎯</span></div>
-        <div class="process-step-title">Delivery</div>
-        <div class="process-step-desc">Handover with full documentation, walkthrough, and ongoing support.</div>
-      </div>
+      <div class="process-step sr d1"><div class="process-step-num">💬</div><div class="process-step-title">Consultation</div><div class="process-step-desc">Understanding your vision, goals, and requirements in detail.</div></div>
+      <div class="process-step sr d2"><div class="process-step-num">📋</div><div class="process-step-title">Planning</div><div class="process-step-desc">Detailed project plan, timeline, and cost estimation reviewed.</div></div>
+      <div class="process-step sr d3"><div class="process-step-num">⚙️</div><div class="process-step-title">Engineering</div><div class="process-step-desc">Technical design, structural analysis, and drawings finalised.</div></div>
+      <div class="process-step sr d4"><div class="process-step-num">🏗️</div><div class="process-step-title">Construction</div><div class="process-step-desc">Skilled teams execute with precision, regular reporting keeps you informed.</div></div>
+      <div class="process-step sr d5"><div class="process-step-num">🔍</div><div class="process-step-title">Inspection</div><div class="process-step-desc">Rigorous quality control and safety checks at every milestone.</div></div>
+      <div class="process-step sr d6"><div class="process-step-num">🎯</div><div class="process-step-title">Delivery</div><div class="process-step-desc">Handover with full documentation, walkthrough, and ongoing support.</div></div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PARTNERS -->
+<!-- ── PARTNERS ── -->
 <section id="partners" aria-label="Our Partners">
   <div class="container">
-
     <div class="partners-header">
       <div class="section-label sr">Trusted Network</div>
-      <h2 class="section-heading sr delay-1">
-        Our <span class="accent">Partners</span>
-      </h2>
-      <p class="partners-intro sr delay-2">
+      <h2 class="section-heading sr d1">Our <span class="accent">Partners</span></h2>
+      <p class="partners-intro sr d2">
         We work alongside a network of trusted and experienced partners
-        committed to the same standards of excellence, integrity, and
-        professional delivery that define Nales Global Services Limited.
+        committed to the same standards of excellence, integrity, and professional delivery
+        that define Nales Global Services Limited.
       </p>
     </div>
-
     <div class="partners-grid">
-
       <div class="partner-card sr d1">
-        <div class="partner-avatar" aria-hidden="true">AA</div>
+        <div class="partner-avatar">AA</div>
         <div class="partner-name">Awe Ayodele Michael</div>
         <div class="partner-role-label">Business Partner</div>
-        <div class="partner-phone-display">
-          <span class="partner-phone-icon">📞</span>
-          0803 061 5862
-        </div>
+        <div class="partner-phone-display"><span class="partner-phone-icon">📞</span>0803 061 5862</div>
         <div class="partner-actions">
-          <a href="tel:08030615862" class="partner-btn-call" aria-label="Call Awe Ayodele Michael">
-            📞 Call
-          </a>
-          <a href="https://wa.me/2348030615862" target="_blank" rel="noopener noreferrer"
-             class="partner-btn-wa" aria-label="WhatsApp Awe Ayodele Michael">
-            💬 WhatsApp
-          </a>
+          <a href="tel:08030615862" class="partner-btn-call">📞 Call</a>
+          <a href="https://wa.me/2348030615862" target="_blank" rel="noopener noreferrer" class="partner-btn-wa">💬 WhatsApp</a>
         </div>
       </div>
-
       <div class="partner-card sr d2">
-        <div class="partner-avatar" aria-hidden="true">AO</div>
+        <div class="partner-avatar">AO</div>
         <div class="partner-name">Awe Oluwaseyi Stella</div>
         <div class="partner-role-label">Business Partner</div>
-        <div class="partner-phone-display">
-          <span class="partner-phone-icon">📞</span>
-          0803 831 0300
-        </div>
+        <div class="partner-phone-display"><span class="partner-phone-icon">📞</span>0803 831 0300</div>
         <div class="partner-actions">
-          <a href="tel:08038310300" class="partner-btn-call" aria-label="Call Awe Oluwaseyi Stella">
-            📞 Call
-          </a>
-          <a href="https://wa.me/2348038310300" target="_blank" rel="noopener noreferrer"
-             class="partner-btn-wa" aria-label="WhatsApp Awe Oluwaseyi Stella">
-            💬 WhatsApp
-          </a>
+          <a href="tel:08038310300" class="partner-btn-call">📞 Call</a>
+          <a href="https://wa.me/2348038310300" target="_blank" rel="noopener noreferrer" class="partner-btn-wa">💬 WhatsApp</a>
         </div>
       </div>
-
       <div class="partner-card sr d3">
-        <div class="partner-avatar" aria-hidden="true">AM</div>
+        <div class="partner-avatar">AM</div>
         <div class="partner-name">Awe Adeyinka Murphy</div>
         <div class="partner-role-label">Business Partner</div>
-        <div class="partner-phone-display">
-          <span class="partner-phone-icon">📞</span>
-          0707 231 1397
-        </div>
+        <div class="partner-phone-display"><span class="partner-phone-icon">📞</span>0707 231 1397</div>
         <div class="partner-actions">
-          <a href="tel:07072311397" class="partner-btn-call" aria-label="Call Awe Adeyinka Murphy">
-            📞 Call
-          </a>
-          <a href="https://wa.me/2347072311397" target="_blank" rel="noopener noreferrer"
-             class="partner-btn-wa" aria-label="WhatsApp Awe Adeyinka Murphy">
-            💬 WhatsApp
-          </a>
+          <a href="tel:07072311397" class="partner-btn-call">📞 Call</a>
+          <a href="https://wa.me/2347072311397" target="_blank" rel="noopener noreferrer" class="partner-btn-wa">💬 WhatsApp</a>
         </div>
       </div>
-
       <div class="partner-card sr d4">
-        <div class="partner-avatar" aria-hidden="true">AI</div>
+        <div class="partner-avatar">AI</div>
         <div class="partner-name">Ayeyemi Israel Ayobami</div>
         <div class="partner-role-label">Business Partner</div>
-        <div class="partner-phone-display">
-          <span class="partner-phone-icon">📞</span>
-          0814 492 8328
-        </div>
+        <div class="partner-phone-display"><span class="partner-phone-icon">📞</span>0814 492 8328</div>
         <div class="partner-actions">
-          <a href="tel:08144928328" class="partner-btn-call" aria-label="Call Ayeyemi Israel Ayobami">
-            📞 Call
-          </a>
-          <a href="https://wa.me/2348144928328" target="_blank" rel="noopener noreferrer"
-             class="partner-btn-wa" aria-label="WhatsApp Ayeyemi Israel Ayobami">
-            💬 WhatsApp
-          </a>
+          <a href="tel:08144928328" class="partner-btn-call">📞 Call</a>
+          <a href="https://wa.me/2348144928328" target="_blank" rel="noopener noreferrer" class="partner-btn-wa">💬 WhatsApp</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- ============================================================
+     GALLERY — Diverse Engineering Image Collection
+     Using high-quality Unsplash images covering all requested
+     engineering categories. Replace any src="" with your own
+     local images when available.
+     ============================================================ -->
 <section id="gallery" aria-label="Project Gallery">
   <div class="container">
     <div class="section-label sr">Gallery</div>
-    <h2 class="section-heading sr delay-1">
-      Our Work<br>
-      <span class="accent">In Pictures</span>
-    </h2>
-    <p class="section-subheading sr delay-2">
-      A visual showcase of completed projects, skilled craftsmanship,
-      and engineering excellence across Lagos and Nigeria.
+    <h2 class="section-heading sr d1">Our Work<br><span class="accent">In Pictures</span></h2>
+    <p class="section-subheading sr d2">
+      A diverse showcase of engineering excellence — from electrical installations
+      and road construction to bridges, civil works, and commercial developments
+      across Lagos and Nigeria.
     </p>
 
+    <!-- Category tags -->
+    <div class="gallery-category-row sr d3">
+      <span class="gallery-cat-tag">Electrical</span>
+      <span class="gallery-cat-tag">Bridge Works</span>
+      <span class="gallery-cat-tag">Road Construction</span>
+      <span class="gallery-cat-tag">Residential</span>
+      <span class="gallery-cat-tag">Commercial</span>
+      <span class="gallery-cat-tag">Drainage</span>
+      <span class="gallery-cat-tag">Civil Engineering</span>
+      <span class="gallery-cat-tag">Heavy Equipment</span>
+      <span class="gallery-cat-tag">Concrete Works</span>
+      <span class="gallery-cat-tag">Steel Structures</span>
+      <span class="gallery-cat-tag">Water Infrastructure</span>
+    </div>
+
     <div class="gallery-grid">
+
+      <!-- 1. Electrical installation — large featured -->
+      <div class="gallery-item large sr d1">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop"
+          alt="High-voltage electrical panel and installation works" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Electrical Installation</div>
+        </div>
+      </div>
+
+      <!-- 2. Road construction -->
+      <div class="gallery-item sr d2">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop"
+          alt="Road construction with heavy machinery and asphalt paving" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Road Construction</div>
+        </div>
+      </div>
+
+      <!-- 3. Steel structure -->
+      <div class="gallery-item sr d3">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop"
+          alt="Steel structural framework of a commercial building under construction" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Steel Structures</div>
+        </div>
+      </div>
+
+      <!-- 4. Bridge construction — tall -->
+      <div class="gallery-item tall sr d1">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80&auto=format&fit=crop"
+          alt="Modern bridge construction over a river" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Bridge Construction</div>
+        </div>
+      </div>
+
+      <!-- 5. Residential building -->
+      <div class="gallery-item sr d2">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&auto=format&fit=crop"
+          alt="Completed residential home with modern architecture" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Residential Buildings</div>
+        </div>
+      </div>
+
+      <!-- 6. Concrete works — wide featured -->
+      <div class="gallery-item wide sr d3">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80&auto=format&fit=crop"
+          alt="Concrete pouring and formwork at a large construction site" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Concrete Works</div>
+        </div>
+      </div>
+
+      <!-- 7. Heavy equipment -->
       <div class="gallery-item sr d1">
-        <img class="gallery-img" src="images/site.jpg" alt="Heavy construction equipment at an active building site" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=600&q=80&auto=format&fit=crop"
+          alt="Excavator and heavy construction equipment at a civil engineering project" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Heavy Equipment</div>
+        </div>
       </div>
+
+      <!-- 8. Drainage system -->
       <div class="gallery-item sr d2">
-        <img class="gallery-img" src="images/coordinate.jpg" alt="Engineer reviewing construction blueprints on site" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80&auto=format&fit=crop"
+          alt="Concrete drainage channel and stormwater infrastructure construction" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Drainage Systems</div>
+        </div>
       </div>
+
+      <!-- 9. Commercial building -->
       <div class="gallery-item sr d3">
-        <img class="gallery-img" src="images/wiring.jpg" alt="Electrical installation and wiring system" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&auto=format&fit=crop"
+          alt="Modern commercial office building exterior" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Commercial Buildings</div>
+        </div>
       </div>
-      <div class="gallery-item sr d4">
-        <img class="gallery-img" src="images/fine internal.jpg" alt="Commercial building exterior at dusk" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+
+      <!-- 10. Water infrastructure — tall -->
+      <div class="gallery-item tall sr d4">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=600&q=80&auto=format&fit=crop"
+          alt="Water treatment and supply infrastructure construction" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Water Infrastructure</div>
+        </div>
       </div>
+
+      <!-- 11. Civil engineering / earthworks -->
+      <div class="gallery-item sr d1">
+        <img class="gallery-img"
+          src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=600&q=80&auto=format&fit=crop"
+          alt="Civil engineering earthworks and site preparation" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Civil Engineering</div>
+        </div>
+      </div>
+
+      <!-- 12. Wiring / power systems — local image -->
       <div class="gallery-item sr d2">
-        <img class="gallery-img" src="images/station at dusk.jpg" alt="Modern commercial high-rise under construction" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+        <img class="gallery-img"
+          src="images/wiring.jpg"
+          alt="Electrical wiring and power system installation" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Electrical Wiring</div>
+        </div>
       </div>
+
+      <!-- 13. Bridge — local image -->
       <div class="gallery-item sr d3">
-        <img class="gallery-img" src="images/worker.jpg" alt="Industrial engineering and power systems" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+        <img class="gallery-img"
+          src="images/bridge.jpg"
+          alt="Bridge construction project by Nales Global Services" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Bridge Works</div>
+        </div>
       </div>
+
+      <!-- 14. Site operations — local image -->
       <div class="gallery-item sr d4">
-        <img class="gallery-img" src="images/install.jpg" alt="Completed residential property with modern architecture" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+        <img class="gallery-img"
+          src="images/site.jpg"
+          alt="Active construction site with equipment and workers" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Site Operations</div>
+        </div>
       </div>
-      <div class="gallery-item sr d5">
-        <img class="gallery-img" src="images/bridge.jpg" alt="Construction team meeting and project planning session" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+
+      <!-- 15. Internal fit-out — local image -->
+      <div class="gallery-item sr d1">
+        <img class="gallery-img"
+          src="images/fine internal.jpg"
+          alt="Premium internal fit-out and finishing works" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Internal Finishing</div>
+        </div>
       </div>
+
+      <!-- 16. Worker / skilled labour — local image -->
+      <div class="gallery-item sr d2">
+        <img class="gallery-img"
+          src="images/worker.jpg"
+          alt="Skilled construction worker on an active project" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-zoom">🔍</div>
+          <div class="gallery-caption">Skilled Workforce</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- FAQ -->
+<!-- ── FAQ ── -->
 <section id="faq" aria-label="Frequently Asked Questions">
   <div class="container">
     <div class="faq-grid">
-
       <div class="faq-content">
         <div class="section-label sr">Common Questions</div>
-        <h2 class="section-heading sr delay-1">
-          Frequently<br>
-          <span class="accent">Asked</span>
-        </h2>
-        <p class="section-subheading sr delay-2">
-          Everything you need to know before starting your project with us.
-        </p>
-
-        <div class="accordion sr delay-2" id="accordion">
+        <h2 class="section-heading sr d1">Frequently<br><span class="accent">Asked</span></h2>
+        <p class="section-subheading sr d2">Everything you need to know before starting your project with us.</p>
+        <div class="accordion sr d2" id="accordion">
           <div class="accordion-item open">
             <button class="accordion-btn" aria-expanded="true">
               <span class="accordion-question">How do I get a project quote?</span>
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-body">
-              <p class="accordion-answer">
-                Contact us via the form on our website, WhatsApp, or phone. We'll arrange a free
-                site visit and consultation, then provide a detailed written quote within 48–72 hours.
-                No obligation whatsoever.
-              </p>
+              <p class="accordion-answer">Contact us via the form, WhatsApp, or phone. We'll arrange a free site visit and consultation, then provide a detailed written quote within 48–72 hours. No obligation whatsoever.</p>
             </div>
           </div>
-
           <div class="accordion-item">
             <button class="accordion-btn" aria-expanded="false">
               <span class="accordion-question">What areas do you serve?</span>
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-body">
-              <p class="accordion-answer">
-                We are headquartered in Ikosi Ketu, Lagos, and operate across Nigeria.
-                Our teams are deployed across Lagos, Abuja, and surrounding states.
-                Contact us to discuss your specific project location.
-              </p>
+              <p class="accordion-answer">Headquartered in Ikosi Ketu, Lagos, we operate across Nigeria — Lagos, Abuja, and surrounding states. Contact us to discuss your specific project location.</p>
             </div>
           </div>
-
           <div class="accordion-item">
             <button class="accordion-btn" aria-expanded="false">
               <span class="accordion-question">How long does a residential project take?</span>
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-body">
-              <p class="accordion-answer">
-                Project duration depends on scope and complexity. A standard 3-bedroom residential
-                build typically takes 6–12 months. We provide a detailed project timeline during
-                the planning phase and commit to delivering within agreed timescales.
-              </p>
+              <p class="accordion-answer">A standard 3-bedroom residential build typically takes 6–12 months. We provide a detailed project timeline during the planning phase and commit to delivering within agreed timescales.</p>
             </div>
           </div>
-
           <div class="accordion-item">
             <button class="accordion-btn" aria-expanded="false">
               <span class="accordion-question">Are your electricians certified?</span>
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-body">
-              <p class="accordion-answer">
-                Yes. All our electrical engineers and technicians are fully certified and
-                comply with Nigerian Electricity Regulatory Commission (NERC) standards and
-                international best practices. Safety and compliance are non-negotiable.
-              </p>
+              <p class="accordion-answer">Yes. All our electrical engineers and technicians comply with NERC standards and international best practices. Safety and compliance are non-negotiable.</p>
             </div>
           </div>
-
           <div class="accordion-item">
             <button class="accordion-btn" aria-expanded="false">
               <span class="accordion-question">Do you offer post-project maintenance?</span>
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-body">
-              <p class="accordion-answer">
-                Absolutely. We offer comprehensive maintenance contracts and 24/7 emergency
-                support for all clients. We believe our relationship with clients doesn't
-                end at project handover — it's just the beginning.
-              </p>
+              <p class="accordion-answer">Absolutely. We offer comprehensive maintenance contracts and 24/7 emergency support. Our relationship with clients doesn't end at project handover.</p>
             </div>
           </div>
-
           <div class="accordion-item">
             <button class="accordion-btn" aria-expanded="false">
               <span class="accordion-question">Can I see completed projects before deciding?</span>
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-body">
-              <p class="accordion-answer">
-                Yes. We encourage potential clients to review our portfolio and, where appropriate,
-                arrange site visits to completed projects with client permission. We're proud of
-                every project we deliver and happy to showcase our work.
-              </p>
+              <p class="accordion-answer">Yes. We encourage potential clients to review our portfolio and arrange site visits to completed projects with client permission. We're proud of every project we deliver.</p>
             </div>
           </div>
         </div>
@@ -2902,145 +1680,84 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
       <div class="sr-right">
         <div class="faq-contact-card">
           <div class="faq-contact-title">Still Have Questions?</div>
-          <p class="faq-contact-desc">
-            Our team is ready to answer any question and guide you through
-            your project from day one. Reach out directly — we respond fast.
-          </p>
+          <p class="faq-contact-desc">Our team is ready to guide you from day one. Reach out directly — we respond fast.</p>
           <div class="faq-contact-info">
-            <div class="faq-contact-item">
-              <div class="faq-contact-icon">📞</div>
-              <span>0701 778 3828</span>
-            </div>
-            <div class="faq-contact-item">
-              <div class="faq-contact-icon">📍</div>
-              <span>10, Ayanbadejo Street, Off Oladogba,<br>Ikosi Ketu, Lagos, Nigeria</span>
-            </div>
-            <div class="faq-contact-item">
-              <div class="faq-contact-icon">👤</div>
-              <span>Contact: Nales global services</span>
-            </div>
+            <div class="faq-contact-item"><div class="faq-contact-icon">📞</div><span>0701 778 3828</span></div>
+            <div class="faq-contact-item"><div class="faq-contact-icon">📍</div><span>10, Ayanbadejo Street, Off Oladogba,<br>Ikosi Ketu, Lagos, Nigeria</span></div>
+            <div class="faq-contact-item"><div class="faq-contact-icon">👤</div><span>Contact: Nales Global Services</span></div>
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;">
-            <a href="tel:07017783828" class="btn btn-primary" style="width:100%;justify-content:center;">
-              📞 Call Now
-            </a>
-            <a href="https://wa.me/2348030615862" target="_blank" rel="noopener"
-               class="btn" style="width:100%;justify-content:center;background:#25D366;color:white;">
-              💬 WhatsApp Us
-            </a>
-            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener"
-               class="btn" style="width:100%;justify-content:center;background:#1877F2;color:white;">
-              Facebook Page →
-            </a>
+            <a href="tel:07017783828" class="btn btn-primary" style="width:100%;justify-content:center;">📞 Call Now</a>
+            <a href="https://wa.me/2348030615862" target="_blank" rel="noopener" class="btn" style="width:100%;justify-content:center;background:#25D366;color:white;">💬 WhatsApp Us</a>
+            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener" class="btn" style="width:100%;justify-content:center;background:#1877F2;color:white;">Facebook Page →</a>
+            <a href="https://www.tiktok.com/@nalesglobal66?_r=1&t=ZS-98bG6Ev6UUh" target="_blank" rel="noopener" class="btn" style="width:100%;justify-content:center;background:#000000;color:white;">TikTok Page</a>
+            <a href="https://www.linkedin.com/in/ayodele-awe-5b6a79177?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="btn" style="width:100%;justify-content:center;background:#0A66C2;color:white;">LinkedIn Profile</a>
+            <a href="https://www.instagram.com/nales_global?igsh=ZGNpc3BxOWN2cTdm" target="_blank" rel="noopener" class="btn" style="width:100%;justify-content:center;background:#E1306C;color:white;">Instagram Page</a>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- CONTACT -->
+<!-- ── CONTACT ── -->
 <section id="contact" aria-label="Contact Us">
   <div class="container">
     <div style="text-align:center;max-width:640px;margin:0 auto 64px;">
       <div class="section-label sr" style="justify-content:center;">Start Your Project</div>
-      <h2 class="section-heading sr delay-1">
-        Ready to Build<br>
-        <span class="accent">Something Great?</span>
-      </h2>
-      <p class="section-subheading sr delay-2" style="max-width:100%;">
-        Get in touch today for a free consultation and project quote.
-        Our team responds within 24 hours.
-      </p>
+      <h2 class="section-heading sr d1">Ready to Build<br><span class="accent">Something Great?</span></h2>
+      <p class="section-subheading sr d2" style="max-width:100%;">Get in touch today for a free consultation and project quote. Our team responds within 24 hours.</p>
     </div>
-
     <div class="contact-grid">
-
       <div class="contact-info sr-left">
-        <h3 class="contact-info-title">
-          Get In<br>
-          <span>Touch</span>
-        </h3>
-        <p class="contact-info-desc">
-          Whether you have a new project in mind, need expert advice,
-          or require emergency maintenance — we're here and ready.
-        </p>
-
+        <h3 class="contact-info-title">Get In<br><span>Touch</span></h3>
+        <p class="contact-info-desc">Whether you have a new project, need expert advice, or require emergency maintenance — we're here and ready.</p>
         <div class="contact-items">
           <a href="tel:07017783828" class="contact-item">
             <div class="contact-item-icon">📞</div>
-            <div>
-              <div class="contact-item-label">Business Phone</div>
-              <div class="contact-item-value">0701 778 3828</div>
-            </div>
+            <div><div class="contact-item-label">Business Phone</div><div class="contact-item-value">0701 778 3828</div></div>
           </a>
           <a href="https://wa.me/2348030615862" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-item-icon">💬</div>
-            <div>
-              <div class="contact-item-label">WhatsApp</div>
-              <div class="contact-item-value">0803 061 5862</div>
-            </div>
+            <div><div class="contact-item-label">WhatsApp</div><div class="contact-item-value">0803 061 5862</div></div>
           </a>
           <div class="contact-item">
             <div class="contact-item-icon">📍</div>
-            <div>
-              <div class="contact-item-label">Office Address</div>
-              <div class="contact-item-value">
-                10, Ayanbadejo Street<br>
-                Off Oladogba, Ikosi Ketu<br>
-                Lagos, Nigeria
-              </div>
-            </div>
+            <div><div class="contact-item-label">Office Address</div><div class="contact-item-value">10, Ayanbadejo Street<br>Off Oladogba, Ikosi Ketu<br>Lagos, Nigeria</div></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">👤</div>
-            <div>
-              <div class="contact-item-label">Contact Person</div>
-              <div class="contact-item-value">Nales global services</div>
-            </div>
+            <div><div class="contact-item-label">Contact Person</div><div class="contact-item-value">Nales Global Services</div></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">🕐</div>
-            <div>
-              <div class="contact-item-label">Availability</div>
-              <div class="contact-item-value">24/7 — Always Ready</div>
-            </div>
+            <div><div class="contact-item-label">Availability</div><div class="contact-item-value">24/7 — Always Ready</div></div>
           </div>
         </div>
-
         <div class="contact-social">
-          <a href="https://www.facebook.com/share/v/1BZXHNVRGg/"
-             target="_blank" rel="noopener"
-             class="social-link" aria-label="Facebook">𝓕</a>
-          <a href="https://wa.me/2348030615862"
-             target="_blank" rel="noopener"
-             class="social-link" aria-label="WhatsApp">💬</a>
+          <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">𝓕</a>
+          <a href="https://wa.me/2348030615862" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">💬</a>
           <a href="tel:07017783828" class="social-link" aria-label="Call us">📞</a>
         </div>
       </div>
-
       <div class="contact-form-wrap sr-right">
         <h3 class="form-title">Request a Free Quote</h3>
         <form id="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="name">Full Name *</label>
-              <input class="form-control" type="text" id="name" name="name"
-                placeholder="Your full name" required autocomplete="name">
+              <input class="form-control" type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
             </div>
             <div class="form-group">
               <label class="form-label" for="phone">Phone Number *</label>
-              <input class="form-control" type="tel" id="phone" name="phone"
-                placeholder="08012345678" required autocomplete="tel">
+              <input class="form-control" type="tel" id="phone" name="phone" placeholder="08012345678" required autocomplete="tel">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email Address</label>
-            <input class="form-control" type="email" id="email" name="email"
-              placeholder="your@email.com" autocomplete="email">
+            <input class="form-control" type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
           </div>
           <div class="form-group">
             <label class="form-label" for="service">Service Required *</label>
@@ -3058,9 +1775,7 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           </div>
           <div class="form-group">
             <label class="form-label" for="message">Project Details *</label>
-            <textarea class="form-control form-textarea" id="message" name="message"
-              placeholder="Describe your project, location, timeline, and any specific requirements..."
-              required rows="4"></textarea>
+            <textarea class="form-control form-textarea" id="message" name="message" placeholder="Describe your project, location, timeline, and any specific requirements..." required rows="4"></textarea>
           </div>
           <button type="submit" class="form-submit" id="form-submit-btn">
             <span id="submit-text">Send Request →</span>
@@ -3068,49 +1783,33 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
           <p class="form-note">* We respond within 24 hours. Your information is confidential.</p>
         </form>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── FOOTER ── -->
 <footer role="contentinfo">
-
   <div class="footer-top-bar">
     <div class="container">
       <div class="footer-top-inner">
-        <div class="footer-top-text">
-          Ready to start your project? Contact us today for a free consultation.
-        </div>
+        <div class="footer-top-text">Ready to start your project? Contact us today for a free consultation.</div>
         <a href="tel:07017783828" class="footer-top-cta">📞 Call: 0701 778 3828</a>
       </div>
     </div>
   </div>
-
   <div class="footer-main">
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-brand">
           <div class="footer-brand-name">Nales Global Services Limited</div>
           <div class="footer-brand-sub">Engineering Excellence Since Day One</div>
-          <p class="footer-brand-desc">
-            A premier Nigerian engineering and construction company delivering
-            quality-first solutions across construction, electrical, petroleum,
-            and engineering consultancy sectors.
-            Located at 10, Ayanbadejo Street, Off Oladogba, Ikosi Ketu, Lagos.
-          </p>
+          <p class="footer-brand-desc">A premier Nigerian engineering and construction company delivering quality-first solutions across construction, electrical, petroleum, and engineering consultancy sectors. Located at 10, Ayanbadejo Street, Off Oladogba, Ikosi Ketu, Lagos.</p>
           <div class="footer-socials">
-            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/"
-               target="_blank" rel="noopener"
-               class="footer-social" aria-label="Facebook">𝓕</a>
-            <a href="https://wa.me/2348030615862"
-               target="_blank" rel="noopener"
-               class="footer-social" aria-label="WhatsApp">💬</a>
+            <a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">𝓕</a>
+            <a href="https://wa.me/2348030615862" target="_blank" rel="noopener" class="footer-social" aria-label="WhatsApp">💬</a>
             <a href="tel:07017783828" class="footer-social" aria-label="Phone">📞</a>
           </div>
         </div>
-
         <div>
           <h4 class="footer-col-title">Quick Links</h4>
           <ul class="footer-links">
@@ -3123,7 +1822,6 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
             <li><a href="#contact"  class="footer-link">Contact</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="footer-col-title">Services</h4>
           <ul class="footer-links">
@@ -3135,37 +1833,27 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
             <li><a href="#services" class="footer-link">Engineering Consultancy</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="footer-col-title">Contact</h4>
           <ul class="footer-links">
-            <li class="footer-link" style="cursor:default;line-height:1.6;">
-              📍 10, Ayanbadejo Street<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Off Oladogba, Ikosi Ketu<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Lagos, Nigeria
-            </li>
+            <li class="footer-link" style="cursor:default;line-height:1.6;">📍 10, Ayanbadejo Street<br>&nbsp;&nbsp;&nbsp;&nbsp;Off Oladogba, Ikosi Ketu<br>&nbsp;&nbsp;&nbsp;&nbsp;Lagos, Nigeria</li>
             <li><a href="tel:07017783828" class="footer-link">📞 0701 778 3828</a></li>
             <li><a href="https://wa.me/2348030615862" target="_blank" rel="noopener" class="footer-link">💬 0803 061 5862 (WhatsApp)</a></li>
             <li><a href="https://www.facebook.com/share/v/1BZXHNVRGg/" target="_blank" rel="noopener" class="footer-link">Facebook Page</a></li>
-            <li class="footer-link" style="cursor:default;">👤 Nales global services</li>
+            <li class="footer-link" style="cursor:default;">👤 Nales Global Services</li>
             <li class="footer-link" style="cursor:default;">🕐 24/7 Support</li>
           </ul>
         </div>
-
       </div>
     </div>
   </div>
-
   <div class="footer-bottom">
     <div class="container">
       <div class="footer-bottom-inner">
-        <div class="footer-copy">
-          © <span id="footer-year">2024</span>
-          <span>Nales Global Services Limited</span>. All rights reserved.
-        </div>
+        <div class="footer-copy">© <span id="footer-year">2024</span> <span>Nales Global Services Limited</span>. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="#hero"    class="footer-bottom-link">Privacy Policy</a>
-          <a href="#hero"    class="footer-bottom-link">Terms</a>
+          <a href="#hero" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#hero" class="footer-bottom-link">Terms</a>
           <a href="#contact" class="footer-bottom-link">Get a Quote</a>
         </div>
       </div>
@@ -3173,27 +1861,19 @@ footer { background: var(--navy); position: relative; overflow: hidden; }
   </div>
 </footer>
 
-<!-- FLOATING ELEMENTS -->
-<a href="https://wa.me/2348030615862"
-   target="_blank"
-   rel="noopener noreferrer"
-   id="whatsapp-fab"
-   aria-label="Contact us on WhatsApp">
+<!-- ── FLOATING ELEMENTS ── -->
+<a href="https://wa.me/2348030615862" target="_blank" rel="noopener noreferrer" id="whatsapp-fab" aria-label="Contact us on WhatsApp">
   💬
   <div class="whatsapp-tooltip">Chat on WhatsApp</div>
 </a>
 
-<button id="back-to-top"
-        onclick="window.scrollTo({top:0,behavior:'smooth'})"
-        aria-label="Back to top">
-  ↑
-</button>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <a href="tel:07017783828" id="mobile-call" aria-label="Call Nales Global Services Limited">
   📞 Call Now — 0701 778 3828
 </a>
 
-<!-- JAVASCRIPT -->
+<!-- ── JAVASCRIPT ── -->
 <script>
 /* ── Scroll Progress ── */
 const scrollBar = document.getElementById('scroll-progress');
@@ -3203,38 +1883,34 @@ window.addEventListener('scroll', () => {
   scrollBar.style.width = (scrollTop / docH * 100) + '%';
 });
 
-/* ── Navbar scroll state ── */
+/* ── Navbar ── */
 const navbar    = document.getElementById('navbar');
 const backToTop = document.getElementById('back-to-top');
-
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   navbar.classList.toggle('scrolled', y > 80);
-  backToTop.classList.toggle('show',  y > 400);
+  backToTop.classList.toggle('show', y > 400);
   updateActiveNav();
 });
-
 function updateActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const scrollY  = window.scrollY + 120;
   sections.forEach(s => {
-    const top    = s.offsetTop;
-    const bottom = top + s.offsetHeight;
-    const link   = document.querySelector(`.nav-link[href="#${s.id}"]`);
-    if (link) link.classList.toggle('active', scrollY >= top && scrollY < bottom);
+    const top  = s.offsetTop;
+    const bot  = top + s.offsetHeight;
+    const link = document.querySelector(`.nav-link[href="#${s.id}"]`);
+    if (link) link.classList.toggle('active', scrollY >= top && scrollY < bot);
   });
 }
 
 /* ── Mobile Nav ── */
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobile-nav');
-
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   mobileNav.classList.toggle('open');
   document.body.classList.toggle('nav-open');
 });
-
 function closeMobileNav() {
   hamburger.classList.remove('open');
   mobileNav.classList.remove('open');
@@ -3243,53 +1919,47 @@ function closeMobileNav() {
 
 /* ── Scroll Reveal ── */
 const srObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      srObserver.unobserve(entry.target);
-    }
-  });
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); srObserver.unobserve(e.target); } });
 }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
-
 document.querySelectorAll('.sr, .sr-left, .sr-right').forEach(el => srObserver.observe(el));
 
-/* ── Counter Animation ── */
+/* ── Counters ── */
 function animateCounter(el) {
-  const target   = parseInt(el.getAttribute('data-target'));
-  const suffix   = el.getAttribute('data-suffix') || '';
-  const duration = 2000;
-  const step     = target / (duration / 16);
-  let current    = 0;
-  const accentEl = el.querySelector('.stat-accent');
-  const timer = setInterval(() => {
+  const target = parseInt(el.getAttribute('data-target'));
+  const suffix = el.getAttribute('data-suffix') || '';
+  const step   = target / (2000 / 16);
+  let current  = 0;
+  const accent = el.querySelector('.stat-accent');
+  const timer  = setInterval(() => {
     current = Math.min(current + step, target);
-    const num = Math.round(current).toLocaleString();
-    if (accentEl) {
-      el.childNodes[0].textContent = num;
-    } else {
-      el.textContent = num + suffix;
-    }
+    if (accent) el.childNodes[0].textContent = Math.round(current).toLocaleString();
+    else el.textContent = Math.round(current).toLocaleString() + suffix;
     if (current >= target) {
       clearInterval(timer);
-      if (accentEl) {
-        el.childNodes[0].textContent = target.toLocaleString();
-      } else {
-        el.textContent = target.toLocaleString() + suffix;
-      }
+      if (accent) el.childNodes[0].textContent = target.toLocaleString();
+      else el.textContent = target.toLocaleString() + suffix;
     }
   }, 16);
 }
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-      entry.target.classList.add('counted');
-      animateCounter(entry.target);
-    }
-  });
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting && !e.target.classList.contains('counted')) { e.target.classList.add('counted'); animateCounter(e.target); } });
 }, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
 
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+/* ── Hero counter on load ── */
+setTimeout(() => {
+  document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => {
+    const target = parseInt(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    let current  = 0;
+    const step   = target / (2500 / 16);
+    const timer  = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.round(current) + suffix;
+      if (current >= target) { clearInterval(timer); el.textContent = target + suffix; }
+    }, 16);
+  });
+}, 1500);
 
 /* ── Accordion ── */
 document.querySelectorAll('.accordion-btn').forEach(btn => {
@@ -3300,25 +1970,20 @@ document.querySelectorAll('.accordion-btn').forEach(btn => {
       el.classList.remove('open');
       el.querySelector('.accordion-btn').setAttribute('aria-expanded', 'false');
     });
-    if (!isOpen) {
-      item.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
+    if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
   });
 });
 
 /* ── Project Filter ── */
 const filterBtns   = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
-
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.getAttribute('data-filter');
     projectCards.forEach(card => {
-      const category = card.getAttribute('data-category');
-      const show = filter === 'all' || category === filter;
+      const show = filter === 'all' || card.getAttribute('data-category') === filter;
       card.style.opacity       = show ? '1' : '0.25';
       card.style.transform     = show ? '' : 'scale(0.97)';
       card.style.pointerEvents = show ? '' : 'none';
@@ -3327,56 +1992,170 @@ filterBtns.forEach(btn => {
   });
 });
 
-/* ── Project Video Hover Play/Pause ── */
+/* ── Project Video hover ── */
 projectCards.forEach(card => {
-  const video    = card.querySelector('.project-video');
-  const muteBtn  = card.querySelector('.project-mute-btn');
+  const video   = card.querySelector('.project-video');
+  const muteBtn = card.querySelector('.project-mute-btn');
   if (!video) return;
-
-  /* Play on hover */
-  card.addEventListener('mouseenter', () => {
-    video.play().catch(() => {}); /* catch autoplay policy errors silently */
-  });
-
-  /* Pause when mouse leaves */
-  card.addEventListener('mouseleave', () => {
-    video.pause();
-  });
-
-  /* Touch support — toggle play/pause on tap */
+  card.addEventListener('mouseenter', () => video.play().catch(() => {}));
+  card.addEventListener('mouseleave', () => video.pause());
   card.addEventListener('touchstart', (e) => {
-    /* Don't intercept mute button taps */
     if (e.target === muteBtn) return;
-    if (video.paused) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
+    video.paused ? video.play().catch(() => {}) : video.pause();
   }, { passive: true });
-
-  /* Mute / unmute toggle */
   if (muteBtn) {
     muteBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); /* prevent card click bubbling */
+      e.stopPropagation();
       video.muted = !video.muted;
       muteBtn.textContent = video.muted ? '🔇' : '🔊';
-      muteBtn.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
     });
   }
 });
 
-/* ── Pause all videos when they scroll out of view (performance) ── */
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const video = entry.target.querySelector('.project-video');
-    if (!video) return;
-    if (!entry.isIntersecting) {
-      video.pause();
-    }
-  });
+const videoObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { const v = e.target.querySelector('.project-video'); if (v && !e.isIntersecting) v.pause(); });
 }, { threshold: 0.1 });
+projectCards.forEach(card => videoObs.observe(card));
 
-projectCards.forEach(card => videoObserver.observe(card));
+/* ============================================================
+   VIDEO SHOWCASE — Horizontal Scroll Controller
+   ============================================================ */
+(function() {
+  const track   = document.getElementById('showcaseTrack');
+  const panels  = track ? Array.from(track.querySelectorAll('.showcase-panel')) : [];
+  const dotsWrap = document.getElementById('showcaseDots');
+  const prevBtn  = document.getElementById('showcasePrev');
+  const nextBtn  = document.getElementById('showcaseNext');
+
+  if (!track || !panels.length) return;
+
+  /* Build dots */
+  panels.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'showcase-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to panel ' + (i + 1));
+    dot.setAttribute('role', 'tab');
+    dot.addEventListener('click', () => scrollToPanel(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  function getDots() { return Array.from(dotsWrap.querySelectorAll('.showcase-dot')); }
+
+  function getActiveIndex() {
+    const trackLeft  = track.getBoundingClientRect().left;
+    let closest = 0, minDist = Infinity;
+    panels.forEach((p, i) => {
+      const dist = Math.abs(p.getBoundingClientRect().left - trackLeft);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    return closest;
+  }
+
+  function scrollToPanel(i) {
+    const panel     = panels[i];
+    const trackLeft = track.scrollLeft;
+    const panelLeft = panel.offsetLeft - parseInt(getComputedStyle(track).paddingLeft);
+    track.scrollTo({ left: panelLeft, behavior: 'smooth' });
+  }
+
+  function updateDots() {
+    const idx  = getActiveIndex();
+    const dots = getDots();
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+
+  /* Arrow nav */
+  prevBtn.addEventListener('click', () => {
+    const idx = getActiveIndex();
+    scrollToPanel(Math.max(0, idx - 1));
+  });
+  nextBtn.addEventListener('click', () => {
+    const idx = getActiveIndex();
+    scrollToPanel(Math.min(panels.length - 1, idx + 1));
+  });
+
+  /* Update dots on scroll */
+  let scrollTimer;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(updateDots, 80);
+  }, { passive: true });
+
+  /* ── Drag-to-scroll (mouse) ── */
+  let isDown = false, startX, startScrollLeft;
+  track.addEventListener('mousedown', e => {
+    isDown = true;
+    track.classList.add('grabbing');
+    startX          = e.pageX - track.offsetLeft;
+    startScrollLeft = track.scrollLeft;
+  });
+  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mouseup',    () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mousemove',  e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x    = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.4;
+    track.scrollLeft = startScrollLeft - walk;
+  });
+
+  /* ── Showcase panel video play on hover/intersection ── */
+  panels.forEach(panel => {
+    const video = panel.querySelector('video');
+    const badge = panel.querySelector('.showcase-play-badge');
+    if (!video) return;
+
+    panel.addEventListener('mouseenter', () => {
+      video.play().catch(() => {});
+      if (badge) badge.textContent = '⏸';
+    });
+    panel.addEventListener('mouseleave', () => {
+      video.pause();
+      if (badge) badge.textContent = '▶';
+    });
+
+    /* Mobile: IntersectionObserver plays when panel is mostly visible */
+    const panelObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.intersectionRatio > 0.6) {
+          video.play().catch(() => {});
+          if (badge) badge.textContent = '⏸';
+        } else {
+          video.pause();
+          if (badge) badge.textContent = '▶';
+        }
+      });
+    }, { threshold: [0.0, 0.6] });
+    panelObs.observe(panel);
+  });
+
+  /* Auto-advance every 6 s (pauses on hover) */
+  let autoTimer;
+  function startAuto() {
+    autoTimer = setInterval(() => {
+      const idx = getActiveIndex();
+      scrollToPanel(idx < panels.length - 1 ? idx + 1 : 0);
+    }, 6000);
+  }
+  function stopAuto() { clearInterval(autoTimer); }
+
+  startAuto();
+  track.addEventListener('mouseenter', stopAuto);
+  track.addEventListener('mouseleave', startAuto);
+  track.addEventListener('touchstart',  stopAuto, { passive: true });
+
+  /* Keyboard nav */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  { const i = getActiveIndex(); scrollToPanel(Math.max(0, i - 1)); }
+    if (e.key === 'ArrowRight') { const i = getActiveIndex(); scrollToPanel(Math.min(panels.length - 1, i + 1)); }
+  });
+})();
+
+/* ── Process step reveal ── */
+const processObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('active'), i * 200); });
+}, { threshold: 0.3 });
+document.querySelectorAll('.process-step').forEach(s => processObs.observe(s));
 
 /* ── Contact Form ── */
 function handleFormSubmit(e) {
@@ -3388,41 +2167,25 @@ function handleFormSubmit(e) {
   const phone   = document.getElementById('phone').value.trim();
   const service = document.getElementById('service').value;
   const message = document.getElementById('message').value.trim();
-
-  if (!name || !phone || !service || !message) {
-    showFormError('Please fill in all required fields.');
-    return;
-  }
-
-  text.textContent  = 'Sending...';
-  btn.style.opacity = '0.7';
-  btn.disabled      = true;
-
+  if (!name || !phone || !service || !message) { showFormError('Please fill in all required fields.'); return; }
+  text.textContent = 'Sending...'; btn.style.opacity = '0.7'; btn.disabled = true;
   setTimeout(() => showFormSuccess(form, btn, text), 1500);
 }
-
 function showFormSuccess(form, btn, text) {
-  text.textContent     = '✓ Message Sent!';
-  btn.style.opacity    = '1';
-  btn.style.background = 'var(--emerald)';
-  btn.disabled         = false;
+  text.textContent = '✓ Message Sent!'; btn.style.opacity = '1';
+  btn.style.background = 'var(--emerald)'; btn.disabled = false;
   form.reset();
-  setTimeout(() => {
-    text.textContent     = 'Send Request →';
-    btn.style.background = '';
-  }, 4000);
+  setTimeout(() => { text.textContent = 'Send Request →'; btn.style.background = ''; }, 4000);
 }
-
 function showFormError(msg) {
   const existing = document.querySelector('.form-error-msg');
   if (existing) existing.remove();
-  const errEl = document.createElement('p');
-  errEl.className = 'form-error-msg';
-  errEl.style.cssText = 'color:#EF4444;font-size:13px;margin-top:8px;font-family:var(--font-mono);';
-  errEl.textContent = msg;
-  const submitBtn = document.getElementById('form-submit-btn');
-  submitBtn.parentNode.insertBefore(errEl, submitBtn);
-  setTimeout(() => errEl.remove(), 5000);
+  const el = document.createElement('p');
+  el.className = 'form-error-msg';
+  el.style.cssText = 'color:#EF4444;font-size:13px;margin-top:8px;font-family:var(--font-mono);';
+  el.textContent = msg;
+  document.getElementById('form-submit-btn').parentNode.insertBefore(el, document.getElementById('form-submit-btn'));
+  setTimeout(() => el.remove(), 5000);
 }
 
 /* ── Footer year ── */
@@ -3432,45 +2195,25 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = target.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
-    }
+    if (target) { e.preventDefault(); window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
   });
 });
 
-/* ── Process step reveal ── */
-const processObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('active'), i * 200);
-    }
-  });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('.process-step').forEach(step => processObserver.observe(step));
-
-/* ── Hero stats counter on load ── */
-setTimeout(() => {
-  document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => {
-    const target   = parseInt(el.getAttribute('data-target'));
-    const suffix   = el.getAttribute('data-suffix') || '';
-    let current    = 0;
-    const duration = 2500;
-    const step     = target / (duration / 16);
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = Math.round(current) + suffix;
-      if (current >= target) { clearInterval(timer); el.textContent = target + suffix; }
-    }, 16);
-  });
-}, 1500);
-
-console.log(
-  '%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  NALES GLOBAL SERVICES LIMITED\n  Portfolio — Video Cards Update\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-  'color:#3B82F6;font-weight:bold;font-family:monospace;'
-);
+console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  NALES GLOBAL SERVICES LIMITED\n  v3 — Video Showcase + Gallery Update\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━','color:#3B82F6;font-weight:bold;font-family:monospace;');
 </script>
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a6ca0089b421a1d42848fde/1jus529jh';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
 </body>
 </html>
